@@ -1,0 +1,1482 @@
+@charset "euc-jp";
+
+/*==============================================
+俺プロお知らせ用　css
+ikegami
+
+TOPガイドバナー
+TOPカルーセル
+TOPおしらせ
+おしらせ
+俺プロとは
+キャンペーン
+==============================================*/
+/*------------------
+TOPガイドバナー
+------------------*/
+#TopPage .view_guide_bnr {
+    padding: 0 10px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 410px;
+}
+
+#TopPage .view_guide_bnr a img {
+    width: 100%;
+}
+
+/*------------------
+TOPカルーセル
+------------------*/
+#TopPage .Event_bnr {
+    padding: 0 10px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 410px;
+}
+
+#TopPage .Event_bnr a img {
+    width: 100%;
+}
+
+/*-- Slider.css --*/
+.slick-slider {
+    position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-list:focus {
+    outline: none;
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+/*
+ * ポインター
+ */
+.slick-dots {
+    position: relative;
+    display: block;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+.slick-dots li {
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+    margin: 7px 5px;
+    background: #5e5d58;
+    display: inline-block;
+    -webkit-backface-visibility: visible;
+    -webkit-transition: opacity 200ms ease;
+    -moz-transition: opacity 200ms ease;
+    -ms-transition: opacity 200ms ease;
+    -o-transition: opacity 200ms ease;
+    transition: opacity 200ms ease;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+}
+
+.slick-dots li button {
+    border: 0;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    outline: none;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+    outline: none;
+}
+
+.slick-dots li button:before {
+    position: relative;
+    display: block;
+    content: " ";
+    width: 8px;
+    height: 8px;
+    background: #5e5d58;
+    border-radius: 4px;
+    font-size: 0;
+    line-height: 0;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 9;
+}
+
+.slick-dots li button:after {
+    position: relative;
+    top: -11px;
+    left: -3px;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    content: " ";
+    background: #dbcf8e;
+    background: -moz-linear-gradient(top, #dbcf8e 0%, #c6b77f 50%, #aaa06f 100%);
+    background: -webkit-linear-gradient(top, #dbcf8e 0%, #c6b77f 50%, #aaa06f 100%);
+    background: linear-gradient(to bottom, #dbcf8e 0%, #c6b77f 50%, #aaa06f 100%);
+    width: 14px;
+    height: 14px;
+    font-size: 0;
+    line-height: 0;
+    z-index: 8;
+    border-radius: 7px;
+    box-shadow: 0 0 1px 1px #796b42;
+}
+
+.slick-dots li.slick-active button:before {
+    background: #ff3232;
+    box-shadow: 0 0 2px 0 #910000 inset;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block !important;
+    line-height: 0;
+    font-size: 0;
+    cursor: pointer;
+    width: 27px;
+    height: 37px;
+    background: rgba(0, 0, 0, 0.3);
+    top: 17%;
+    margin: auto;
+    padding: 0;
+    border: none;
+    outline: none;
+    z-index: 10;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    height: 0;
+    width: 0;
+    font-size: 0;
+    width: 6px;
+    height: 6px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .slick-prev,
+    .slick-next {
+        position: absolute;
+        display: block !important;
+        line-height: 0;
+        font-size: 0;
+        cursor: pointer;
+        width: 27px;
+        height: 81px;
+        background: rgba(0, 0, 0, 0.3);
+        top: 0;
+        margin: auto;
+        padding: 0;
+        border: none;
+        outline: none;
+        z-index: 10;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        content: "";
+        height: 0;
+        width: 0;
+        font-size: 0;
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    outline: none;
+}
+
+.slick-prev:before {
+    left: 5px;
+    transform: rotate(45deg);
+}
+
+.slick-next:before {
+    right: 10px;
+    transform: rotate(-135deg);
+}
+
+.slick-prev {
+    left: 0px;
+}
+
+.slick-next {
+    right: 0px;
+}
+
+
+/*----------------------------------
+TOPおしらせ
+----------------------------------*/
+
+#TopPage .Orepro_Message {
+    color: #d62b00;
+    font-size: 90%;
+    text-decoration: underline !important;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.Orepro_News_List .Static_Contents_Box {
+    background: #483b24;
+    padding-bottom: 10px;
+    margin: 0 10px 28px;
+}
+
+.Orepro_News_List .Static_Contents_Box .Sub_Title {
+    margin-bottom: 10px;
+}
+
+.Orepro_News_List .Static_Contents_Box a {
+    position: relative;
+    display: block;
+    color: #fff;
+    line-height: 1.4em;
+    font-size: 81.5%;
+    text-decoration: underline !important;
+}
+
+.Orepro_News_List .Static_Contents_Box a + a {
+    margin-top: 6px;
+}
+
+@media only screen and (max-width: 320px) {
+    .Orepro_Message {
+        font-size: 80%;
+    }
+
+    #TopPage .Orepro_News.Message {
+        font-size: 78%;
+    }
+}
+
+/*------------------
+お知らせ
+------------------*/
+#Orepro_News img.Banner {
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    #Orepro_News a.Sp_info_link {
+        display: block;
+    }
+
+    #Orepro_News a.Pc_info_link {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #Orepro_News a.Sp_info_link {
+        display: none;
+    }
+
+    #Orepro_News a.Pc_info_link {
+        display: block;
+    }
+}
+
+/* =======================================================
+お知らせここから
+======================================================= */
+#Orepro_News .Contents a {}
+
+#Orepro_News dl dt h2 {
+    font-size: 113%;
+    color: #756438;
+}
+
+#Orepro_News dl dt {
+    line-height: 1.4em;
+    color: #252118;
+}
+
+#Orepro_News dl dd .Sub_Title {
+    background: none;
+    font-size: 100%;
+    color: #756438;
+}
+
+#Orepro_News dl dd p.Attention {
+    padding-top: 3px !important;
+}
+
+#Orepro_News .Text_Red {
+    color: #dc3c3c !important;
+}
+
+/*-- ポップアップ内 --*/
+#Orepro_News.frame_road header,
+#Orepro_News.frame_road .MenuNew01,
+#Orepro_News.frame_road .ContentNavi01,
+#Orepro_News.frame_road .Navi_Contents,
+#Orepro_News.frame_road footer {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    #Orepro_News .Content_Title_Bar {
+        font-size: 4vmin;
+    }
+}
+
+#Orepro_News .Static_Inner_Box {
+    line-height: 1.4em;
+}
+
+
+#Orepro_News .Honmei {
+    margin-top: 20px;
+}
+
+#Orepro_News img.title {
+    display: block;
+    width: 125px;
+    height: 25px;
+    margin: auto;
+}
+
+#Orepro_News img.info_image {
+    display: block;
+    max-width: 280px;
+    margin: auto;
+}
+
+#Orepro_News .User_Result {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+}
+
+#Orepro_News .User_Result:before {
+    position: absolute;
+    left: 0px;
+    top: 22px;
+    display: block;
+    content: "";
+    width: 13px;
+    height: 65px;
+    background-image: url("../img/orepro/box_round_bg_ml.png");
+    background-size: 13px 13px;
+    z-index: 10;
+}
+
+#Orepro_News .User_Result:after {
+    position: absolute;
+    right: -1px;
+    top: 22px;
+    display: block;
+    content: "";
+    width: 13px;
+    height: 65px;
+    background-image: url("../img/orepro/box_round_bg_mr.png");
+    background-size: 13px 13px;
+}
+
+#Orepro_News .User_Result .Frame_Top {
+    position: relative;
+    top: 10px;
+    left: 13px;
+    display: block;
+    width: calc(100% - 25px);
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_tc.png");
+    z-index: 10;
+    background-size: 13px 13px;
+}
+
+#Orepro_News .User_Result .Frame_Top:before {
+    position: absolute;
+    left: -13px;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_tl.png");
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+}
+
+#Orepro_News .User_Result .Frame_Top:after {
+    position: absolute;
+    right: -15px;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_tr.png");
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+}
+
+#Orepro_News .User_Result .Frame_Bottom {
+    position: relative;
+    bottom: 9px;
+    left: 13px;
+    display: block;
+    width: 100%;
+    width: calc(100% - 25px);
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_bc.png");
+    background-size: 13px 13px;
+}
+
+#Orepro_News .User_Result .Frame_Bottom:before {
+    position: absolute;
+    left: -13px;
+    display: block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_bl.png");
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+}
+
+#Orepro_News .User_Result .Frame_Bottom:after {
+    position: absolute;
+    right: -13px;
+    display: block;
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-image: url("../img/orepro/box_round_bg_br.png");
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+}
+
+#Orepro_News .User_Result .User_Result_container {
+    position: relative;
+    height: 83px;
+    padding: 18px 0 0 92px;
+    text-align: left;
+    background: #340202;
+    border-radius: 14px;
+}
+
+#Orepro_News .User_Result .Avatar_Box {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+
+#Orepro_News .User_Result .Avatar_Box > div {
+    overflow: hidden;
+    width: 52px;
+    border-radius: 4px;
+}
+
+#Orepro_News .User_Result .Avatar_Box img {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    border-radius: 4px;
+}
+
+#Orepro_News .User_Result .User_Name {
+    display: block;
+    color: #fff;
+}
+
+#Orepro_News .User_Result .Grade_Emblem {
+    position: absolute;
+    right: 6px;
+    top: 5px;
+}
+
+#Orepro_News .User_Result dl.Result {
+    display: table;
+    width: 96%;
+    width: calc(100% - 6px);
+    width: -webkit-calc(100% - 6px);
+    background: #000;
+    color: #ddd6ba;
+    padding: 0px 8px 4px;
+    font-size: 92%;
+    margin-top: 8px;
+}
+
+#Orepro_News .User_Result dl dt {
+    display: table-cell;
+    color: #ddd6ba;
+}
+
+#Orepro_News .User_Result dl dd {
+    display: table-cell;
+    text-align: right;
+}
+
+/*--文字色--*/
+#Orepro_News span.Color_Red {
+    color: #e20c0c
+}
+
+#Orepro_News span.Color_Brown {
+    color: #716136;
+}
+
+#Orepro_News span.Attention {
+    font-size: 88%;
+    color: #4a4845;
+}
+
+/*-- ボーダー装飾 --*/
+#Orepro_News .Information_Line {
+    position: relative;
+    margin: 18px auto;
+    height: 3px;
+    width: 80%;
+    background-color: #957f32;
+}
+
+#Orepro_News .Information_Line:before,
+#Orepro_News .Information_Line:after {
+    display: block;
+    position: absolute;
+    content: '●';
+    width: 12px;
+    height: 12px;
+    color: #957f32;
+    top: -6px;
+}
+
+#Orepro_News .Information_Line:before {
+    left: -20px;
+}
+
+#Orepro_News .Information_Line:after {
+    right: -20px;
+}
+
+/*--詳細テーブル--*/
+#Orepro_News table.RuleTable {
+    width: 100%;
+    margin: 16px auto;
+
+}
+
+#Orepro_News table.RuleTable thead td {
+    color: #fff;
+    background: #8a7a52;
+}
+
+#Orepro_News table.RuleTable th {
+    color: #fff;
+    background: #8a7a52;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 88%;
+}
+
+#Orepro_News table.RuleTable.Rank th {
+    width: 100px;
+    font-weight: normal;
+}
+
+#Orepro_News table.RuleTable td {
+    padding: 8px;
+    background: #fff;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 88%;
+}
+
+#Orepro_News table.RuleTable.Rank td {
+    width: 60px;
+}
+
+#Orepro_News table.RuleTable td.Sub {
+    width: 64px;
+    text-align: center;
+    color: #fff;
+    background: #ada17a;
+}
+
+#Orepro_News table.RuleTable.Rank th,
+#Orepro_News table.RuleTable.Rank td {
+    text-align: center;
+}
+
+#Orepro_News table.RuleTable.Flow {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#Orepro_News table.RuleTable.Flow:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+    margin: auto;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 20px 0 20px;
+    border-color: #8a7b52 transparent transparent transparent;
+}
+
+#Orepro_News ul.DebutUserBox {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 335px;
+    max-width: 100%;
+    margin: auto;
+}
+
+#Orepro_News ul.DebutUserBox li {
+    width: 157px;
+    max-width: 47%;
+    margin: 10px auto;
+    padding: 0px 0 10px;
+    background: #f1ebca;
+}
+
+
+#Orepro_News .DebutUserBox dl dt .Photo a {
+    position: relative;
+    width: 100%;
+    height: 147px;
+    background: #fff;
+    border: 5px solid #f3efdb;
+}
+
+#Orepro_News .DebutUserBox dl dt .Photo img {
+    position: absolute;
+    width: 100%;
+    max-width: 120px;
+    max-height: 137px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+#Orepro_News .DebutUserBox dl dd .name {
+    display: block;
+    padding: 6px 0;
+    font-size: 108%;
+    color: #365909;
+    font-weight: bold;
+    text-align: center;
+}
+
+#Orepro_News .DebutUserBox dl dd .copy {
+    display: block;
+    font-size: 66.8%;
+    text-align: center;
+    margin: 4px auto 0px;
+    color: #fff;
+    line-height: 1.7em;
+    height: 1.5em;
+    background: #e89a00;
+    width: 90%;
+}
+
+#Orepro_News .DebutUserBox dl dd {
+    padding: 8px;
+}
+
+#Orepro_News .DebutUserBox dl dd > * {
+    display: block;
+}
+
+#Orepro_News .DebutUserBox dl dd .comment_head {
+    font-size: 78%;
+    color: #801807;
+    font-weight: bold;
+    line-height: 1.3;
+    letter-spacing: -.05em;
+}
+
+#Orepro_News .DebutUserBox dl dd .comment {
+    font-size: 78%;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 2px;
+}
+
+#Orepro_News .DebutUserBox .btn_area {
+    position: relative;
+    width: 141px;
+    max-width: 90%;
+    margin: 10px auto 0;
+    padding: 8px 0 6px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 120%;
+    background: #bf113b;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 320px) {
+    #Orepro_News ul.DebutUserBox li {
+        width: 130px;
+
+    }
+
+    #Orepro_News .DebutUserBox dl dd .name {
+        font-size: 90%;
+    }
+}
+
+/*------------------
+俺プロとは？
+------------------*/
+#Orepro .Title_Box.Black {
+    background: #070707;
+}
+
+#Orepro .Title_Box.Black .Title {
+    height: 50px;
+}
+
+#Orepro .Orepro_Body {
+    position: relative;
+    padding: 20px 22px;
+    background-color: #353535;
+    background-image: url("../img/orepro/orepro_bg_l.jpg");
+    background-repeat: no-repeat;
+    background-size: 1117px auto;
+    background-position: center top;
+}
+
+#Orepro .Orepro_Body:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 310px;
+    background: -webkit-linear-gradient(top, rgba(7, 7, 7, 1) 0%, rgba(7, 7, 7, 0) 24%, rgba(7, 7, 7, 0) 100%);
+    background: linear-gradient(to bottom, rgba(7, 7, 7, 1) 0%, rgba(7, 7, 7, 0) 24%, rgba(7, 7, 7, 0) 100%);
+}
+
+@media only screen and (max-width: 380px) {
+    #Orepro .Orepro_Body {
+        background-size: 559px auto;
+        background-position: center top;
+    }
+}
+
+#Orepro .Orepro_Body p {
+    position: relative;
+    color: #fff;
+    text-indent: 1em;
+    line-height: 1.4em;
+    z-index: 1;
+}
+
+#Orepro .Orepro_Body p + p {
+    padding-top: 33px;
+}
+
+/*
+#Orepro .Orepro_Body dl dt{
+	padding-top: 40px;
+	padding-bottom: 25px;
+}
+
+#Orepro .Orepro_Body dl dt img{
+	width:220px;
+	height: 39px;
+}
+#Orepro .Orepro_Body a{
+	margin-top: 55px;
+	margin-bottom: 40px;
+}*/
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+    #Orepro .Orepro_Body {
+        background-position: center 30%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 766px) {
+    #Orepro .Orepro_Body {
+        background-position: center 20%;
+    }
+}
+
+/*------------------
+俺プロルール
+------------------*/
+#Orepro_Rule .Title_Box {
+    padding: 36px 18px 4px;
+    background: #dad2ad;
+}
+
+#Orepro_Rule ul.Rule_Menu.No_Text {
+    padding-bottom: 33px;
+}
+
+#Orepro_Rule ul.Rule_Menu li {
+    text-align: left;
+    padding: 0px;
+
+}
+
+#Orepro_Rule ul.Rule_Menu li a {
+    display: block;
+    color: #2b221a;
+    padding: 15px 0 14px 29px;
+}
+
+#Orepro_Rule ul.Rule_Menu li + li {
+    margin-top: 15px;
+}
+
+#Orepro_Rule ul.Rule_Menu li.Active {
+    color: #fff;
+    background: #7b7341;
+    box-shadow: none;
+    padding: 15px 0 14px 29px;
+}
+
+#Orepro_Rule ul.Rule_Menu li.Active a {
+    color: #fff;
+}
+
+#Orepro_Rule ul.Rule_Menu li.Active:after {
+    display: none;
+}
+
+#Orepro_Rule .Static_Contents_Box img {
+    display: block;
+    margin: 33px auto 0;
+    width: 100%;
+    max-width: 362px;
+}
+
+#Orepro_Rule .Static_Contents_Box.Detail p {
+    position: relative;
+    padding-left: 1em;
+}
+
+#Orepro_Rule .Static_Contents_Box.Detail p:before {
+    display: block;
+    position: absolute;
+    content: '・';
+    left: 0;
+}
+
+#Orepro_Rule .Static_Contents_Box.Detail p.Attention,
+#Orepro_Rule .Static_Contents_Box.Detail p.No_Indent {
+    padding-left: 0;
+}
+
+#Orepro_Rule .Static_Contents_Box.Detail p.Attention:before,
+#Orepro_Rule .Static_Contents_Box.Detail p.No_Indent:before {
+    display: none;
+}
+
+#Orepro_Rule .Static_Contents_Box dl dt {
+    position: relative;
+    padding-left: 1em;
+}
+
+#Orepro_Rule .Static_Contents_Box dl dt:before {
+    display: block;
+    position: absolute;
+    content: '■';
+    left: 0;
+}
+
+#Orepro_Rule .Static_Contents_Box dl dd p + p {
+    padding-top: 16px;
+}
+
+#Orepro_Rule .Yoso_Flow {
+    margin-top: 16px;
+}
+
+#Orepro_Rule .Yoso_Flow .Step {
+    position: relative;
+    display: block;
+    padding-top: 6px;
+    margin-bottom: 18px;
+    text-align: center;
+    line-height: 1.4em;
+    color: #fff;
+}
+
+#Orepro_Rule .Yoso_Flow .Step:after {
+    display: none;
+}
+
+#Orepro_Rule .Yoso_Flow .Step + .Step:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -15px;
+    margin: auto;
+    display: block;
+    content: '▼';
+    color: #c1b892;
+}
+
+#Orepro_Rule .Yoso_Flow .Step:last-child {
+    margin-bottom: 6px;
+}
+
+#Orepro_Rule .Point_Box.Shirushi {
+    padding: 16px;
+}
+
+#Orepro_Rule .Point_Box.Shirushi p {
+    color: #fff;
+}
+
+#Orepro_Rule table.RuleTable {
+    width: 100%;
+    margin: 16px auto;
+
+}
+
+#Orepro_Rule table.RuleTable thead td {
+    color: #fff;
+    background: #8a7a52;
+}
+
+#Orepro_Rule table.RuleTable th {
+    color: #fff;
+    background: #8a7a52;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 88%;
+}
+
+#Orepro_Rule table.RuleTable.Rank th {
+    width: 100px;
+    font-weight: normal;
+}
+
+#Orepro_Rule table.RuleTable td {
+    padding: 8px;
+    background: #fff;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 88%;
+}
+
+#Orepro_Rule table.RuleTable.Rank td {
+    width: 60px;
+}
+
+#Orepro_Rule table.RuleTable td.Sub {
+    width: 64px;
+    text-align: center;
+    color: #fff;
+    background: #ada17a;
+}
+
+#Orepro_Rule table.RuleTable.Rank th,
+#Orepro_Rule table.RuleTable.Rank td {
+    text-align: center;
+}
+
+#Orepro_Rule table.RuleTable.Flow {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#Orepro_Rule table.RuleTable.Flow:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+    margin: auto;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 20px 0 20px;
+    border-color: #8a7b52 transparent transparent transparent;
+}
+
+/*-- 賞金イメージ--*/
+#Orepro_Rule.Rule_03 img + img {
+    margin-top: 0px;
+}
+
+#Orepro_Rule.Rule_03 .Static_Contents_Box .Static_Inner_Box img {
+    margin-bottom: 20px;
+}
+
+/* =======================================================
+・俺プロとは 詳細 ここから
+======================================================= */
+.Orepro_Information {
+    background: #c1b989;
+}
+
+.Orepro_Information .Ranking_Head {
+    position: relative;
+    margin-top: 63px;
+    padding-top: 25px;
+}
+
+.Orepro_Information .Title_Box .Title:after {
+    background-image: url("../img/orepro/ranking_head_frame_r03.png");
+}
+
+.Orepro_Information .Title_Box .Title:before {
+    background-image: url("../img/orepro/ranking_head_frame_l03.png");
+}
+
+.Orepro_Information .Ranking_Head .Title_Box .Title {
+    top: 63px;
+}
+
+.Orepro_Information .txt {
+    padding: 24px 38px 0;
+}
+
+.Orepro_Information .txt p {
+    color: #252017;
+    line-height: 1.53;
+}
+
+.Orepro_Information .txt p + p {
+    padding-top: 30px;
+}
+
+.Orepro_Information .next,
+.Orepro_Information .back {
+    padding: 0 13px 0 15px;
+    text-align: center;
+}
+
+.Orepro_Information .next {
+    margin-bottom: 18px;
+}
+
+.Orepro_Information .back {
+    margin-bottom: 15px;
+}
+
+.Orepro_Information .next a,
+.Orepro_Information .back a {
+    display: block;
+    padding: 16px 0;
+    color: #362e19;
+    font-size: 94%;
+    border: 1px solid #362e19;
+    border-radius: 5px;
+
+}
+
+/*==============================================
+キャンペーン
+==============================================*/
+/*------------------
+2017.06.13 宝塚記念
+------------------*/
+#Orepro.campaign20180624 .Orepro_Body {
+    padding-top: 10%;
+}
+
+#Orepro.campaign20180624 .Orepro_Body .About_body dl dd {
+    width: 640px;
+    max-width: 88%;
+    padding: 18px 13px;
+    margin: 0 auto 40px;
+    color: #fff;
+    line-height: 1.8;
+    box-shadow: 0px 0px 0px 1px #c8a55d inset, 0px 0px 0px 2px #99763a inset, 0px 0px 0px 3px #6c4915 inset, 0px 0px 0px 4px #512e00 inset, 0px 0px 2px 0px #512e00;
+    background: #473b24;
+}
+
+#Orepro.campaign20180624 .Orepro_Body .About_body dl dd .Sns_Post_Wrap {
+    padding: 15px 0 0;
+}
+
+/*==============================================
+銀行入力フォーム
+==============================================*/
+
+.help_section_page {
+    margin: auto;
+    max-width: 480px;
+    padding: 10px 15px 50px;
+    background: #7b7341;
+}
+
+.contents_header {
+    position: relative;
+    padding-top: 18px;
+    margin-top: 16px;
+}
+
+.help_section_page .contents_header h2.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    width: 329px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    color: #fff;
+    font-size: 112.5%;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.8);
+    background-image: url(../img/top/content_title_bg.png);
+    background-size: 329px 41px;
+    background-repeat: no-repeat;
+}
+
+.help_section_page .btn_submit {
+    border-radius: 10px;
+    border-style: none;
+    position: relative;
+    display: block;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 3px;
+    color: #2b221a;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 95%;
+    background: #d9cea4;
+    background: -webkit-linear-gradient(top, #d9cea4 0%, #a99454 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#d9cea4), to(#a99454));
+    background: -o-linear-gradient(top, #d9cea4 0%, #a99454 100%);
+    background: linear-gradient(to bottom, #d9cea4 0%, #a99454 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d9cea4', endColorstr='#a99454', GradientType=0);
+    -webkit-box-shadow: 0 3px 0 0 #836611;
+    box-shadow: 0 3px 0 0 #836611;
+    border-radius: 5px;
+    margin: 40px auto;
+}
+.help_section_page .btn_submit.off{
+    width:125px;
+    padding: 0 9px;
+    line-height: 40px;
+    background: #c7c7c7;
+    box-shadow: none;
+    color: #a9a7a7;
+}
+.help_section_page form input {
+    line-height: 1.3em;
+    border-style: none;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.help_section_page .contents_area p.txt {
+    line-height: 1.7em;
+    margin-top: 20px;
+    background: #d9cea4;
+    padding: 30px 15px 0px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 95%;
+    margin-top: 5px;
+}
+
+.help_section_page dl dt {
+    line-height: 1.5em;
+    color: #d9cea4;
+    font-weight: 600;
+}
+
+.help_section_page dl dd {
+    display: block;
+    margin: 0px 0px 20px 0px;
+    color: #ffffff;
+    line-height: 1.3em;
+    text-align: justify;
+    font-size: 95%;
+}
+
+.help_section_page dl dd select {
+    background: #fff;
+    border-style: none;
+    line-height: 1.4em;
+    padding: 3px;
+    border-radius: 3px;
+
+}
+
+.help_section_page form dl dd .help_section_page input {
+    max-width: 400px;
+}
+
+.help_section_page form dl dd span.notice {
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
+}
+
+.help_section_page form dl dd input[type="branch_name"] {
+    width: 100px;
+}
+
+.help_section_page form dl dd input[type="email"],
+.help_section_page form dl dd input[type="email_check"],
+.help_section_page form dl dd input[type="bank_name"] {
+    width: 270px;
+}
+
+.help_section_page .contents_area p.complete_txt {
+    line-height: 1.7em;
+    color: #ffffff;
+    padding-top: 40px;
+}
+
+.help_section_page .contents_area .err_message p {
+    color: yellow;
+    line-height: 1.7em;
+    font-size: 80%;
+}
+
+.help_section_page .contents_area .err_message p:first-child {
+    margin-top: 2em;
+}
+
+.help_section_page textarea {
+    padding: 5px;
+    border-radius: 5px;
+    height: 80px;
+}
+
+.help_section_page .contents_area ul.btn_group {
+    max-width: 300px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.help_section_page .contents_area ul.btn_group li {
+    float: left;
+    margin: 3px;
+}
+.help_section_page .PrivacyBox{
+    height: 200px;
+    overflow-y: scroll;
+    background:#fff;
+    -webkit-overflow-scrolling: touch
+
+}
+.help_section_page .Pryvacy_Consent{
+    text-align:center;
+}
+.help_section_page .Pryvacy_Consent p{
+    font-size: 88%;
+    color: #f7f5dd;
+    display: block;
+    text-align:center;
+    padding:10px 0 6px;
+}
+.help_section_page .PrivacyBox pre{
+    padding: 0 10px 10px;
+    white-space: pre;
+    white-space: pre-wrap;
+    white-space: pre-line;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+.help_section_page #pryvacy_check + label{
+    position: relative;
+    font-size: 88%;
+    color: #f7f5dd;
+    display: inline-block;
+    padding-left: 25px;
+}
+.help_section_page #pryvacy_check + label:before{
+    position: absolute;
+    left: 0;
+    top: -4px;
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,.7);
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,.7);
+    border-radius: 3px;
+}
+.help_section_page #pryvacy_check:checked + label:before{
+    background: #ed4947;
+}
+.help_section_page #pryvacy_check:checked + label:after {
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+.help_section_page #pryvacy_check + label:after{
+    position: absolute;
+    left: 3px;
+    top: -1px;
+    display: block;
+    content: '';
+    width: 11px;
+    height: 7px;
+    border-left: 3px solid #c1c1c1;
+    border-bottom: 3px solid #c1c1c1;
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+@media only screen and (max-width: 320px) {
+    .help_section_page .contents_header h2.title {
+        background-repeat: no-repeat;
+        width: 245px;
+        height: 50px;
+        background-size: 245px 40px;
+    }
+}

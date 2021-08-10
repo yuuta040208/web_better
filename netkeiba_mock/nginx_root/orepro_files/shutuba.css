@@ -1,0 +1,4079 @@
+@charset "euc-jp";
+
+/* =======================================================
+【レース情報　馬券購入フロー】 Shutuba.css
+
+出馬表table, オッズtable, myオッズtable, 購入table, 投票(モーダル)
+5走表示,　収支分析
+======================================================= */
+
+/* android2系対応クラス */
+.ipat_dialog_android {
+  background: #ef5350;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 83%;
+  padding: 16px 0;
+  text-align: center;
+  vertical-align: top;
+  width: 46%;
+}
+
+
+/* 選択中に組数ブロック */
+.Selected_Block {
+	margin: 8px 8px 18px;
+	position: relative;
+}
+.Selected_Block .Title {
+	background: #4150b2;
+	color: #fff;
+	font-size: 88%;
+	font-weight: bolder;
+	padding: 13px 0 13px 12px;
+	position: relative;
+	border-bottom: 1px solid #eee;
+}
+.Selected_Block .Title:after {
+	content: "";
+	display: inline-block;
+	border-top: 14px solid #eee;
+	border-right: 14px solid #eee;
+	border-bottom: 14px solid #212e85;
+	border-left: 14px solid #212e85;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+}
+.Selected_Block .Inner {
+	background: #fff;
+	box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.Selected_Footer {
+	background: #f1f1f1;
+	padding: 8px;
+}
+
+.Selected_Table {
+	border-bottom: 1px solid #efefef;
+	display: table;
+	width: 100%;
+	padding: 8px;
+}
+.Selected_Table .Txt {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	margin-bottom: 8px;
+}
+.Selected_Table #select_kumiawase,
+.Selected_Table .Kumiawase_Count {
+	display: table-cell;
+}
+.Selected_Table .Kumiawase_Count {
+	border-left: 1px solid #efefef;
+	vertical-align: middle;
+	width: 90px;
+}
+#select_kumiawase > table {
+	border-collapse: collapse;
+	width: 100%;
+	min-height: 70px;
+}
+#select_kumiawase > table tr.Type th {
+	border-bottom: 1px solid #efefef;
+	color: #777;
+	font-size: 88%;
+	padding: 8px;
+}
+#select_kumiawase > table tr th div {
+	background: url('../img/race/Axis_Bg01.png') no-repeat center;
+	background-size: 40px 22px;
+	-webkit-background-size: 40px 22px;
+	-moz-background-size: 40px 22px;
+	-ms-background-size: 40px 22px;
+	color: #fff;
+	font-size: 74%;
+	font-weight: normal;
+	margin: 8px;
+	padding: 5px 3px 5px 0;
+	width: 40px;
+}
+#select_kumiawase > table tr:last-child td {
+	padding-bottom: 4px;
+	width: 100%;
+	line-height: 1.3;
+}
+#select_kumiawase table tr.Box:last-child td {
+	padding-bottom: 0;
+}
+#select_kumiawase table tr.Box th,
+#select_kumiawase table tr.Box td {
+	vertical-align: middle;
+}
+#select_kumiawase table tr.Box td {
+	padding-top: 2px;
+	line-height: 1.3;
+}
+#select_kumiawase .UmaBan {
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 0px 2px 0px;
+	width: 22px;
+	margin: -1px 4px 4px 0;
+}
+.Selected_Table .Kumiawase_Count {
+	font-size: 122%;
+	margin-bottom: 0;
+}
+.Selected_Table .Kumiawase_Count > .Txt01 {
+    font-size: 72%;
+}
+#kumiawase_kensu {
+	color: #EF5350;
+}
+.Kaime_Selected_Btn + .Kaime_Selected_Btn {
+	margin-top: 8px;
+}
+
+
+/* submit_btn viewBtn */
+button.SubmitBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	color: #fff;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350;
+	border-radius: 3px;
+	font-size: 88%;
+	font-weight: bold;
+	padding: 15px 0;
+	position: relative;
+	width: 100%;
+}
+button.SubmitBtn.Type_A {
+	background: #ef5350 url("../img/icon/icon_view.png") no-repeat 24px center;
+	background-size: 10px 11px;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+}
+button.SubmitBtn.Type_B {
+	font-size: 94%;
+	text-indent: -2em;
+}
+button.SubmitBtn.Type_B:before {
+	content: "";
+    border-top: 8px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid #ef5350;
+    display: inline-block;
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    width: 0;
+    height: 0;
+}
+button.SubmitBtn.Type_C,
+button.SubmitBtn.Type_D {
+	background: #FFE35C;
+	color: #572908;
+	font-weight: bold;
+	box-shadow: 0 2px 2px #9d7b32;
+}
+button.SubmitBtn.Type_D {
+	background: #FFE35C url("../img/icon/icon_view03.png") no-repeat 24px center;
+	background-size: 10px 11px;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+}
+
+
+/* オッズ追加案内 */
+#message_odds_form {
+	background: #fff;
+	border-radius: 0 0 3px 3px;
+	margin: 8px 8px 24px;
+	position: relative;
+}
+#message_odds_form:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid #dcdcdc;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	left: 50%;
+	bottom: -18px;
+	margin-left: -28px;
+}
+#message_odds_form .Title {
+	font-size: 86%;
+	font-weight: bold;
+	background: #999;
+	border-radius: 3px 3px 0 0;
+	color: #fff;
+	margin-bottom: 0;
+	padding: 8px;
+	text-align: center;
+}
+#message_odds_form .Inner {
+	padding: 8px;
+}
+#message_odds_form ul li {
+	font-size: 83%;
+}
+#message_odds_form ul li + li {
+	margin-top: 10px;
+}
+
+
+/* =======================================================
+ 出馬表layout
+======================================================= */
+
+/* Mode切替btn */
+.Shutuba_Table tr.Header th.CheckMark .On_MarkMode,
+.Shutuba_Table tr.Header th.CheckMark .On_CheckMode {
+	font-size: 100%;
+}
+.Shutuba_Table tr.Header th.CheckMark .Off_MarkMode {
+	display: inline-block;
+	color: #999;
+	margin-top: 4px;
+}
+.Shutuba_Table tr.Header th.CheckMark .Off_CheckMode {
+	display: inline-block;
+	color: #999;
+	margin-bottom: 4px;
+}
+.Shutuba_Btn_Group {
+	padding: 0 8px 10px;
+	background: #dcdcdc;
+}
+.Mode_Change_Btn {
+	outline: none;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	appearance:none;
+	border: none;
+	width: 82px;
+	display: inline-block;
+	font-size: 72%;
+	font-weight: bold;
+	color: #707070;
+	background: #efefef;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .6);
+	padding: 10px 0;
+}
+.Mode_Change {
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+.Mode_Change:after {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 27px;
+	left: 50%;
+	margin-left: -5px;
+	box-shadow: 1px 1px 1px rgba(146, 151, 165, .5);
+	background: #efefef;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+/* 通常・5走・更新　表示変更btn */
+.Mode_Btn {
+  /*width: 200px;*/
+  float: right;
+}
+.Mode_Btn ul li {
+  box-shadow: 0 0 6px rgba(146, 151, 165, .7);
+  border-bottom: 1px solid #E2E2E2;
+}
+.Mode_Btn ul a {
+	display: block;
+	width: 92px;
+	font-size: 74%;
+	font-weight: bold;
+	text-align: center;
+	background: #EFEFEF;
+	color: #707070;
+	padding: 10px 0px;
+	border-top: 1px solid #EFEFEF;
+	border-left: 1px solid #EFEFEF;
+	position: relative;
+}
+.Mode_Btn ul .Active {
+	box-shadow: none;
+	border-bottom: none;
+}
+.Mode_Btn ul .Active a {
+	color: #969696;
+	border: 1px solid #BEBEBE;
+	background: #DADADA;
+	box-shadow: 0 0 10px #C1C2C8 inset;
+	padding: 10px 0;
+}
+.Mode_Btn ul li:first-child,
+.Mode_Btn ul li:first-child a {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.Mode_Btn ul li:last-child,
+.Mode_Btn ul li:last-child a {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+.Mode_Btn .Past5 a {
+	padding: 10px 0px 10px 22px;
+}
+.Mode_Btn .Normal a {
+	padding: 10px 0px 10px 26px;
+}
+.Mode_Btn .Past5 a:before,
+.Mode_Btn .Normal a:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_sprite_nk02.png') no-repeat -13px -1299px;
+	-webkit-background-size: 236px 2000px;
+	-moz-background-size: 236px 2000px;
+	-ms-background-size: 236px 2000px;
+	background-size: 236px 2000px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+}
+.Mode_Btn .Active a:before {
+	background: none;
+}
+
+
+/* myodds 自動・手動更新 */
+.Update_Btn_Group {
+  padding: 10px 8px;
+  position: relative;
+}
+.Update_Btn_Group .Update_Time {
+  float: left;
+  font-size: 72%;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+}
+
+
+/* 出馬表 */
+.Shutuba_HorseList {
+	position: relative;
+	margin: 0 0 15px;
+}
+.Shutuba_Table {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+}
+.Shutuba_Table tr.HorseList {
+	border-bottom: 1px solid #E3E5EB;
+}
+.Shutuba_Table tr.Header th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 5px 0;
+	vertical-align: middle;
+}
+.Shutuba_Table tr.Header th span{
+	font-size: 84%;
+}
+.Shutuba_Table tr.Header th + th {
+	border-left: 1px solid #E3E5EB;
+}
+.Shutuba_Table tr.Header th.Waku {
+	width: 1em;
+	padding: 0 3px;
+	line-height: 1.2;
+}
+.Shutuba_Table tr.Header th.CheckMark {
+	white-space: nowrap;
+	width: 54px;
+	letter-spacing: -1px;
+	font-weight:bold;
+}
+.Shutuba_Table tr.Header th.Horse_Info {
+	line-height: 1.2;
+}
+.Shutuba_Table tr.Header th.Popular,
+.Shutuba_Table tr.Header th.Weight {
+	line-height: 1.2;
+	width: 14%;
+}
+
+.Shutuba_Table tr.HorseList td {
+	vertical-align: middle;
+	text-align: center;
+	font-size: 66%;
+	color: #555;
+	font-weight:bold;
+}
+.Shutuba_Table tr.HorseList td + td {
+	border-left: 1px solid #E3E5EB;
+}
+.Shutuba_Table tr.HorseList td.Horse_Select {
+	padding: 8px 0;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info {
+	text-align: left;
+	padding: 6px 4px;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info dl {}
+.Shutuba_Table tr.HorseList td.Horse_Info dl dt.Horse {
+	color: #145BFB;
+	font-size: 141%;
+	font-weight: bold;
+	line-height: 1.2;
+	margin-bottom: 7px;
+	letter-spacing: -1px;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info dl dd.Age,
+.Shutuba_Table tr.HorseList td.Horse_Info dl dd.Jockey {
+	font-size: 108%;
+	color: #9c9fa6;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info dl dd.Age {
+	float: left;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info dl dd.Age > .Kyaku_Type {
+	position: relative;
+	top: -1px;
+}
+.Shutuba_Table tr.HorseList td.Horse_Info dl dd.Jockey {
+	float: right;
+}
+.Shutuba_Table tr.HorseList td.Popular,
+.Shutuba_Table tr.HorseList td.Weight {
+	font-size: 78%;
+}
+.Shutuba_Table tr.HorseList td.Popular > span,
+.Shutuba_Table tr.HorseList td.Weight > span {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 92%;
+	color: #9c9fa6;
+	white-space: nowrap;
+	margin-top: 9px;
+}
+.Shutuba_Table tr.HorseList td.Popular > span.Odds_Ninki {
+	color: #f20;
+	font-size: 100%;
+	margin-top: 0;
+}
+@media screen and (max-width: 374px) {
+	.Shutuba_Table tr.HorseList td.Horse_Info dl dt.Horse {
+		font-size: 122%;
+	}
+}
+
+
+/*-- 出走取消 --*/
+.Shutuba_Table tr.Cancel {
+	background: #dee0e5;
+	text-align: center;
+}
+.Shutuba_Table tr.Cancel td,
+.RaceOdds_HorseList_Table tr.Cancel {
+	color: #9C9fa6;
+	vertical-align: middle;
+	font-size: 66%;
+}
+.Shutuba_Table tr.Cancel td + td {
+	border-left: 1px solid #c6c9d3;
+}
+.Shutuba_Table tr.Cancel td.Horse_Info {
+	text-align: left;
+	padding: 10px 6px;
+}
+.Shutuba_Table tr.Cancel td.Horse_Info dl dt.Horse {
+	color: #9C9FA6;
+	font-weight: bold;
+	font-size: 141%;
+	margin-bottom: 8px;
+	line-height: 1.2;
+	letter-spacing: -1px;
+}
+.Shutuba_Table tr.Cancel td.Cancel_Txt {
+	font-size: 78%;
+}
+.Shutuba_Table tr.Cancel td.Horse_Info dl dd.Age {
+	float: left;
+	font-weight:bold;
+	font-size: 108%;
+}
+.Shutuba_Table tr.Cancel td.Horse_Info dl dd.Jockey {
+	float: right;
+	font-weight:bold;
+	font-size: 108%;
+}
+.Shutuba_Table tr.Cancel td.Popular {
+	font-weight: bold;
+	color: #9C9FA6;
+}
+.Shutuba_Table tr.Cancel td.Weight > span {
+	width: 6px;
+	height: 2px;
+	background: #9C9FA6;
+	display: inline-block;
+	vertical-align: middle;
+}
+@media screen and (max-width: 374px) {
+	.Shutuba_Table tr.Cancel td.Horse_Info dl dt.Horse {
+		font-size: 122%;
+	}
+}
+
+
+table.Shutuba_Table tr.HorseList td.Horse_Info .Icon_HorseMark {
+/*	position: relative;
+	top: 1px;*/
+}
+
+
+/*-- 枠色 --*/
+table tr td.Waku1 {background: #fff;}
+table tr td.Waku2 {background: #222; color: #fff !important;}
+table tr td.Waku3 {background: #dc3c3c; color: #fff !important;}
+table tr td.Waku4 {background: #2c53a9; color: #fff !important;}
+table tr td.Waku5 {background: #e4ca3b; color: #fff !important;}
+table tr td.Waku6 {background: #58af4a; color: #fff !important;}
+table tr td.Waku7 {background: #de8a26; color: #fff !important;}
+table tr td.Waku8 {background: #dc6179; color: #fff !important;}
+
+
+/* My印Icon */
+.MarkIcon {
+	display: block;
+	background: url('../img/icon/icon_sprite_mark.png') no-repeat;
+	-webkit-background-size: 400px 20px;
+	-moz-background-size: 400px 20px;
+	-ms-background-size: 400px 20px;
+	background-size: 400px 20px;
+	text-align: center;
+	position: relative;
+	width: 18px;
+	height: 18px;
+	margin: 0 auto;
+}
+.Mark00 {background-position: -227px 0px;}
+.Mark1 {background-position: -1px 0px;}
+.Mark2 {background-position: -22px -1px;}
+.Mark3 {background-position: -84px 0px;}
+.Mark4 {background-position: -42px 0px;}
+.Mark5 {background-position: -268px 0px;}
+.Mark06 {background-position: -105px -2px;}
+.Mark07 {background-position: -127px -2px;}
+.Mark08 {background-position: -148px 0px;}
+.Mark09 {background-position: -169px 0px;}
+.Mark10 {background-position: -189px -2px;}
+.Mark11 {background-position: -63px 0px;}
+.Mark98 {background-position: -246px -1px;}
+.Mark99 {background-position: -210px -1px;}
+.Mark100 {background-position: -246px -1px;}
+.Race_HorseList_Table tr td.Mark_User {background: #f0f4ff;}
+
+
+/* submit_btn */
+.Phase01_Btn:before {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 8px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 8px solid #ef5350;
+	position: absolute;
+	top: -16px;
+	left: 20px;
+}
+#shutuba_form .Notice {
+	font-size: 72%;
+	color: #666;
+	text-align: center;
+	line-height: 1.3;
+	padding: 12px 0 0;
+}
+
+
+/* 出馬表・オッズ更新時間 */
+.Shutuba_Update_Time {
+	padding: 0 8px 8px;
+}
+.Shutuba_Update_Time dl,
+.RaceIpat_Help dl {
+	border: 1px solid #bfbfbf;
+	border-radius: 3px;
+	padding: 10px;
+}
+.Shutuba_Update_Time dl dt,
+.RaceIpat_Help dl dt {
+	font-size: 78%;
+	color: #0039ab;
+	position: relative;
+	padding-left: 26px;
+}
+.Shutuba_Update_Time > dl > dt:before,
+.Description_Box > dl > dt:before {
+	content: "";
+	width: 22px;
+	height: 22px;
+	background: url('../img/icon/icon_sprite_raceinfo.png') no-repeat;
+	background-position: -37px -3px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -13px;
+}
+.Shutuba_Update_Time dl dt:before {
+	background-position: -37px -3px;
+	margin-top: -11px;
+}
+.Description_Box dl dt:before {
+	background-position: -37px -262px;
+}
+.Shutuba_Update_Time dl dd,
+.RaceIpat_Help dl dd {
+	font-size: 78%;
+	display: none;
+	margin-top: 12px;
+}
+.Description_Box .Icon_ArrowB,
+.Shutuba_Update_Time .Icon_ArrowB,
+.RaceIpat_Help .Icon_ArrowB {
+	display: inline-block;
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -36px -44px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 22px;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -6px;
+}
+.Description_Box .Icon_ArrowT,
+.Shutuba_Update_Time .Icon_ArrowT,
+.RaceIpat_Help .Icon_ArrowT {
+	display: inline-block;
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -36px -59px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 22px;
+	height: 12px;
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+.RaceIpat_Info li + li {
+	margin-top: 8px;
+}
+.RaceIpat_Info li a {
+	font-size: 83%;
+	display: block;
+	line-height: 1.3;
+	padding-left: 28px;
+	position: relative;
+}
+.RaceIpat_Info li a:before {
+	content: "";
+	display: block;
+	background: url('../img/icon/icon_sprite_raceinfo.png') no-repeat;
+	background-position: -37px -263px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 22px;
+	height: 21px;
+	position: absolute;
+	top: -1px;
+	left: 0;
+}
+
+.Shutuba_Update_Time .Update_Time_Table {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+}
+.Shutuba_Update_Time .Update_Time_Table + .Update_Time_Table {
+	margin-top: 8px;
+}
+.Shutuba_Update_Time .Update_Time_Table tr.Header {
+	background: #72737e;
+	color: #fff;
+	border: 1px solid #686978;
+	text-align: center;
+}
+.Shutuba_Update_Time .Update_Time_Table tr.Header th {
+	padding: 8px 0;
+}
+.Shutuba_Update_Time .Update_Time_Table tr:not(.Header) th {
+	background: #999;
+	color: #fff;
+	font-weight: normal;
+	width: 70px;
+	padding: 8px 0;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	line-height: 1.2;
+}
+.Shutuba_Update_Time .Update_Time_Table tr td {
+	color: #333;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-left: none;
+	vertical-align: middle;
+	line-height: 1.3;
+}
+.Shutuba_Update_Time .Update_Time_Table tr td > span {
+	color: #888;
+	font-size: 85%;
+	margin-left: 4px;
+}
+.Shutuba_Update_Time .Note {
+	margin: 8px 0;
+	line-height: 1.3;
+}
+
+
+/* 出馬表 - 脚質タイプ */
+table.Kyaku_Type {
+	margin-bottom: 15px;
+}
+table.Kyaku_Type tr th {
+	width: 50px;
+	font-size: 74%;
+	text-align: center;
+	color: #777;
+	background: #efefd9;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+table.Kyaku_Type tr td {
+    text-align: left;
+    padding: 6px 4px 0px 4px;
+}
+.Kyaku_Type_Num {
+    display: inline-block;
+    width: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2px;
+    padding: 6px 0px 6px 0;
+    position: relative;
+    margin-bottom: 1px;
+}
+.Kyaku_Type_box {
+	display: inline-block;
+	margin-bottom: 6px;
+	margin-right: 6px;
+	text-align: center;
+}
+.Kyaku_Type_box .UmaName {
+	padding-left: 2px;
+}
+
+
+
+/* =======================================================
+ Horseチェックマーク
+======================================================= */
+
+.HorseCheckBtn {
+	display: inline-block;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(146, 151, 165, 0.6);
+	width: 42px;
+	height: 42px;
+	vertical-align: middle;
+}
+.HorseCheck_Select {
+	display: none;
+}
+.HorseCheck_Select:checked + label {
+	background: url('../img/race/check01_on.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.HorseCheck_Select + label {
+	background: url('../img/race/check_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.Race_Odds_Result_Table tr td.Horse_Select {
+	position: relative;
+}
+.Horse_Select input[type="radio"],
+.Horse_Select input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+}
+
+
+/*-- 選択状態 --*/
+.Shutuba_Table tr.Selected,
+.Type_Detail_Table tr.Selected,
+.RaceOdds_Result_Table02 tr.Selected,
+.RaceOdds_Result_Table03 tr.Selected,
+.RaceOdds_HorseList_Table.Ninki tr.Selected {
+	background: #FFEBED !important;
+}
+.Shutuba_Table tr.Selected .selectBox {
+	background: #ef5350;
+	border: 1px solid #ef5350;
+	color: #fff;
+}
+
+
+/* =======================================================
+ オッズ選択
+======================================================= */
+
+.Shutuba_Type_Section {
+	margin: 0 8px;
+}
+.Shutuba_Type_Section + .Shutuba_Type_Section {
+	margin-top: 12px;
+}
+.Shutuba_Type_Section [class*="Type_BgColor"] {
+	border-radius: 2px;
+}
+.Shutuba_Type_Section .Type_Header {
+	color: #fff;
+	padding: 12px 18px;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+	position: relative;
+	margin-bottom: 8px;
+}
+.Shutuba_Type_Section .Type_Header.Icon_Close01 {
+	box-shadow: none;
+}
+.Shutuba_Type_Section .Type_Header:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_toggle_arrow.png') no-repeat 1px -12px;
+	-webkit-background-size: 17px 46px;
+	-moz-background-size: 17px 46px;
+	-ms-background-size: 17px 46px;
+	background-size: 17px 46px;
+	width: 19px;
+	height: 10px;
+	position: absolute;
+	top: 17px;
+	right: 18px;
+}
+.Shutuba_Type_Section .Icon_Close01:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_toggle_arrow.png') no-repeat 1px 0px;
+	-webkit-background-size: 17px 46px;
+	-moz-background-size: 17px 46px;
+	-ms-background-size: 17px 46px;
+	background-size: 17px 46px;
+	width: 19px;
+	height: 10px;
+	position: absolute;
+	top: 15px;
+	right: 18px;
+}
+.Shutuba_Type_Section .Type_Header > .Count {
+	font-size: 105%;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.Shutuba_Type_Section .Type_Header > .Count > span {
+	font-size: 76%;
+}
+.Type_Detail_Table {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+	margin-top:-8px;
+}
+.Type_Detail_Table .Header th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 15px 0;
+	vertical-align: middle;
+}
+.Type_Detail_Table .Header th + th {
+	border-left: 1px solid #E3E5EB;
+}
+.Type_Detail_Table .Header th.Select {
+	width: 60px;
+}
+.Type_Detail_Table .Header th.Odds {
+	width: 90px;
+}
+.Type_Detail_Table .Header th.Combination > span,
+.Type_Detail_Table .Header th.Odds > span {
+	margin-left: 15px;
+}
+
+.Type_Detail_Table tr.ItemList {
+	border-bottom: 1px solid #E3E5EB;
+}
+.Type_Detail_Table tr.ItemList td {
+	vertical-align: middle;
+	text-align: center;
+	font-size: 66%;
+	color: #555;
+}
+.Type_Detail_Table tr.ItemList td + td {
+	border-left: 1px solid #E3E5EB;
+}
+.Type_Detail_Table tr.ItemList td.Horse_Select {
+	padding: 10px 0;
+}
+.Type_Detail_Table tr.ItemList td.Horse_Select > .Kumi {
+	display: none;
+}
+.Type_Detail_Table tr.ItemList td.Combination {
+	text-align: left;
+	padding: 0 4px;
+}
+.Type_Detail_Table tr.ItemList td.Combination > span {
+	display: table-cell;
+	vertical-align: middle;
+	margin-right: 3px;
+}
+.Type_Detail_Table tr.ItemList td.Combination > .Horse_Name {
+	font-size: 125%;
+	font-weight: bold;
+	line-height: 1.2;
+	letter-spacing: -1px;
+	padding-left: 4px;
+}
+.Type_Detail_Table tr.ItemList td.Odds {
+	text-align: right;
+	font-size: 77%;
+	font-weight: bold;
+	padding: 0 8px 0 5px;
+}
+.Type_Detail_Table [class*="Combi_"] {
+	text-align: center !important;
+}
+.Type_Detail_Table [class*="Combi_"] > .Combi01 ul li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.Type_Detail_Table [class*="Combi_"] > .Combi02 {
+	margin-top: 5px;
+}
+.Type_Detail_Table [class*="Combi_"] > .Combi02 > .UmaName {
+	/*font-size: 116%;*/
+	font-weight: bold;
+}
+.Type_Detail_Table [class*="Combi_"] > .Combi02 > .UmaName:first-child {
+	margin-right: 0.5em;
+}
+.Type_Detail_Table [class*="Combi_"] > .Combi02 > .UmaName:last-child {
+	margin-left: 0.5em;
+}
+.UmaBan {
+	display: inline-block;
+	width: 26px;
+	font-size: 122%;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	border: 1px solid #333;
+	border-radius: 2px;
+	padding: 4px 0px 4px 0px;
+	position: relative;
+}
+.Hyphen {
+	display: inline-block;
+	vertical-align: middle;
+	width: 8px;
+	height: 2px;
+	background: #333;
+	margin: 0 4px;
+}
+.Kaime_Arrow {
+	display: inline-block;
+	vertical-align: middle;
+	width: 8px;
+	height: 8px;
+	border-top: 2px solid #333;
+	border-right: 2px solid #333;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: none;
+	margin: 0 5px 0 1px;
+}
+.BorderColor01 {
+	border-color: #fff;
+}
+.Type_Detail_Table tr.ActionBtn td {
+	  vertical-align: middle;
+	  text-align: center;
+	  padding: 0;
+}
+.Type_Detail_Table tr.ActionBtn td + td {
+	border-left: 1px solid #E3E5EB;
+}
+.Type_Detail_Table tr.ActionBtn + tr.ActionBtn {
+	border-top: 1px solid #E3E5EB;
+}
+.Type_Detail_Table .ActionBtn td.Txt > div {
+	font-weight: bold;
+	font-size: 74%;
+	text-align: left;
+	background: #D9D9D9;
+	padding: 20px 0;
+	margin-left: 12px;
+}
+.Type_Detail_Table .ActionBtn td.Txt > div:before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #D9D9D9;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: relative;
+	left: -6px;
+	top: 2px;
+}
+
+
+/* myオッズ - 方式選択 */
+.Houshiki_Type th {
+	padding: 4px;
+}
+.Houshiki_Type ul .Type01,
+.Houshiki_Type ul .Type02 {
+	width: 30%;
+}
+.Houshiki_Type ul .Type03 {
+	width: 40%;
+}
+.Houshiki_Type ul li + li a {
+	margin-left: 3px;
+}
+.Houshiki_Type ul a {
+	display: block;
+	font-size: 77%;
+	font-weight: bold;
+	text-align: center;
+	color: #797e8c;
+	background: #fff;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5), 0 -1px 1px rgba(146, 151, 165, .5);
+}
+
+
+/* view_btn */
+.Shutuba_Type_Section tr.More_View {
+	background: #fff;
+	border-bottom: 1px solid #E4E4E4;
+}
+.Shutuba_Type_Section tr.More_View td {
+	padding: 10px 12px;
+}
+.ViewBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 100%;
+	color: #555;
+	font-size: 72%;
+	font-weight: bold;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #d9d9d9 url("../img/icon/icon_view02.png") no-repeat 24px center;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+}
+
+
+/* 券種背景色 */
+.Type_BgColor01,
+.Shutuba_Type_Bar_Tansho {
+	background: #565eb0;
+}
+.Type_BgColor02,
+.Shutuba_Type_Bar_Fukusho {
+	background: #CB5353;
+}
+.Type_BgColor03,
+.Shutuba_Type_Bar_Wakuren {
+	background: #52A455;
+}
+.Type_BgColor04,
+.Shutuba_Type_Bar_Umaren {
+	background: #87599A;
+}
+.Type_BgColor05,
+.Shutuba_Type_Bar_Wide {
+	background: #529FA8;
+}
+.Type_BgColor06,
+.Shutuba_Type_Bar_Umatan {
+	background: #E5A339;
+}
+.Type_BgColor07,
+.Shutuba_Type_Bar_Renpuku3 {
+	background: #4A94BC;
+}
+.Type_BgColor08,
+.Shutuba_Type_Bar_Rentan3 {
+	background: #E18131;
+}
+
+
+/* 選択済みリスト */
+[class*="Item_Selected"] {
+	background: #FFEBED;
+}
+[class*="Item_Selected"] + [class*="Item_Selected"] {
+	border-left: 1px solid #FFEBED !important;
+}
+.Type_Detail_Table tr.ItemList td.Item_Selected01 {
+	padding: 10px 0;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: #EF5350;
+}
+.Type_Detail_Table tr.ItemList td.Item_Selected02 {
+	text-align: left;
+	padding: 0 5px 0 10px;
+}
+.Type_Detail_Table tr.ItemList td.Item_Selected02 > span {
+	margin-right: 3px;
+}
+.Type_Detail_Table tr.ItemList td.Item_Selected03 {
+	text-align: right;
+	font-size: 77%;
+	font-weight: bold;
+	padding: 0 15px 0 5px;
+}
+
+
+/* =======================================================
+ 馬券購入 -　買い目一覧
+======================================================= */
+
+/* 買い目一覧メニュー */
+.Tab_BetMenu {
+    border-bottom: 2px solid #4150b2;
+}
+.Tab_BetMenu ul {
+    padding: 8px 8px 0;
+}
+.Tab_BetMenu ul li {
+    display: table;
+    float: left;
+}
+.Tab_BetMenu .Col3 li {
+	width: 30%;
+}
+.Tab_BetMenu ul a {
+    display: table-cell;
+    height: 52px;
+    font-size: 88%;
+    font-weight: bold;
+    text-align: center;
+    color: #797e8c;
+    background: #fff;
+    vertical-align: middle;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+    position: relative;
+}
+.Tab_BetMenu ul .Active a {
+    background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+    -webkit-background-size: 44px 35px;
+    -moz-background-size: 44px 35px;
+    -ms-background-size: 44px 35px;
+    background-size: 44px 35px;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(255,255,255,.5) inset;
+}
+.Tab_BetMenu ul .External_links span.Icon_RaceInfo28 {
+	width: 48px;
+	height: 20px;
+	margin: 0 auto 4px;
+	background-position: -51px -1110px;
+}
+.Tab_BetMenu ul .External_links span.Icon_RaceInfo29 {
+	width: 48px;
+	height: 20px;
+	margin: 0 auto 6px;
+	background-position: -100px -1204px;
+}
+.Tab_BetMenu ul .External_links {
+	width: 23.3%;
+    padding-left: 4px;
+}
+.Tab_BetMenu ul .External_links a {
+	font-size: 77%;
+    height: 48px;
+    border-radius: 3px;
+}
+
+
+/* 買い目購入テーブル */
+.InputValue_Table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.InputValue_Table tr.Header th.Delete {
+	width: 58px;
+}
+.InputValue_Table tr.Header th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 5px 0;
+	vertical-align: middle;
+}
+
+.InputValue_Table tr.Header th.kaime {
+	width: 31.5%;
+}
+.InputValue_Table tr.Header th.Odds {
+	width: 18.8%;
+}
+/*.InputValue_Table tr.Header th.Money {
+	width: 27.5%;
+}*/
+.InputValue_Table tr.Header th.Payout {
+	width:22.1%;
+	line-height: 1;
+}
+.InputValue_Table tr.Header th.Payout > span,
+.InputValue_Table tr.Header th.Kaime > span {
+	font-size: 80%;
+	line-height: 1.5;
+}
+.InputValue_Table tr.Header th + th {
+	border-left: 1px solid #E3E5EB;
+}
+.InputValue_Table tr.Header th.DeleteCell {
+	width: 60px;
+}
+.InputValue_Table tr.Header th.Kaime {
+	white-space: nowrap;
+}
+.InputValue_Table tr.ItemList {
+	background: #fff;
+}
+.InputValue_Table tr.Type th {
+	color: #fff;
+	text-align: left;
+	font-size: 83%;
+	padding: 8px;
+}
+.InputValue_Table tr.ItemList td {
+	vertical-align: middle;
+	font-size: 66%;
+	padding: 8px 4px;
+	border-top: 1px solid #E4E4E4;
+	border-bottom: 1px solid #E4E4E4;
+	line-height: 1.3;
+}
+.InputValue_Table tr.ItemList td + td {
+	border-left: 1px solid #E4E4E4;
+}
+.InputValue_Table tr.ItemList td.Kaime .Odds {
+	font-weight: bold;
+	display: block;
+	margin-top: 5px;
+	font-size: 114%;
+}
+.InputValue_Table tr.ItemList td.Money .InputMoney {
+	font-family: "ヒラギノ角ゴ ProN W3",ArialMT,"Hiragino Kaku Gothic ProN";
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	text-align: right;
+	font-weight: bold;
+	font-size: 125%;
+	padding: 7px 4px;
+	color: #797e8c;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 2px 4px rgba(146, 151, 165, .5);
+	letter-spacing: -0.5px;
+}
+
+.InputValue_Table tr.ItemList td.Kaime {
+	white-space: nowrap;
+}
+.InputValue_Table tr.ItemList td.Kaime [class*="Type_Result"] {
+	font-size: 114%;
+	font-weight: bold;
+}
+.InputValue_Table tr.ItemList td.Money {
+	/*width: 33%;*/
+}
+.InputValue_Table tr.ItemList td.Payout {
+	/*width: 33%;*/
+}
+.InputValue_Table tr.ItemList td.Kaime ul li {
+	display: inline-block;
+}
+.InputValue_Table tr.ItemList td.Kaime ul li + li {
+	margin-left: 8px;
+}
+.InputValue_Table.Umaren tr.ItemList td.Kaime ul li + li .UmaBan:before,
+.InputValue_Table.Renpuku3 tr.ItemList td.Kaime ul li + li .UmaBan:before {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 2px;
+	background: #333;
+	position: absolute;
+	top: 10px;
+	left: -10px;
+}
+.InputValue_Table.Umatan tr.ItemList td.Kaime ul li + li .UmaBan:before,
+.InputValue_Table.Rentan3 tr.ItemList td.Kaime ul li + li .UmaBan:before {
+	content: "";
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #cdcdcd;
+	border-right: 2px solid #cdcdcd;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: none;
+	position: absolute;
+	top: 7px;
+	left: -10px;
+}
+.InputValue_Table tr.ItemList td.Kaime .UmaBan {
+	width: 24px;
+}
+.InputValue_Table tr.ItemList td.Payout {
+	font-size: 15px;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: right;
+	white-space: nowrap;
+}
+.InputValue_Table tr.ItemList td.Payout > span {
+	display: block;
+	line-height: 1.2;
+}
+.InputValue_Table tr.ItemList td.Payout > .Payout01 {
+	font-size: 14px;
+	color: #00B967;
+	margin-top: 2px;
+}
+.InputValue_Table tr.ItemList td.Payout > .Payout02 {
+	font-size: 83%;
+	color: #ef5350;
+	margin-top: 3px;
+}
+.InputValue_Table th.DeleteCell,
+.InputValue_Table td.DeleteCell {
+	text-align: center;
+	display: none;
+}
+.InputValue_Table td.DeleteCell input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	display: none;
+}
+
+.ItemList.DeleteList td.DeleteCell_Block {
+	text-align: center;
+	padding: 0;
+}
+.ItemList.DeleteList td.Txt {
+	padding: 0;
+}
+.ItemList.DeleteList td.Txt > div {
+	background: #f5f5f5;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: left;
+	padding: 20px 0;
+	margin-left: 12px;
+}
+.ItemList.DeleteList td.Txt > div:before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #f5f5f5;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: relative;
+	left: -6px;
+	top: 2px;
+}
+
+
+/**/
+.InputValue_Table tr.ItemList.Parent td.Kaime {
+	white-space: normal;
+	max-width:111px;
+}
+.InputValue_Table tr.ItemList.Parent td.Kaime > div {
+	line-height: 1.3;
+}
+.InputValue_Table tr.ItemList.Parent .Toggle_Btn {
+	text-align: center;
+}
+.InputValue_Table tr.ItemList.Parent .Toggle_Btn .Open_Btn {
+	display: block;
+	width: 22px;
+	height: 22px;
+	background: #fff url("../img/race/subMenu_Btn.png") no-repeat center;
+	-webkit-background-size: 22px 22px;
+	-moz-background-size: 22px 22px;
+	-ms-background-size: 22px 22px;
+	background-size: 22px 22px;
+	outline: none;
+	margin: 0 auto;
+}
+.InputValue_Table tr.ItemList.Parent .Toggle_Btn .Close_Btn {
+	display: inline-block;
+	background: url("../img/race/icon_close_mark02.png") no-repeat center;
+	-webkit-background-size: 17px 17px;
+	-moz-background-size: 17px 17px;
+	-ms-background-size: 17px 17px;
+	background-size: 17px 17px;
+	width: 17px;
+	height: 17px;
+	vertical-align: middle;
+}
+.InputValue_Table tr.ItemList.Parent td.Money .Txt01 {
+	width: 1em;
+	padding-right: 3px;
+}
+
+
+/* 購入金額btn */
+.InputValue_Table tr.ItemList.Child td.Money div {
+	float: right;
+}
+.InputValue_Table tr.ItemList td.Money div {
+	text-align: right;
+	display: table;
+	width: 100%;
+}
+.InputValue_Table tr.ItemList td.Money span {
+	display: table-cell;
+	width: 33px;
+	font-size: 15px;
+	font-weight: bold;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.InputValue_Table tr.Parent td.Money span.Txt02 {
+	text-align: left;
+	padding-left: 1px;
+	white-space: normal;
+}
+.InputValue_Table tr.ItemList.Parent td.Money .InputMoney {
+	min-width: 30px;
+}
+
+
+/* overlay_FixedArea */
+.Tanfuku .InputFixedArea01 {
+	/*display: block;*/
+}
+.InputFixedArea_Wrap {
+	min-height: 76px;
+}
+.InputFixedArea01 {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 1000;
+	padding: 4px 8px;
+	background: rgba(0, 0, 0, .8);
+	box-shadow: 0 -1px 3px rgba(0, 0, 0, .5);
+}
+.TotalBetDL {
+	margin-bottom: 4px;
+	text-align: center;
+}
+.TotalBetDL dt {
+	color: #fff;
+	font-size: 83%;
+	font-weight: bold;
+}
+.TotalBetDL dd {
+	color: #fff;
+	font-size: 83%;
+	font-weight: bold;
+	margin-left: 30px;
+}
+.TotalBetDL dd .PrizeMoney {
+	color: #FEDE00;
+	font-size: 108%;
+}
+.TotalBetDL dt,
+.TotalBetDL dd {
+	display: inline-block;
+}
+
+.InputBtnBox {
+	text-align: center;
+}
+.InputBtnBox button[type="submit"] {
+	width: 45%;
+	box-shadow: 0 2px 6px #1b1b20;
+}
+.InputBtnBox .AddBtn,
+.InputBtnBox .DeleteCheckAddBtn {
+	width: 25%;
+}
+.Phase02_Btn .Result {
+	color: #fff;
+	text-align: center;
+	font-size: 66%;
+	margin-bottom: 8px;
+}
+.Phase02_Btn .Result > span {
+	margin: 0 3px;
+	color: #ef5350;
+	font-size: 133%;
+	font-weight: bold;
+}
+.Phase02_Btn .SubmitBtn {
+	box-shadow: 0 2px 6px #1b1b20 !important;
+	background: #ef5350;
+	text-align: center;
+	letter-spacing: 0.5px;
+}
+.InputBtnBox .AddBtn,
+.InputBtnBox .DeleteCheckAddBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 25%;
+	color: #333;
+	font-size: 66%;
+	font-weight: bold;
+	background: #fff;
+	padding: 14px 0 4px;
+	border-radius: 3px;
+	box-shadow: 0 2px 6px #1b1b20;
+	position: relative;
+}
+.Icon_addBtn {
+	display: block;
+	background: url("../img/icon/icon_addBtn.png") no-repeat;
+	-webkit-background-size: 17px 17px;
+	-moz-background-size: 17px 17px;
+	-ms-background-size: 17px 17px;
+	width: 17px;
+	height: 17px;
+	margin: 0 auto;
+	position: relative;
+	top: -6px;
+}
+.Icon_deleteBtn {
+	display: block;
+	background: url("../img/icon/icon_deleteBtn.png") no-repeat;
+	-webkit-background-size: 17px 4px;
+	-moz-background-size: 17px 4px;
+	-ms-background-size: 17px 4px;
+	width: 17px;
+	height: 17px;
+	margin: 0 auto;
+}
+.DetleteBtnBox ul {
+	text-align: center;
+}
+.DetleteBtnBox ul li {
+	display: inline-block;
+	vertical-align: top;
+}
+.DetleteBtnBox ul li:first-child {
+	width: 60%
+}
+.DetleteBtnBox ul li:last-child {
+	width: 38%;
+}
+.DetleteBtnBox .DeleteBtn,
+.DetleteBtnBox .CancelBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 100%;
+	color: #333;
+	font-size: 72%;
+	font-weight: bold;
+	background: #fff;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 6px #1b1b20;
+	position: relative;
+}
+.InputBtnBox .ipat_dialog {
+    display: inline-block;
+    font-size: 83%;
+    width: 46%;
+    color: #fff;
+    background: #ef5350;
+    text-align: center;
+    padding: 16px 0;
+    vertical-align: top;
+    box-shadow: 0 2px 6px #1b1b20;
+    border-radius: 3px;
+}
+.InputBtnBox .AddBtn {}
+
+
+/* 買い目一覧 - 未選択メッセージ */
+.NoData_Msg {
+	margin: 12px 14px;
+}
+.NoData_Msg .Msg {
+    font-size: 86%;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 5px solid #ddd;
+    background: #fff;
+    line-height: 1.3;
+}
+.NoData_Msg .Txt {
+	font-size: 83%;
+	line-height: 1.3;
+}
+
+
+/* 買い目一覧　-　注意事項 */
+.Ipat_Notice {
+    padding: 8px 8px 18px;
+}
+.Ipat_Notice .Title {
+    font-size: 88%;
+    font-weight: bold;
+    background: #ffe35c;
+    margin-bottom: 0;
+    padding: 8px;
+    text-align: center;
+}
+.Ipat_Notice .Title > img {
+	vertical-align: bottom;
+	margin-right: 4px;
+	margin-left: -1em;
+	position: relative;
+	top: 1px;
+}
+.Ipat_Notice .Inner {
+	padding: 8px;
+	background: #FFF9D9;
+}
+.Ipat_Notice ul li {
+	font-size: 83%;
+    color: #333;
+    line-height: 1.3;
+}
+.Ipat_Notice ul li + li {
+	margin-top: 8px;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+	.InputFixedArea01 {
+		width: 750px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.InputFixedArea01 {
+		width: 920px;
+	}
+}
+
+
+/* fancybox_一括入力form */
+.BatchInput_Form {
+	border-top: 1px solid #5D5D5D;
+	border-radius: 4px;
+	background: #353535;
+}
+.BatchInput_Header {
+	padding: 18px 8px 12px;
+	border-bottom: 1px solid #2B2A2A;
+	position: relative;
+}
+.BatchInput_Header .Title {
+	font-size: 94%;
+	font-weight: bold;
+	color: #d2d2d2;
+	margin-bottom: 16px;
+}
+.BatchInput_Header .LinkBtn {
+	display: inline-block;
+	font-size: 72%;
+	font-weight: bold;
+	color: #5f5f5f;
+	background: #232323;
+	border-radius: 4px;
+	padding: 8px 8px 8px 28px;
+	position: absolute;
+	top: 12px;
+	right: 8px;
+}
+.BatchInput_Header .LinkBtn:before {
+	content: "";
+	display: block;
+	background: url('../img/icon/icon_sprite_raceinfo.png') no-repeat;
+	background-position: -88px -82px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	top: 4px;
+	left: 6px;
+}
+.BatchInputValue input[type="tel"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 3px;
+	float: left;
+	width: 140px;
+	font-weight: bold;
+	font-size: 138%;
+	text-align: right;
+	padding: 4px 4px;
+	color: #fff;
+	background: #666;
+	box-shadow: 0 0 6px rgba(4, 4, 4, .5) inset;
+}
+.BatchInputValue input::-webkit-input-placeholder {
+    color: #ccc;
+}
+.BatchInputValue input:-moz-placeholder {
+    color: #ccc;
+}
+.BatchInputValue > div {
+	float: left;
+	color: #fff;
+	font-size: 138%;
+	font-weight: bold;
+	margin-left: 4px;
+	line-height: 36px;
+}
+.BatchInputValue > div > span {
+	font-weight: normal;
+	font-size: 74%;
+}
+.BatchInput_Form .Type_Btn {
+	padding: 15px;
+	border-top: 1px solid #565656;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background: #454545;
+}
+.BatchInput_Form .Type_Btn .Btn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 3px;
+	width: 100%;
+	font-size: 88%;
+	font-weight: bold;
+	color: #555;
+	background: #f1f1f1;
+	padding: 14px;
+	box-shadow: 0 -1px 0 rgba(165, 165, 165, .8) inset, 0 2px 6px rgba(27, 27, 27, .6);
+}
+.BatchInput_Form .Type_Btn ul li + li {
+	margin-top: 8px;
+}
+.input_dialog {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+    color: #777;
+	display: block;
+	font-size: 13px;
+	margin: 0 8px;
+	padding: 6px;
+}
+.input_dialog > span {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+
+/* =======================================================
+ オッズlayout
+======================================================= */
+
+/* 出馬表 */
+.RaceOdds_HorseList_Table {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+	position: relative;
+	margin-bottom: 18px;
+}
+.RaceOdds_HorseList_Table tr {
+	border-bottom: 1px solid #E3E5EB;
+}
+.RaceOdds_HorseList_Table tr th.Waku,
+.RaceOdds_HorseList_Table tr th.Mark {
+	width: 1em;
+	padding: 0 4px;
+	line-height: 1.2;
+}
+.RaceOdds_HorseList_Table tr th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 10px 0;
+	vertical-align: middle;
+}
+.RaceOdds_HorseList_Table tr th + th,
+.RaceOdds_HorseList_Table tr td + td {
+	border-left: 1px solid #E3E5EB;
+}
+
+/**/
+.RaceOdds_HorseList_Table tr td {
+	vertical-align: middle;
+	font-size: 66%;
+	color: #555;
+	text-align: center;
+}
+.RaceOdds_HorseList_Table tr td[class*="Waku"] {
+	font-size: 78%;
+	font-weight: bold;
+}
+.RaceOdds_HorseList_Table tr td.Mark_User {
+	border-left: 1px solid #E3E5EB;
+	border-right: 1px solid #E3E5EB;
+	background: #f0f4ff;
+}
+.RaceOdds_HorseList_Table tr td.Horse_Name {
+	font-size: 83%;
+	font-weight: bold;
+	text-align: left;
+	padding: 12px 0 12px 6px;
+	line-height: 1.2;
+	letter-spacing: -1px;
+}
+.RaceOdds_HorseList_Table tr td.Horse_Name .Odds {
+	margin-top: 4px;
+	margin-right: 3px;
+	font-size: 12px;
+	color: #777;
+	text-align: right;
+	letter-spacing: 0.1px;
+}
+.RaceOdds_HorseList_Table tr td.Horse_Name .Odds .Txt {
+	font-size: 10px;
+}
+
+
+/* 出走取消　*/
+.RaceOdds_HorseList_Table tr.Cancel {
+	background: #dee0e5;
+	text-align: center;
+}
+.RaceOdds_HorseList_Table tr.Cancel td {
+	color: #979aa0;
+	font-weight: bold;
+	vertical-align: middle;
+	font-size: 15px;
+}
+.RaceOdds_HorseList_Table tr.Cancel td.Horse_Info {
+	text-align: left;
+	padding: 20px 0 20px 6px;
+}
+.RaceOdds_HorseList_Table tr.Cancel td:nth-child(2),
+.RaceOdds_HorseList_Table tr.Cancel.Waku td:nth-child(3) {
+	border-right: 1px solid #C6C9D3;
+}
+.RaceOdds_HorseList_Table tr.Cancel.Tanfuku_Summary td.Odds,
+.RaceOdds_HorseList_Table.Ninki tr.Cancel td.Odds {
+	font-size: 15px;
+	text-align: center;
+}
+
+
+/* 点数カウント */
+.View_Count{
+	display: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 3px;
+    padding: 0 10px 4px;
+    z-index: 100;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+	position: fixed;
+    right: 20px;
+    bottom: 40px;
+    text-align: right;
+}
+
+
+/* result まとめ買い */
+.Kumiawase {
+	width: 100%;
+	background: #fff;
+	border-top: 1px solid #E4E4E4;
+	border-bottom: 1px solid #E4E4E4;
+}
+.RaceOdds_Result_Table01 {
+	background: #fff;
+}
+.RaceOdds_Result_Table01 tr th {
+	vertical-align: middle;
+	padding: 13px 10px 13px 8px;
+}
+.RaceOdds_Result_Table01 tr th div {
+	width: 40px;
+	padding: 5px 3px 5px 0;
+	color: #fff;
+	font-size: 66%;
+	background: url('../img/race/Axis_Bg01.png') no-repeat;
+	-webkit-background-size: 40px 22px;
+	-moz-background-size: 40px 22px;
+	-ms-background-size: 40px 22px;
+	background-size: 40px 22px;
+	font-weight: normal;
+}
+.RaceOdds_Result_Table01 tr td {
+	vertical-align: middle;
+	text-align: center;
+}
+.RaceOdds_Result_Table01 tr td.Num {
+	width: 100%;
+	word-wrap: break-word;
+	font-size: 77%;
+	font-weight: bold;
+	line-height: 1.3;
+	text-align: left;
+}
+.RaceOdds_Result_Table01 tr td.Check {
+	width: 60px;
+}
+.Kumiawase_Count {
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.4;
+	margin-bottom: 4px;
+}
+.Kumiawase_Count > span.Txt01 {
+	color: #333;
+	margin-bottom: 4px;
+	font-size: 12px;
+}
+.Kumiawase_Count > span.Txt02 {
+	display: block;
+	color: #868e97;
+	font-size: 12px;
+	margin-left: 2px;
+}
+.Kumiawase .SubmitBtn {
+	background: #ef5350;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8) !important;
+}
+.Kumiawase .Result_Btn {
+	padding: 8px 20px;
+	background-color: #F1F1F1;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+}
+.RaceOdds_Result_Table03 {
+	border-bottom: none;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase {
+	border-collapse: collapse;
+	width: 94%;
+	padding: 0 8px;
+	margin: 0 auto;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr {
+	border: none;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr th {
+	padding: 0;
+	background: inherit;
+	border: none;
+	vertical-align: top;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr.Type th {
+	font-size: 77%;
+	text-align: left;
+	padding-bottom: 4px;
+	background-color: inherit;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr.Type th.Formation {
+	border-bottom: 1px solid #efefef;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr th div {
+	width: 40px;
+	padding: 5px 3px 5px 0;
+	color: #fff;
+	background: url('../img/race/Axis_Bg01.png') no-repeat center;
+	-webkit-background-size: 40px 22px;
+	-moz-background-size: 40px 22px;
+	-ms-background-size: 40px 22px;
+	background-size: 40px 22px;
+	font-weight: normal;
+	position: relative;
+	top: 1px;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr td.Num {
+	width: 100%;
+	word-wrap: break-word;
+	font-size: 77%;
+	font-weight: bold;
+	line-height: 1.3;
+	text-align: left;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase .UmaBan {
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 0px 2px 0px;
+	width: 22px;
+	margin: -1px 4px 4px 0;
+}
+.RaceOdds_Result_Table03 .RaceOdds_Result_Kumiawase tr td {
+	padding: 4px;
+}
+.RaceOdds_Result_Table03 .Kumiawase_Count {
+	font-size: 122%;
+	margin-bottom: 0;
+}
+.RaceOdds_Result_Table03 .Kumiawase_Count > span {
+	font-size: 72%;
+}
+
+
+/* 券種result バラ買い */
+.Oddz_Detail_Header {
+	display: table;
+	width: 100%;
+	color: #fff;
+	background: #4894bd;
+	padding: 12px 8px;
+}
+.Oddz_Detail_Header .RaceOdds_Result_Title {
+	display: inline-block;
+	margin-right: 2px;
+	font-weight: normal;
+	vertical-align: bottom;
+}
+.Oddz_Detail_Header .Count {
+	display: inline-block;
+	font-size: 133%;
+	color: #4894bd;
+	background: #fff;
+	border-radius: 3px;
+	padding: 1px 6px;
+}
+.Oddz_Detail_Header .Count span {
+	font-weight: bold;
+}
+.Oddz_Detail_Header .Count .Txt02 {
+	font-size: 80%;
+}
+
+
+/* バラ買 */
+.RaceOdds_Result_Table02,
+.RaceOdds_Result_Table03 {
+	border-collapse: collapse;
+	width: 100%;
+	border-bottom: 1px solid #E4E4E4;
+	background: #fff;
+}
+.RaceOdds_Result_Table02 tr + tr,
+.RaceOdds_Result_Table03 tr + tr {
+	border-top: 1px solid #E4E4E4;
+}
+.RaceOdds_Result_Table02 tr th,
+.RaceOdds_Result_Table03 tr > th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 10px 0;
+	vertical-align: middle;
+}
+.RaceOdds_Result_Table02 tr th + th,
+.RaceOdds_Result_Table03 tr th + th {
+	border-left: 1px solid #E3E5EB;
+}
+.RaceOdds_Result_Table02 tr td,
+.RaceOdds_Result_Table03 tr td {
+	text-align: center;
+	padding: 10px 0;
+	vertical-align: middle;
+}
+.RaceOdds_Result_Table02 tr td + td,
+.RaceOdds_Result_Table03 tr td + td {
+	border-left: 1px solid #E4E4E4;
+}
+.RaceOdds_Result_Table02 tr td.Num {
+	width: 40px;
+	font-size: 78%;
+	font-weight: bold;
+}
+.RaceOdds_Result_Table02 tr td.Apart {
+	font-size: 66%;
+}
+.RaceOdds_Result_Table02 tr td.Odds {
+	font-size: 77%;
+	font-weight: bold;
+	text-align: right;
+	padding-right: 8px;
+}
+.RaceOdds_Result_Table02 td.Apart ul li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.RaceOdds_Result_Table02 td.Apart > .Combi02 {
+	margin-top: 5px;
+}
+.RaceOdds_Result_Table02 td.Apart > .Combi02 > .UmaName:first-child,
+.RaceOdds_Result_Table02 td.Apart > .Combi02 > .UmaName:first-child {
+	margin-right: 0.5em;
+}
+.RaceOdds_Result_Table02 td.Apart > .Combi02 > .UmaName:last-child,
+.RaceOdds_Result_Table02 td.Apart > .Combi02 > .UmaName:last-child {
+	margin-left: 0.5em;
+}
+.RaceOdds_Result_Table02 tr.ActionBtn td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0;
+}
+.RaceOdds_Result_Table02 tr.ActionBtn td.Txt > div {
+	font-weight: bold;
+	font-size: 74%;
+	text-align: left;
+	background: #f5f5f5;
+	padding: 20px 0;
+	margin-left: 12px;
+}
+.RaceOdds_Result_Table02 tr.ActionBtn td.Txt > div:before {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #f5f5f5;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: relative;
+	left: -6px;
+	top: 2px;
+}
+.RaceOdds_Result_Table02 tbody + tbody {
+	border-top: 1px solid #E4E4E4;
+}
+
+[class*="RaceOdds_Result_Table"] tr.Select_Type th {
+	font-size: 83%;
+	color: #54544C;
+	text-align: left;
+	padding: 10px 15px;
+	background-color: #C5C59D;
+	overflow: hidden;
+}
+[class*="RaceOdds_Result_Table"] tr.Select_Type th > span {
+	font-size: 13px;
+	float:right;
+	margin-top:1px;
+	color: #E62001;
+}
+
+
+/* オッズ通常 */
+table tr th.Waku1 {background: #fff; color: #333;}
+table tr th.Waku2 {background: #222; color: #fff !important;}
+table tr th.Waku3 {background: #dc3c3c; color: #fff !important;}
+table tr th.Waku4 {background: #2c53a9; color: #fff !important;}
+table tr th.Waku5 {background: #e4ca3b; color: #fff !important;}
+table tr th.Waku6 {background: #58af4a; color: #fff !important;}
+table tr th.Waku7 {background: #de8a26; color: #fff !important;}
+table tr th.Waku8 {background: #dc6179; color: #fff !important;}
+
+.Normal .RaceOdds_HorseList_Table {
+	width: 50%;
+	float: left;
+	margin-bottom: 14px;
+}
+.Normal .RaceOdds_HorseList_Table:after {
+	border: none;
+}
+.Normal .RaceOdds_HorseList_Table + .RaceOdds_HorseList_Table {
+	border-left: 1px solid #E3E5EB;
+}
+.Normal .RaceOdds_HorseList_Table tr.col_label th {
+	border-top: none;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 8px;
+}
+.Normal .RaceOdds_HorseList_Table tr {
+   border-bottom: none;
+}
+.Normal .RaceOdds_HorseList_Table tr td.Waku1 {
+	border-right: 1px solid #E3E5EB;
+}
+.Normal .RaceOdds_HorseList_Table tr [class*="Waku"] {
+	font-size: 74%;
+	width: 1.2em;
+}
+.Normal .RaceOdds_HorseList_Table tr td.Waku_Normal {
+	background: #e3ecff;
+	color: #333 !important;
+}
+.Normal .RaceOdds_HorseList_Table tr td.Odds {
+	font-size: 78%;
+	font-weight: bold;
+	text-align: right;
+	line-height: 1.2;
+	padding: 10px;
+}
+.Normal .RaceOdds_HorseList_Table tr [class*="Waku"],
+.Normal .RaceOdds_HorseList_Table tr td.Check,
+.Normal .RaceOdds_HorseList_Table tr td.Odds {
+	border-bottom: 1px solid #E3E5EB;
+}
+.Normal .RaceOdds_HorseList_Table tr.EmptyCell {
+	height: 61px;
+	background: #eee;
+}
+
+
+/* 強制的非表示 */
+.Normal .RaceOdds_HorseList_Table tr td.Waku,
+.Normal .RaceOdds_HorseList_Table tr td.Waku + .Odds {
+	color: #eee !important;
+	background: #eee;
+	height: 37px;
+	border-bottom: 1px solid #eee;
+	border-left: 1px solid #eee;
+}
+.Normal .RaceOdds_HorseList_Table tr td.Waku + .Check > label {
+	display: none;
+}
+
+
+/* レスポンシブtable対応 */
+@media screen and (max-width: 374px) {
+	.Normal .RaceOdds_HorseList_Table:nth-child(2n+2) {
+		clear: both;
+	}
+}
+@media screen and (min-width: 375px) {
+	.Normal .RaceOdds_HorseList_Table {
+		width: 33.3%;
+		float: left;
+	}
+	.Normal .RaceOdds_HorseList_Table:nth-of-type(3n+1),
+	.Ren3_Normal .RaceOdds_HorseList_Table:nth-of-type(3n+1) {
+		clear: both;
+	}
+}
+
+
+/* 予想オッズ（馬連） */
+.Yoso_Odds_Umaren table.RaceOdds_HorseList_Table tr td.Waku,
+.Yoso_Odds_Umaren table.RaceOdds_HorseList_Table tr td.Waku + .Odds {
+    color: #333 !important;
+    background: #fff;
+}
+.Yoso_Odds_Umaren table.RaceOdds_HorseList_Table tr td.Waku_Normal {
+    background: #e3ecff;
+    color: #333;
+}
+.Yoso_Odds_Umaren table.RaceOdds_HorseList_Table {
+    margin-bottom: 14px;
+}
+@media screen and (max-width: 374px) {
+	.Yoso_Odds_Umaren .RaceOdds_HorseList_Table:nth-child(2n) {
+	    clear: none;
+	}
+	.Yoso_Odds_Umaren .RaceOdds_HorseList_Table:nth-child(2n+1) {
+	    clear: both;
+	}
+}
+
+
+/* 軸馬select */
+.Axis_Horse_Container {
+	padding: 0px 8px 16px;
+}
+.Axis_Horse_selectbox {
+    position: relative;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Axis_Horse_selectbox select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 42px;
+	opacity: 0;
+}
+.Axis_Horse_selectbox .Inner {
+	position: relative;
+	z-index: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #555;
+	background: #fff;
+	border-radius: 3px;
+	padding: 0 12px;
+	width: 100%;
+	height: 42px;
+	line-height: 42px;
+}
+.Axis_Horse_selectbox .Inner:before,
+.Axis_Horse_selectbox .Inner:after {
+	content: "";
+	position: absolute;
+	display: block;
+}
+.Axis_Horse_selectbox .Inner:before {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 42px;
+	border-radius: 0 3px 3px 0;
+	background: #44434f;
+}
+.Axis_Horse_selectbox .Inner:after {
+	top: 50%;
+	right: 12px;
+	margin-top: -4px;
+	width: 16px;
+	height: 10px;
+	background: url('../img/icon/icon_select_arrow.png') no-repeat;
+	-webkit-webkit-background-size: 16px 10px;
+	-moz-webkit-background-size: 16px 10px;
+	-ms-webkit-background-size: 16px 10px;
+	background-size: 16px 10px;
+}
+.Axis_Horse {
+	color: #fff;
+	font-weight: bold;
+	padding: 16px 8px;
+	background: #2c53a9;
+	position: relative;
+	margin-bottom: 2px;
+}
+.Axis_Horse .Inner:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_check02.png') no-repeat;
+	-webkit-background-size: 18px 18px;
+	-moz-background-size: 18px 18px;
+	-ms-background-size: 18px 18px;
+	background-size: 18px 18px;
+	margin-right: 4px;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	top: 1px;
+}
+.Axis_Horse .Inner > .Num {
+	font-size: 111%;
+	font-weight: normal;
+}
+[id*='waku_disp_'] {
+	display: none;
+}
+
+
+/* 単複 */
+.Tanfuku .RaceOdds_HorseList_Table {
+	margin-bottom: 0;
+}
+.Tanfuku .RaceOdds_HorseList_Table:after {
+	border: none;
+}
+.Tanfuku .RaceOdds_HorseList_Table td.Odds {
+	font-size: 77%;
+	font-weight: bold;
+	text-align: right;
+	padding: 8px 2px;
+}
+.Tanfuku .RaceOdds_HorseList_Table tr td.Horse_Name {
+	padding: 20px 0 20px 6px;
+}
+
+
+/* 枠連 */
+.RaceOdds_HorseList.Wakuren table td.Horse_Select {
+	border-left: 1px solid #E3E5EB;
+}
+
+
+/* オッズ-人気順bar*/
+.Type_Sec {
+	padding: 8px;
+	font-size: 86%;
+	color: #fff;
+}
+
+/* 券種 */
+.RaceOdds_HorseList .Ninki tr.col_label th.Odds {
+	line-height: 1.2;
+}
+.RaceOdds_HorseList.Wakuren .Ninki tr th.Ninki,
+.RaceOdds_HorseList.Umaren .Ninki tr th.Ninki,
+.RaceOdds_HorseList.Umatan .Ninki tr th.Ninki {
+	white-space: nowrap;
+	padding: 8px;
+}
+
+.RaceOdds_HorseList.Tanfuku .Ninki tr td.Ninki,
+.RaceOdds_HorseList.Tanfuku .Ninki tr [class*="Waku"],
+.RaceOdds_HorseList.Tanfuku .Ninki tr td.Mark_User {
+	padding: 0 3px;
+}
+.RaceOdds_HorseList.Wakuren .Ninki tr td.Horse_Name {
+	text-align: center;
+}
+
+
+/* 方式選択 */
+.RaceOdds_HorseList_Table.Ninki {
+	margin-bottom: 0px;
+}
+.RaceOdds_HorseList_Table.Ninki:after {
+	border: none;
+}
+.RaceOdds_HorseList_Table.Ninki tr th.Ninki {
+	width: 1em;
+	line-height: 1.2;
+}
+.RaceOdds_HorseList_Table.Ninki tr th.Check {
+	width: 62px;
+}
+.RaceOdds_HorseList_Table.Ninki tr td {
+	padding: 8px 2px !important;
+}
+.RaceOdds_HorseList_Table.Ninki  td + td {
+	border-left: 1px solid #E3E5EB;
+}
+.RaceOdds_HorseList_Table.Ninki tr td.Odds {
+	font-size: 78%;
+	font-weight: bold;
+	line-height: 1.2;
+	text-align: right;
+	padding-right: 8px;
+}
+.RaceOdds_HorseList_Table.Ninki tr td.Ninki {
+	font-weight: bold;
+}
+.RaceOdds_HorseList_Table.Ninki .Combi01 ul li {
+	display: inline-block;
+	vertical-align: middle;
+}
+/*.RaceOdds_HorseList_Table.Ninki .Combi01 .UmaBan {
+	font-size: 123%;
+}*/
+.RaceOdds_HorseList_Table.Ninki .Combi02 {
+	margin-top: 5px;
+}
+.RaceOdds_HorseList_Table.Ninki .Combi02 > .UmaName:first-child {
+	margin-right: 0.5em;
+}
+.RaceOdds_HorseList_Table.Ninki .Combi02 > .UmaName:last-child {
+	margin-left: 0.5em;
+}
+
+
+/* footer_fixed_modal */
+.InputFixedArea01 .Result {
+	font-size: 66%;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 8px;
+}
+.InputFixedArea01 .Result > span {
+	color: #ef5350;
+	font-size: 133%;
+	font-weight: bold;
+	margin: 0 3px;
+}
+.InputFixedArea01 .Result_Btn .SubmitBtn {
+	box-shadow: 0 2px 6px #1b1b20;
+}
+
+.InputFixedArea01.Odds .SubmitBtn {
+	display: inline-block;
+	font-size: 83%;
+	width: 73%;
+	color: #fff;
+	background: #ef5350;
+	text-align: center;
+	padding: 16px 0;
+	vertical-align: top;
+	box-shadow: 0 2px 6px #1b1b20;
+	border-radius: 3px;
+}
+
+
+/* submit_btn viewBtn */
+.RaceOdds_Form_Btn {
+	margin: 0 18px;
+	position:relative;
+}
+.Shutuba_Form_Footer.Phase01_Btn {
+	margin: 0 20px;
+	position: relative;
+}
+.Shutuba_Form_Footer.Phase01_Btn .SubmitBtn,
+.InputBtnBox .SubmitBtn,
+.InputFixedArea01 .SubmitBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 100%;
+	color: #fff;
+	font-size: 92%;
+	font-weight: bold;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+}
+#Netkeiba_Race_Shutuba .SubmitBtn {
+	text-indent: -1em;
+}
+.SubmitBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 100%;
+	color: #fff;
+	font-size: 88%;
+	font-weight: bold;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350 url("../img/icon/icon_view.png") no-repeat 24px center;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+}
+.ViewBtn_Area {
+	background-color: #fff;
+	padding: 12px 20px;
+	border-bottom: 1px solid #E4E4E4;
+}
+.ViewBtn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	width: 100%;
+	color: #555;
+	font-size: 77%;
+	font-weight: bold;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(146, 151, 165, .8);
+	background: #d9d9d9 url("../img/icon/icon_view02.png") no-repeat 24px center;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+}
+
+.RaceInfo_Notice01 {
+	font-size: 78%;
+	color: #666;
+	line-height: 1.3;
+	margin: 0px 8px 8px;
+}
+.RaceInfo_Notice02 {
+	font-size: 66%;
+	color: #666;
+	text-align: left;
+	line-height: 1.3;
+	margin: 12px 8px 0;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+
+
+
+.RaceInfo_Link_Text a {
+	display: inline-block;
+	font-size: 78%;
+	margin: 0 8px 12px 8px;
+	line-height: 1.3;
+	text-decoration: underline !important;
+}
+.RaceInfo_Link_Text a:before {
+	content: "・";
+	display: inline-block;
+}
+
+
+/* =======================================================
+ Horseチェックマーク / 軸チェック
+======================================================= */
+
+/* radio */
+.RaceOdds_HorseList_Table .Horse_Select {
+	width: 60px;
+	padding: 6px 0;
+}
+.RaceOdds_HorseList_Table [class*="AxisBtn_"] {
+	display: inline-block;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(146, 151, 165, 0.6);
+	width: 42px;
+	height: 42px;
+}
+.RaceOdds_HorseList_Table .AxisBtn_Off {
+	background: url('../img/race/radio_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.RaceOdds_HorseList_Table .Horse_Select input[type="radio"]:checked + label {
+	background: url('../img/race/radio_on.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+
+
+/*　checkbox */
+[class*="Check01Btn_"] {
+	display: inline-block;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(146, 151, 165, 0.6);
+	width: 42px;
+	height: 42px;
+}
+.HorseCheck_Select + label,
+.BuyCheck_Select + label {
+	background: url('../img/race/check_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.HorseCheck_Select:checked + label,
+.BuyCheck_Select:checked + label {
+	background: url('../img/race/check01_on.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.DeleteCell_List + label {
+    background: url('../img/race/all_off.png') no-repeat center;
+    -webkit-background-size: 42px 42px;
+    -moz-background-size: 42px 42px;
+    -ms-background-size: 42px 42px;
+    background-size: 42px 42px;
+}
+.DeleteCell_List:checked + label {
+    background: url('../img/race/all_on.png') no-repeat center;
+    -webkit-background-size: 42px 42px;
+    -moz-background-size: 42px 42px;
+    -ms-background-size: 42px 42px;
+    background-size: 42px 42px;
+}
+.DeleteCell_List {
+	display: none;
+}
+
+
+/* checkbox default非表示 */
+.Multi_Select input.MultiCheck,
+.RaceOdds_HorseList_Table.Ninki input.HorseCheck_Select,
+.Normal .RaceOdds_HorseList_Table .HorseCheck_Select,
+.Check input.HorseCheck_Select,
+.RaceOdds_Result_Table02 input.BuyCheck_Select {
+	display: none;
+}
+
+
+/* マルチcheck */
+.Multi_Select {
+	margin-top: 16px;
+}
+.Multi_Select .MultiCheck + label {
+	background: url('../img/race/check02_off.png') no-repeat;
+	-webkit-background-size: 28px 28px;
+	-moz-background-size: 28px 28px;
+	-ms-background-size: 28px 28px;
+	background-size: 28px 28px;
+	padding-left: 34px;
+	line-height: 28px;
+	display: block;
+	font-weight: bold;
+	font-size: 88%;
+}
+.Multi_Select .MultiCheck:checked + label {
+	background: url('../img/race/check02_on.png') no-repeat;
+	-webkit-background-size: 28px 28px;
+	-moz-background-size: 28px 28px;
+	-ms-background-size: 28px 28px;
+	background-size: 28px 28px;
+	padding-left: 34px;
+	line-height: 28px;
+	display: block;
+	font-weight: bold;
+	font-size: 88%;
+}
+
+
+/* All_Action */
+.ActionBtn input {display: none;}
+.ActionBtn .All_Action + label:active,
+.ActionBtn .Mark_Action + label:active,
+.Cancel_Action + label:active {
+	box-shadow: 2px 2px 0 #fff, inset 0 2px 2px rgba(0, 0, 0, .3);
+}
+.ActionBtn .All_Action + label,
+.ActionBtn .Mark_Action + label,
+.Cancel_Action + label {
+	display: inline-block;
+	box-shadow: 0 2px 4px rgba(146, 151, 165, 0.6);
+	width: 42px;
+	height: 42px;
+	border-radius: 5px;
+}
+.Cancel_Action + label {
+	background: url('../img/race/clear_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.All_Action + label {
+	background: url('../img/race/all_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.All_Action:checked + label {
+	background: url('../img/race/all_on.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.Mark_Action + label {
+	background: url('../img/race/mark_off.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.Mark_Action:checked + label {
+	background: url('../img/race/mark_on.png') no-repeat center;
+	-webkit-background-size: 42px 42px;
+	-moz-background-size: 42px 42px;
+	-ms-background-size: 42px 42px;
+	background-size: 42px 42px;
+}
+.RaceOdds_HorseList_Table tr.ActionBtn td.Txt {
+	border-left: none;
+	background: #fff;
+}
+.RaceOdds_HorseList_Table tr.ActionBtn td.Txt > div {
+	font-size: 118%;
+	font-weight: bold;
+	text-align: right;
+	background: #f5f5f5;
+	padding: 20px 0;
+	margin-right: 12px;
+}
+.RaceOdds_HorseList_Table .ActionBtn td.Txt > div:after {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background: #f5f5f5;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: relative;
+	right: -6px;
+	top: 2px;
+}
+
+
+/* カスタムselect */
+[class*="makeMeFancy_"] {
+	width: 40px;
+}
+.tzSelect{
+	height: 40px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.tzSelect .selectBox{
+	height:100%;
+	width:100%;
+	line-height: 40px;
+	box-shadow: rgba(0, 0, 0, 0.199219) 0px 1px 1px;
+	color:#666;
+	cursor: pointer;
+	border: 1px solid #efefef;
+	border-radius: 3px;
+	font-size: 200%;
+}
+.tzSelect .dropDown{
+	/*width:100%;*/
+	border:1px solid #CECECE;
+	border-width:0 1px 1px;
+	border-radius: 4px;
+	box-shadow: 0 0 4px #CECECE;
+	background: #fff;
+	width: 272px;
+	position: relative;
+	top: -36px;
+	left: 2px;
+	z-index: 1;
+}
+.tzSelect li{
+	width: 32px;
+	height: 32px;
+	cursor:pointer;
+	position:relative;
+	display: inline-block;
+}
+.tzSelect li:active {
+	background: #CECECE;
+}
+.tzSelect li > span {
+	font-size: 160%;
+	line-height: 33px;
+}
+.Race_Shutuba_List table.Race_Common_Table td.Mark_User {
+	position: relative;
+	overflow: visible;
+}
+table.Race_Common_Table td.Mark_User div.Select_Box {
+	position: absolute;
+	z-index: 99999;
+	top: 50%;
+	left: 50%;
+	margin-left: -12px;
+	margin-top: -13px;
+}
+
+
+/* =======================================================
+ ipanログイン
+======================================================= */
+
+/* ipatログイン入力ページ */
+.RaceIpat {}
+.RaceIpat_Header .Title h2 {
+	color: #fff;
+	padding: 10px 8px;
+	line-height: 1.2;
+}
+.RaceIpat_Inner {
+	background: #fff;
+	padding: 10px 8px;
+}
+.Ipat_Login_Form dt {
+	font-size: 83%;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.Ipat_Login_Form input[type="tel"],
+.Ipat_Login_Form input[type="password"] {
+	width: 100%;
+	font-size: 88%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 8px;
+}
+.Ipat_Login_Form dd {
+	margin-bottom: 16px;
+}
+.Ipat_Login_Form input::-webkit-input-placeholder {
+    color: #ddd;
+}
+.Ipat_Login_Form input:-moz-placeholder {
+    color: #ddd;
+}
+
+.RaceIpat_Dialog .Check,
+.RaceIpat_Inner .Check {
+	margin-bottom: 16px;
+}
+.RaceIpat_Dialog .Check input[type="checkbox"],
+.RaceIpat_Inner .Check input[type="checkbox"] {
+	display: none;
+}
+.RaceIpat_Dialog .Check label,
+.RaceIpat_Inner .Check label {
+	font-size: 83%;
+}
+.RaceIpat_Dialog .Check input[type="checkbox"] + label,
+.RaceIpat_Inner .Check input[type="checkbox"] + label {
+	background: url('../img/race/check02_off.png') no-repeat;
+	-webkit-background-size: 28px 28px;
+	-moz-background-size: 28px 28px;
+	-ms-background-size: 28px 28px;
+	background-size: 28px 28px;
+	padding-left: 34px;
+	line-height: 28px;
+	display: block;
+}
+.RaceIpat_Dialog .Check input[type="checkbox"]:checked + label,
+.RaceIpat_Inner .Check input[type="checkbox"]:checked + label {
+	background: url('../img/race/check02_on.png') no-repeat;
+	-webkit-background-size: 28px 28px;
+	-moz-background-size: 28px 28px;
+	-ms-background-size: 28px 28px;
+	background-size: 28px 28px;
+	padding-left: 34px;
+	line-height: 28px;
+	display: block;
+}
+
+.Ipat_Login_Footer {}
+.Ipat_Login_Footer .SubmitBtn,
+.Ipat_Btn .SubmitBtn {
+	display: block;
+	width: 100%;
+	color: #fff;
+	font-size: 86%;
+	font-weight: bold;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350;
+	text-align: center;
+}
+
+
+/* fancybox_ダイアログ */
+.RaceIpat_Dialog {
+	background: #fff;
+}
+.RaceIpat_Dialog .Inner {
+	padding: 16px 8px 22px 8px;
+	border-radius: 0 0 3px 3px;
+}
+.RaceIpat_Dialog .Inner .Txt01 {
+	font-size: 88%;
+	line-height: 1.4;
+}
+.Dialog_Header .Title {
+	font-size: 92%;
+	font-weight: bold;
+	color: #fff;
+	padding: 10px 0;
+	line-height: 1.2;
+	text-align: center;
+	border-radius: 3px 3px 0 0;
+	background: #2c4ebe;
+}
+.Dialog_Body .Introduction {
+	margin-bottom: 16px;
+}
+.Dialog_Body .Introduction .Txt,
+.Dialog_Contents .Txt {
+	font-size: 88%;
+	line-height: 1.4;
+}
+.Dialog_Body .Introduction img {
+	display: block;
+	margin: 8px auto 0;
+	width: 100%;
+}
+.Dialog_Contents .Title {
+	color: #333;
+	font-weight: bold;
+	margin-bottom: 14px;
+	text-align: center;
+}
+
+
+/* 共通dialog */
+.Dialog_Btn {
+	text-align: center;
+	margin-bottom: 12px;
+}
+.Dialog_Btn.Col2 li {
+	float: left;
+	width: 50%;
+}
+.Dialog_Btn.Col1 .Agree {
+	margin-bottom: 8px;
+}
+.Dialog_Btn.Col2 .Agree {
+	padding-left: 8px;
+}
+.Agree .Btn,
+.Disagree .Btn{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: 100%;
+  color: #fff;
+  font-size: 88%;
+  font-weight: bold;
+  padding: 16px 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(146, 151, 165, 1);
+}
+.Disagree .Btn,
+.Agree .Btn {
+	background: #fff;
+	color: #333;
+}
+.Agree .Btn {
+	background: #ef5350;
+	color: #fff;
+}
+.Dialog_Header.External .Title {
+	text-align: left;
+	background: #79aa60 url('../img/race/jra_ipat_logo.png') no-repeat right;
+	-webkit-background-size: 60px 40px;
+	-moz-background-size: 60px 40px;
+	-ms-background-size: 60px 40px;
+	background-size: 60px 40px;
+	text-indent: 8px
+}
+.Dialog_Footer.External {
+	background: #fff;
+	padding: 8px 12px 12px;
+}
+.Dialog_Footer.External .Close a {
+	display: block;
+	color: #999;
+	text-align: center;
+	padding: 12px 0;
+	border-radius: 3px;
+	border: 1px solid #bfbfbf;
+	background: #fff;
+}
+.RaceIpat_Dialog.Confirm {
+	border-radius: 5px;
+	position: absolute;
+	margin-right: 8px;
+}
+.RaceIpat_Dialog.Confirm .Inner {
+	padding: 12px 8px 4px 8px;
+}
+.RaceIpat_Dialog.Confirm .Title {
+	border-radius: 3px 3px 0 0;
+}
+.RaceIpat_Dialog.Confirm .Txt01 {
+	color: #333;
+	font-size: 88%;
+	line-height: 1.4;
+	margin-bottom: 8px;
+}
+.RaceIpat_Dialog.Confirm .Txt02 {
+    color: #777;
+    font-size: 83%;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    text-align: left;
+}
+.RaceIpat_Dialog.Confirm .Notice .Title > img {
+	vertical-align: bottom;
+	margin-right: 4px;
+	position: relative;
+	top: 1px;
+}
+@media only screen and (min-width: 759px) {
+	.RaceIpat_Dialog.Confirm {
+		width: 750px;
+	    margin-left: -375px;
+	    left: 50%;
+	}
+}
+
+
+/* 馬券購入完了 */
+.RaceIpat_Dialog.Complete {
+    background: none;
+    margin-bottom: 18px;
+}
+.RaceInfo_MyMenu {
+    padding: 0 8px 0;
+}
+.RaceInfo_MyMenu ul li {}
+.RaceInfo_MyMenu ul a {
+    display: block;
+    font-size: 88%;
+    font-weight: bold;
+    text-align: center;
+    color: #797e8c;
+    background: #fff;
+    vertical-align: middle;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+    position: relative;
+    padding: 17px 0;
+}
+.RaceIpat_Dialog.Complete .Ipat_Notice {
+    padding: 8px 8px 0;
+}
+.RaceIpat_Dialog.Complete .Note {
+    font-size: 83%;
+    color: #7f7e7e;
+    line-height: 1.3;
+    padding: 8px;
+}
+.LinkBtn_05 .Shutuba {
+    font-size: 105%;
+    padding-left: 34px;
+}
+.LinkBtn_05 .Shutuba span {
+    position: relative;
+}
+.LinkBtn_05 .Shutuba span:before {
+    content: "";
+    background: url('../img/icon/icon_shutuba01.png') no-repeat;
+    -webkit-background-size: 27px 22px;
+    -moz-background-size: 27px 22px;
+    -ms-background-size: 27px 22px;
+    background-size: 27px 22px;
+    width: 27px;
+    height: 22px;
+    position: absolute;
+    left: -34px;
+}
+.Basic_Guidance {
+    padding: 16px 8px;
+}
+.Register_Block .Btn {
+    margin-bottom: 12px;
+    text-align: center;
+}
+.Register_Block img {
+    width: 90%;
+}
+.Register_Block .Title {
+    text-align: center;
+    color: #029DFF;
+    margin-bottom: 8px;
+}
+.Register_Block .LinkText_01 {
+    display: block;
+    font-size: 88%;
+    text-align: right;
+}
+.Ipat_Complete_Msg {
+    margin: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 5px;
+    /*box-shadow: 0 0 2px #ccc;*/
+}
+.Ipat_Complete_Msg > p {
+    font-size: 88%;
+    line-height: 1.4;
+}
+.Ipat_Complete_Msg .Txt {
+    font-size: 83%;
+    color: #7f7e7e;
+    border-top: 1px solid #eee;
+    margin-top: 4px;
+    padding-top: 4px;
+}
+.Ipat_Complete_Msg .Txt > span {
+	display: block;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+
+/* ipat注意事項 */
+.RaceIpat .Notice .Inner {
+	font-size: 88%;
+	background: #FFF9D9;
+}
+.RaceIpat .Notice .Inner .Txt {
+	padding: 8px 8px 0;
+	line-height: 1.3;
+}
+.RaceIpat_Dialog .Notice .Title,
+.RaceIpat .Notice .Title {
+	font-size: 88%;
+	font-weight: bold;
+	background: #ffe35c;
+	margin-bottom: 0;
+	padding: 8px;
+	text-align: center;
+	text-indent: -1em;
+}
+.RaceIpat_Dialog .Notice ul,
+.RaceIpat_Dialog .Notice p,
+.RaceIpat .Notice ul {
+	padding: 8px;
+	background: #FFF9D9;
+}
+.RaceIpat_Dialog .Notice ul li,
+.RaceIpat .Notice ul li {
+	font-size: 88%;
+	color: #333;
+	line-height: 1.3;
+}
+.RaceIpat_Dialog .Notice p {
+	font-size: 83%;
+	color: #333;
+	line-height: 1.3;
+}
+.RaceIpat_Dialog .Notice ul li + li,
+.RaceIpat .Notice ul li + li {
+	margin-top: 6px;
+}
+
+
+/* my収支合計 */
+.RaceDayWrap.History:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #1F5DC3;
+}
+.Current_Total {
+	text-align: center;
+	padding: 16px 20px;
+	margin-bottom: 22px;
+	background: #fff;
+	position: relative;
+}
+.Current_Total:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid #fff;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	left: 50%;
+	bottom: -12px;
+	margin-left: -28px;
+}
+.Current_Total .Total01 {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.Current_Total .Total01 dt {
+	font-size: 	83%;
+	margin-right: 4px;
+	color: #666;
+}
+.Current_Total .Total01 dd {
+	font-size: 166%;
+	color: #4caf50;
+}
+.Current_Total .Total01 dd > .Icon {
+	margin-right: 2px;
+}
+.Current_Total .Total01 dd > .Txt {
+	font-size: 53%;
+	vertical-align: middle;
+}
+.Current_Total .Total01 dt,
+.Current_Total .Total01 dd {
+	display: inline-block;
+	vertical-align: middle;
+}
+.Current_Total .Total01 > .Icon {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+.Current_Total .Total01 > .Txt {
+	font-size: 72%;
+}
+.Current_Total table.Total02 {
+	border-collapse: collapse;
+	width:100%;
+}
+.Current_Total table.Total02 tr.Header th {
+	width: 50%;
+	color: #fff;
+	font-size: 88%;
+	font-weight: normal;
+	background: #7e7e85;
+	padding: 8px;
+	border: 1px solid #25252c;
+}
+.Current_Total table.Total02 tr td {
+	font-size: 	111%;
+	font-weight: bold;
+	background: #fff;
+	padding: 8px 4px;
+	border: 1px solid #a3a8b8;
+}
+.Current_Total table.Total02 tr td > .Txt {
+	font-size: 75%;
+}
+
+
+/* my収支 - テーブル */
+.Balance_List {
+	background: #fff;
+	border-top: 1px solid #a3a8b8;
+}
+.Balance_List .Race_Name {
+	display: table;
+	width: 100%;
+	padding: 10px 8px 6px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+.Balance_List .Race_Name li {
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.Balance_List .Race_Name .Jyo {
+	font-size: 88%;
+	width: 100%;
+	color: #555;
+	text-align: left;
+	line-height: 1.2;
+	padding-right: 46px;
+}
+.Balance_List .Race_Name .Time {
+	font-size: 77%;
+	color: #999;
+	text-align: center;
+	white-space: nowrap;
+	padding-right: 6px;
+}
+.Balance_List .Race_Name .Kakutei,
+.Balance_List .Race_Name .miKakutei {
+	font-size: 14px;
+    color: #fff;
+    background: #EF5350;
+    padding: 1px 4px;
+    border-radius: 2px;
+    position: relative;
+    top: -1px;
+}
+.Balance_List .Race_Name .Kakutei {
+    background: #EF5350;
+}
+.Balance_List .Race_Name .miKakutei {
+    background: #84ADFF;
+}
+table.Balance_List_Table {
+	width: 100%;
+	border-collapse: collapse;
+	background: #fff;
+}
+table.Balance_List_Table tr.History {
+	border-bottom: 1px solid #eee;
+}
+table.Balance_List_Table tr th,
+table.Balance_List_Table tr td {
+	padding: 6px 3px;
+	vertical-align: middle;
+	text-align: left;
+}
+table.Balance_List_Table tr th.Baken_Type {
+	font-size: 77%;
+	font-weight: bold;
+	color: #fff;
+	width: 50px;
+	white-space: nowrap;
+}
+table.Balance_List_Table tr th.Txt {
+	width: 37px;
+	font-size: 77%;
+	font-weight: bold;
+	color: #888;
+	background: #eee;
+	white-space: nowrap;
+}
+table.Balance_List_Table tr td span.Txt {
+    font-size: 80%;
+}
+table.Balance_List_Table tr td.Money {
+	width: 28%;
+}
+table.Balance_List_Table tr td.Money,
+table.Balance_List_Table tr [class*="Payout"] {
+	color: #777;
+	font-size: 83%;
+	font-weight: bold;
+}
+table.Balance_List_Table tr.List td.Kaime {
+	padding: 0;
+}
+table.Balance_List_Table tr.List td.Kaime > .Housiki {
+	font-size: 77%;
+	font-weight: bold;
+	padding-left: 4px;
+	position: relative;
+	top: 2px;
+}
+table.Balance_List_Table td.Kaime ul li {
+	display: inline-block;
+}
+table.Balance_List_Table td.Kaime ul li > span {
+	display: inline-block;
+	width: 26px;
+	font-size: 77%;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	border: 1px solid #333;
+	border-radius: 2px;
+	padding: 4px 0px 4px 0px;
+	position: relative;
+}
+table.Balance_List_Table td.Kaime ul li + li {
+	margin-left: 8px;
+}
+table.Balance_List_Table td.Kaime .Arrow01 li + li span:before,
+table.Balance_List_Table td.Kaime .Hyphen01 li + li span:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+table.Balance_List_Table td.Kaime .Arrow01 li + li span:before {
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #333;
+	border-right: 2px solid #333;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: 6px;
+	left: -12px;
+}
+table.Balance_List_Table td.Kaime .Hyphen01 li + li span:before {
+	width: 7px;
+	height: 2px;
+	background: #333;
+	top: 8px;
+	left: -11px;
+}
+table.Balance_List_Table td.Kaime .Btn {
+    width: 30px;
+    height: 25px;
+    background: #C4C4C4 url("../img/race/subMenu_Btn.png") no-repeat center;
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -ms-background-size: 22px 22px;
+    background-size: 22px 22px;
+    outline: none;
+    float: right;
+}
+table.Balance_List_Table td.Payout01 {
+	color: #4caf50;
+}
+table.Balance_List_Table [class*="Payout"] [class*="Result"] {
+	font-size: 85%;
+	color: #fff;
+	padding: 1px 3px;
+	border-radius: 2px;
+	position: relative;
+	top: -1px;
+}
+table.Balance_List_Table [class*="Payout"] .Result01 {
+	background: #EF5350;
+}
+table.Balance_List_Table [class*="Payout"] .Result02,
+table.Balance_Table tr.ItemList td.Result02 {
+	color: #fff;
+	background: #3B79F5;
+}
+table.Balance_List_Table [class*="Payout"] .Result03,
+table.Balance_Table tr.ItemList td.Result03 {
+	color: #fff;
+	background: #888;
+}
+
+
+/* my収支 - まとめテーブル */
+.Balance_Detail_Table {
+    padding: 2px;
+    background: #666;
+}
+table.Balance_Detail_Table tr td {
+	text-align: left;
+}
+table.Balance_Table tr.Header th {
+	text-align: center;
+}
+table.Balance_Table tr.ItemList td.Kaime {
+	width: 100px;
+    white-space: nowrap;
+}
+table.Balance_Table tr.ItemList [class*="Result"] {
+    font-size: 85%;
+    color: #fff;
+    padding: 1px 3px;
+}
+table.Balance_Table td.Kaime ul li > span {
+	font-size: 105%;
+}
+
+table.Balance_List_Table .Close_Btn {
+	background: #666 !important;
+}
+table.Balance_List_Table .Close_Btn:before {
+	content: "";
+	display: block;
+	background: url("../img/race/icon_close_mark.png") no-repeat;
+	-webkit-background-size: 17px 17px;
+	-moz-background-size: 17px 17px;
+	-ms-background-size: 17px 17px;
+	background-size: 17px 17px;
+	width: 17px;
+	height: 17px;
+	margin-top: 4px;
+	margin-left: 8px;
+}
+
+
+/* my収支 - sort */
+#ipat_history_list .sort {
+	display: inline-block;
+	font-size: 74%;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: #fff;
+	padding: 8px;
+}
+#ipat_history_list .sort:after,
+#ipat_history_list .sort.desc:after,
+#ipat_history_list .sort.asc:after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 12px;
+  margin-left: 8px;
+  position: relative;
+  top: 1px;
+}
+#ipat_history_list .sort.asc:after {
+  background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -39px -287px;
+  -webkit-background-size: 124px 300px;
+  -moz-background-size: 124px 300px;
+  -ms-background-size: 124px 300px;
+  background-size: 124px 300px;
+}
+#ipat_history_list .sort.desc:after {
+  background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -39px -225px;
+  -webkit-background-size: 124px 300px;
+  -moz-background-size: 124px 300px;
+  -ms-background-size: 124px 300px;
+  background-size: 124px 300px;
+}
+#ipat_history_list .sort:after {
+  background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -62px -210px;
+  -webkit-background-size: 124px 300px;
+  -moz-background-size: 124px 300px;
+  -ms-background-size: 124px 300px;
+  background-size: 124px 300px;
+}
+#ipat_history_list .Sort_Btn {
+	padding: 0 8px;
+	margin-bottom: 8px;
+}
+#ipat_history_list .Sort_Btn span:last-child {
+	float: right;
+}
+table.Balance_Table tr.ItemList td.Kaime .UmaBan {
+	display: inline-block;
+	width: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	border: 1px solid #858693;
+	border-radius: 3px;
+	padding: 2px 0px 2px 0px;
+	background: #fff;
+	position: relative;
+}
+table.Balance_Table tr.ItemList td.Kaime ul.Arrow01 li + li .UmaBan:before,
+table.Balance_Table tr.ItemList td.Kaime ul.Hyphen01 li + li .UmaBan:before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+
+
+/* my収支 - 収支がないとき */
+.Balance_Note {
+	margin: 12px;
+}
+.Balance_Note .Title {
+    font-size: 86%;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    /*margin-bottom: 8px;*/
+    /*border: 5px solid #fff;*/
+    background: #FFE35C;
+    line-height: 1.3;
+}
+.Balance_Note .Inner {
+
+}
+.Balance_Note .Txt {
+	font-size: 83%;
+    color: #333;
+    line-height: 1.3;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #fff;
+}
+.Balance_Note dl dt {
+	background: #FFF9D9;
+	padding: 8px;
+	border-radius: 3px 3px 0 0;
+}
+.Balance_Note dl dd {
+	background: #fff;
+	padding: 8px;
+	margin-bottom: 8px;
+	border-radius: 0 0 3px 3px;
+}
+.Balance_Note dl dt,
+.Balance_Note dl dd {
+	font-size: 83%;
+	line-height: 1.3;
+}
+
+
+/* My収支 - 削除機能 */
+.Balance_List .Delete_Btn {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid #fff;
+	box-shadow: 0 1px 1px rgba(146, 151, 165, .5);
+	background: #EF5350;
+	display: none;
+	font-size: 83%;
+	font-weight: bold;
+	float: right;
+	padding: 4px 8px;
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+.Switch_Delete_Btn {
+	display: none;
+	margin: 12px 8px 4px;
+}
+.Switch_Delete_Btn a {
+	color: #797e8c;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	font-size: 77%;
+	font-weight: bold;
+	display: block;
+	margin-right: 3px;
+	padding: 15px 0;
+	text-align: center;
+	width: 100%;
+}
+
+
+/* My収支 - （日・月・年）履歴一覧 */
+table.History_Result {
+	border-collapse: collapse;
+	border: 1px solid #a3a8b8;
+	width: 100%;
+	margin-bottom: 8px;
+}
+table.History_Result tr + tr {
+	border-top: 1px solid #a3a8b8;
+}
+table.History_Result tr th,
+table.History_Result tr td {
+	vertical-align: middle;
+}
+table.History_Result tr th.Date {
+	background: #eee;
+	border-right: 1px solid #E3E5EB;
+	color: #555;
+	font-size: 86%;
+	width: 60px;
+}
+table.History_Result tr th.Date > span {
+	display: block;
+	margin-top: 2px;
+}
+table.History_Result tr td.Result {
+	background: #fff;
+	padding: 8px;
+}
+table.History_Result td.Result li + li {
+	margin-top: 4px;
+}
+table.History_Result td.Result .Total01,
+table.History_Result td.Result .Total02 {
+	color: #4caf50;
+	font-size: 100%;
+	font-weight: bold;
+}
+table.History_Result td.Result .Total01 {
+	color: #555;
+}
+table.History_Result td.Result .Buy,
+table.History_Result td.Result .Payout {
+	font-size: 77%;
+	font-weight: bold;
+}
+table.History_Result td.Result .Total01 > span,
+table.History_Result td.Result .Total02 > span {
+	font-size: 14px;
+}
+table.History_Result td.Result .Buy > span,
+table.History_Result td.Result .Payout > span {
+	font-size: 11px;
+}
+table.History_Result td.Result > a {
+	display: block;
+	background: #fff url("../img/icon/icon_link_arrow_x2.png") no-repeat right center;
+	background-size: 21px 16px;
+	-webkit-background-size: 21px 16px;
+	-moz-background-size: 21px 16px;
+}
+
+
+/* 5走 馬番 - オッズ */
+table.Shutuba_Past5_Table tr.Cancel [class*="Waku"],
+table.Shutuba_Past5_Table tr.HorseList [class*="Waku"] {
+    font-size: 77%;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Horse_Select {
+    padding: 4px;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Horse_Info {
+    min-width: 170px;
+}
+table.Shutuba_Past5_Table tr.Header th.Odds {
+    white-space: nowrap;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info [class*="Horse"] {
+    display: table;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    font-size:100%;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse01 {
+    margin-bottom: 8px;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse01 > span {
+    display: table-cell;
+    color: #9c9fa6;
+    text-align: right;
+    width: 100%;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse02 {
+    font-size: 134%;
+    margin-bottom: 8px;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse02 > .Mark {
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    background: #111;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 2px;
+    line-height: 17px;
+    width: 17px;
+    height: 17px;
+    position: relative;
+    top: -1px;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse04 {
+    margin-bottom: 8px;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse05 {
+    margin-bottom: 6px;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse06 > img {
+    width: 71px;
+    vertical-align: middle;
+    float: left;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse06 {
+    margin-bottom: 8px;
+    line-height: 14px;
+    width: 100%;
+    text-align: right;
+}
+table.Shutuba_Past5_Table tr td.Horse_Info .Horse07 > .Popular {
+    display: table-cell;
+    width: 100%;
+    text-align: right;
+}
+table.Shutuba_Past5_Table tr td.Jockey {
+    font-size: 77%;
+    padding: 6px;
+    white-space: nowrap;
+}
+table.Shutuba_Past5_Table tr td.Jockey > a {
+    display: inline-block;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+table.Shutuba_Past5_Table tr td.Jockey span {
+    font-size: 80%;
+}
+table.Shutuba_Past5_Table tr td.Jockey .Barei {
+    display: block;
+    margin-bottom: 6px;
+}
+table.Shutuba_Past5_Table tr.Cancel td.Cancel_NoData,
+table.Shutuba_Past5_Table tr.HorseList td.Popular {
+    font-size: 94%;
+    padding: 6px;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Popular > span {
+    font-size: 76%;
+    margin-top: 4px;
+    color: #555;
+}
+
+
+/* 5走出走取消 */
+table.Shutuba_Past5_Table tr.Cancel {
+    background: #dee0e5;
+}
+table.Shutuba_Past5_Table tr.Cancel td {
+    color: #555;
+}
+table.Shutuba_Past5_Table tr.Cancel td + td {
+    border-left: 1px solid #E3E5EB;
+}
+table.Shutuba_Past5_Table tr.Cancel td.Cancel_NoData {
+	font-size: 78%;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: #9C9fa6;
+}
+
+
+/* 5走表詳細 */
+table.Shutuba_Past5_Table tr.HorseList td.Past,
+table.Shutuba_Past5_Table tr.HorseList td.Rest {
+    padding: 8px 6px;
+    white-space: nowrap;
+    background: #fff;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past > span,
+table.Shutuba_Past5_Table tr.HorseList td.Rest > span {
+    display: block;
+    text-align: left;
+    line-height: 1.3;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data01 {
+    font-size: 106%;
+    margin-bottom: 4px;
+    color:#222;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data02 {
+    font-size: 141%;
+    margin-bottom: 4px;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data03 > .Num {
+    display: inline-block;
+    background: #e3ebf0;
+    border: 1px solid #b2b2b2;
+    padding: 2px 0;
+    width: 26px;
+    text-align:center;
+    font-size: 106%;
+    font-weight:bold;
+    color:#000;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data05 > strong {
+    font-weight:bold;
+    font-size:120%;
+    color:#000;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data03,
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data04,
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data05,
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data06,
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data07 {
+    font-size: 100%;
+    margin-bottom: 7px;
+    color:#666;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data07 {
+    margin-bottom: 0;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Past .Data07 > a {
+    margin-right: 4px;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Rest {
+    line-height:1.4;
+    font-size: 86%;
+    color:#666;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Rest:first-line {
+    font-size: 116%;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+
+/* 5走　1-3着・アイコンスタイル */
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_1 .Data03 > .Num {
+    background: #FFEF84 !important;
+    border: 1px solid #CCB834 !important;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_2 .Data03 > .Num {
+    background: #D8F6FF !important;
+    border: 1px solid #6AACCE !important;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_3 .Data03 > .Num {
+    background: #FFD4D4 !important;
+    border: 1px solid #FF9494 !important;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Rest + td.Rest {min-width: 150px;}
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_1 {background: #FFFBE5;}
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_2 {background: #F5FBFF;}
+table.Shutuba_Past5_Table tr.HorseList td.Ranking_3 {background: #FFF8F8;}
+
+table.Shutuba_Past5_Table tr.HorseList td.Past .Icon_GradeType {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Horse_Info .Icon_HorseMark {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+    top: 0;
+}
+table.Shutuba_Past5_Table tr.HorseList td.Horse_Info .Icon_MaruGai {
+    position: relative;
+    top: 1px;
+}
+
+
+/* 5走表示サンプル画像 */
+.Premium_Regist_Box.Past5 {
+    position: absolute;
+    top: 600px;
+    left: 326px;
+    width: 440px;
+    margin: 0;
+}
+.Past5_Sample {
+    background: url("../img/race/past5_sample.png") no-repeat left top;
+    background-size: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -ms-background-size: 100%;
+}

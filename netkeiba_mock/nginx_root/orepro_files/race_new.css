@@ -1,0 +1,6429 @@
+@charset "euc-jp";
+
+/*==============================================
+【レース情報】 race_new.css
+==============================================*/
+
+/*
+ *　レース情報　予想ページ
+ *　ウマい馬券強化スタイル
+　*/
+
+/* 一時的に消去 */
+.Yoso_HonshiBox_01,
+.Yosoka_RankingList {
+    display: none;
+}
+
+
+/* 厳選予想table */
+.Gensen_YosoHit div:before {
+    content: '';
+    background: url("../img/race/gensen_hit_flag.png") no-repeat;
+    -webkit-background-size: 38px 20px;
+    -moz-background-size: 38px 20px;
+    background-size: 38px 20px;
+    width: 36px;
+    height: 20px;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+}
+.Gensen_Name_Th {
+    padding: 0 !important;
+    background: url("../img/race/gensen_name_bg.png") no-repeat !important;
+}
+.Gensen_Name_Th a {
+    color: #d5524f;
+}
+.Gensen_YosoPurchased a {
+    background: #f5d0d0 !important;
+}
+.Gensen_Name_Th_Hit a {
+    background: #f5d0d0 !important;
+}
+.Gensen_Name_Th div {
+    position: relative;
+}
+.Gensen_Name_Th div img {
+    vertical-align: bottom;
+}
+
+/* cellの色 */
+.Gensen_Mark_Pro {
+    background: #fff5cc !important;
+}
+.Gensen_Mark_Pro_Hit {
+    background: #f8e3e3 !important;
+}
+
+.Gensen_Info01 {
+    display: inline-block;
+    background: url('../img/race/gensen_mark_mosaic01.png') repeat-y;
+    -webkit-background-size: 38px 575px;
+    -moz-background-size: 38px 575px;
+    background-size: 38px 575px;
+    width: 38px;
+    position: absolute;
+    z-index: 49;
+}
+.Gensen_Info01:before {
+    content: '';
+    background: url("../img/race/gensen_td_text01.png") no-repeat;
+    -webkit-background-size: 28px 169px;
+    -moz-background-size: 28px 169px;
+    background-size: 28px 169px;
+    width: 28px;
+    height: 169px;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+}
+
+
+/* 本紙の見解 */
+.HonshiBox {
+    background: #e2e0d8;
+    padding: 10px;
+}
+.HonshiBox .InnerBox {
+    background: #fff;
+    border-radius: 2px;
+    padding: 18px 18px 22px;
+}
+.HonshiBox .InnerBox .HeadTitle {
+    font-size: 111%;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-left: 35px;
+    position: relative;
+}
+.HonshiBox .InnerBox .HeadTitle:before {
+    content: '';
+    background: url("../img/icon/icon_hand02.png") no-repeat;
+    -webkit-background-size: 31px 20px;
+    -moz-background-size: 31px 20px;
+    background-size: 31px 20px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 31px;
+    height: 20px;
+}
+.HonshiBox .InnerBox .Detail {
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+.HonshiBox .InnerBox .Detail_All {
+    line-height: 1.5;
+}
+.HonshiBox .InnerBox .Detail_All > a {
+	display: block;
+    line-height: 1.5;
+}
+.HonshiMoreBtn {
+    display: block;
+    background: #ececec;
+    border-radius: 2px;
+    color: #a5abaf;
+    font-size: 77%;
+    text-align: center;
+    padding: 14px 0;
+}
+.HonshiMoreBtn span {
+    position: relative;
+}
+.HonshiMoreBtn span:before {
+    content: '';
+    background: url("../img/icon/icon_open02.png") no-repeat;
+    -webkit-background-size: 13px 13px;
+    -moz-background-size: 13px 13px;
+    background-size: 13px 13px;
+    position: absolute;
+    top: 1px;
+    left: -18px;
+    width: 13px;
+    height: 13px;
+}
+#Honshi_Txt02 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+/* プロ予想家の見解一覧 */
+.GensenResultBlock_Wrap {
+    padding: 10px 10px 0;
+}
+.GensenResultBlock + .GensenResultBlock {
+    margin-top: 12px;
+}
+.GensenResultInner {
+    background: #fff;
+    border-radius: 2px;
+    padding: 8px;
+}
+.YosokaResult {
+    display: table;
+    background: #f5f4f1;
+    padding: 8px;
+    width: 100%;
+}
+.YosokaResult .ThumbBox,
+.YosokaResult .DetailBox {
+    display: table-cell;
+    vertical-align: middle;
+}
+.YosokaResult .ThumbBox {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #333;
+    border-radius: 4px;
+    position: relative;
+    width: 53px;
+    height: 53px;
+}
+.YosokaResult .ThumbBox img {
+    display: block;
+    border-radius: 4px;
+    margin: 0 auto;
+    vertical-align: bottom;
+}
+.YosokaResult .ThumbBox .ContentsName {
+    display: inline-block;
+    font-size: 61.1%;
+    font-weight: bold;
+    background: #333;
+    border-radius: 0 0 2px 2px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5px;
+    padding: 4px 0 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.YosokaResult .ThumbBox.No1 {
+    border: 1px solid #506bc3;
+}
+.YosokaResult .ThumbBox.No1 .ContentsName {
+    background: #506bc3;
+}
+.YosokaResult .ThumbBox.Gensen {
+    border: 1px solid #d5524f;
+}
+.YosokaResult .ThumbBox.Gensen .ContentsName {
+    background: #d5524f;
+}
+
+.YosokaResult .DetailBox {
+    padding-left: 10px;
+}
+.YosokaResult .DetailBox dt {
+    font-size: 116%;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+.YosokaResult .DetailBox dd {
+    font-size: 83%;
+    height: 16px;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.YosokaResult .DetailBox dd > strong {
+    color: #d5524f;
+}
+
+.YosoBtnArea {
+    padding: 12px 6px;
+}
+.LinkYosoBtn {
+    display: block;
+    border-radius: 4px;
+    background: #f4e7c8;
+    box-shadow: inset 0 -1px 0 #d2c6a9;
+    color: #333;
+    font-size: 77%;
+    padding: 15px 0;
+    text-align: center;
+}
+.LinkYosoBtn span {
+    position: relative;
+}
+
+.GensenResultBlock_Footer {
+    margin-top: 15px;
+    padding: 0 8px;
+}
+.GensenResultBlock_Footer .Note {
+    color: #807f79;
+    font-size: 77%;
+    line-height: 1.4;
+}
+.GensenResultBlock_Footer .Note a {
+    border-bottom: 1px solid #807f79;
+    color: #807f79;
+}
+.GensenResultBlock_Footer .LinkMoreButton {
+    margin-bottom: 10px;
+}
+.LinkMoreButton {
+    display: block;
+    border-radius: 3px;
+    background: #dedede;
+    box-shadow: inset 0 -1px 0 #bfbfbf;
+    color: #333;
+    font-size: 77%;
+    padding: 21px 0;
+    text-align: center;
+}
+
+
+/* 購入済み */
+.GensenResultBlock.Purchas .LinkYosoBtn {
+    background: #ecb326;
+    box-shadow: inset 0 -1px 0 #ce9200;
+    color: #fff;
+}
+
+
+/* 的中 */
+.GensenResultBlock.Hit {
+    position: relative;
+}
+.GensenResultBlock.Hit:after {
+    content: '';
+    display: inline-block;
+    background: url("../img/race/stamp_hit.png") no-repeat;
+    -webkit-background-size: 65px 65px;
+    -moz-background-size: 65px 65px;
+    background-size: 65px 65px;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+.GensenResultBlock.Hit dl dd {
+	font-weight: bold;
+}
+.GensenResultBlock.Hit .GensenResultInner {
+    background: url("../img/race/Bg_YosokaHit.png") center;
+}
+.GensenResultBlock.Hit .YosokaResult {
+    border-radius: 2px 2px 0 0
+}
+.GensenResultBlock.Hit .YosoBtnArea {
+    padding: 0;
+}
+.GensenResultBlock.Hit .YosoBtnArea .LinkYosoBtn {
+    border-radius: 0 0 2px 2px;
+    box-shadow: none;
+    color: #8a8881;
+    font-weight: bold;
+}
+.GensenResultBlock.Hit .YosoBtnArea .LinkYosoBtn span:after {
+    content: '';
+    border-style: solid;
+    border-width: 3px 0 3px 5px;
+    border-color: transparent transparent transparent #8a8881;
+    right: 20px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 4px;
+    right: -12px;
+}
+
+
+/* プロ予想メニュー */
+.ProYosoMenu {
+    padding: 8px 8px 10px 8px;
+}
+.ProYosoMenu ul li + li {
+    margin-top: 6px;
+}
+.ProYosoMenu ul a {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(146, 151, 165, .6);
+    display: table;
+    width: 100%;
+}
+.ProYosoMenu ul a .MenuImgBox,
+.ProYosoMenu ul a .TxtBox {
+    display: table-cell;
+    vertical-align: middle;
+}
+.ProYosoMenu ul a .MenuImgBox {
+    width: 92px;
+}
+.ProYosoMenu ul a .MenuImgBox .Thumb {
+    vertical-align: bottom;
+}
+.ProYosoMenu ul a .TxtBox {
+    padding: 18px;
+}
+.ProYosoMenu ul a .TxtBox .MenuTitle {
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+.ProYosoMenu ul a .TxtBox .SubTxt {
+    color: #9d9d9d;
+    font-size: 83%;
+}
+
+
+/* あなたの厳選保有ポイント */
+.MyPointDataBox {
+    padding: 12px;
+    margin: 0 8px 8px;
+    border: 4px solid #d9d5c9;
+    border-radius: 3px;
+    background: #fff;
+    text-align: center;
+}
+.MyPointDataBox h2.MyPointAreaTitle {
+    display: inline-block;
+    font-size: 72.3%;
+    font-weight: normal;
+    line-height: 1.7;
+}
+.MyPointDataBox p {
+    display: inline-block;
+    font-size: 127.8%;
+    font-weight: bold;
+    color: #55a78e;
+}
+.MyPointDataBox p > span.PointTxt01 {
+    font-size: 65.2%;
+}
+.MyPointDataBox .PointAddBtn01 {
+    margin-top: 12px;
+}
+.YosoBtn01 {
+    display: block;
+    background: #e5a221;
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #eeb72d), color-stop(1, #dfa300) );
+    background-image: -o-linear-gradient(bottom, #eeb72d 0%, #dfa300 100%);
+    background-image: -moz-linear-gradient(bottom, #eeb72d 0%, #dfa300 100%);
+    background-image: -webkit-linear-gradient(bottom, #eeb72d 0%, #dfa300 100%);
+    background-image: -ms-linear-gradient(bottom, #eeb72d 0%, #dfa300 100%);
+    background-image: linear-gradient(to bottom, #eeb72d 0%, #dfa300 100%);
+    box-shadow: 0 3px 0 rgba(212, 146, 21, 1), inset 0 -1px rgba(231, 188, 85, 1);
+    color: #fff;
+    padding: 15px 0 14px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 80%;
+    border-radius: 5px;
+    margin: auto;
+}
+
+
+/* ウマい馬券リンク */
+.UmaibakenLinkArea {
+    background: #DCDCDC;
+    padding: 0px 8px 8px;
+    text-align: right;
+}
+.UmaibakenLink {
+    display: inline-block;
+    font-size: 74%;
+    font-weight: bold;
+    text-align: center;
+    background: #EFEFEF;
+    border-radius: 3px;
+    /*box-shadow: 0 0 6px rgba(146, 151, 165, .7);
+    color: #707070;*/
+    padding: 3px 12px 12px;
+    position: relative;
+}
+.UmaibakenLink.v2 {
+	background: #d5524f;
+	color: #fff;
+    box-shadow: 0px 2px 0px #a03a37;
+    -moz-box-shadow: 0px 2px 0px #a03a37;
+    -webkit-box-shadow: 0px 2px 0px #a03a37;
+}
+
+.UmaibakenLink.v2 img:first-child{
+	margin-right:5px;
+	margin-bottom:-10px;}
+
+.UmaibakenLink.v2 img:last-child{
+	margin-left:5px;
+	margin-bottom:2px;}
+
+/* ピンチイン・アウト */
+.ios .fixed {
+    position: static;
+}
+
+
+/* アプリ調整用 */
+body[id^="Netkeiba_Race"] .Contents {
+	min-height:400px;
+}
+
+
+/* gif-loader */
+.FileLoader02 {
+	background: #dcdcdc;
+	text-align: center;
+	padding: 8px;
+	width: 100%;
+}
+.FileLoader02 > div {
+	background: #fff;
+	border-radius: 3px;
+	padding: 5px;
+}
+.FileLoader02 img{
+	display:inline;
+	vertical-align: middle;
+}
+
+
+/* プレミアム導線 */
+.Premium_Regist_Box {
+	border: 5px solid #ddd;
+	background: #fff;
+	margin: 12px 14px;
+	padding: 18px 12px 0;
+}
+.Premium_Regist_Msg {
+	font-weight: bold;
+	line-height: 1.3;
+	text-align: center;
+	margin-bottom: 15px;
+}
+.Premium_Regist_Btn {
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	background: #00C0FF;
+	box-shadow: 0 3px 0 #0A8FB1;
+	padding: 15px 0;
+}
+.Premium_Regist_Txt02 {
+	line-height: 1.3;
+	font-size: 80%;
+	color: #3159B9;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.Premium_Regist_Note {
+	color: #666;
+	font-size: 78%;
+	line-height: 1.3;
+	margin: -4px 16px 18px;
+}
+
+
+/* 馬名アイコンマーク */
+.Icon_HorseMark {
+	display: inline-block;
+	background: url("../img/icon/icon_horse_mark.png") no-repeat;
+	background-size: 25px 250px;
+	-moz-background-size: 25px 250px;
+	-webkit-background-size: 25px 250px;
+	-ms-background-size: 25px 250px;
+	width: 17px;
+	height: 17px;
+	margin-bottom: -2px;
+}
+.Icon_Chusen {background-position: -4px -23px;}
+.Icon_MaruChichi {background-position: -4px -3px;}
+.Icon_MaruIchi {background-position: -4px -43px;}
+.Icon_MaruChi {background-position: -4px -63px;}
+.Icon_MaruGai {background-position: -4px -103px;}
+.Icon_kakuChi {background-position: -4px -83px;}
+.Icon_KakuGai {background-position: -4px -122px;}
+
+
+/* race_new_icon */
+.Icon_Sprite_Nk {
+	display: block;
+	background-image: url('../img/icon/icon_sprite_nk02.png?20190116');
+	background-repeat: no-repeat;
+	-webkit-background-size: 236px 2000px;
+	-moz-background-size: 236px 2000px;
+	-ms-background-size: 236px 2000px;
+	background-size: 236px 2000px;
+}
+
+.RaceInfo_Navi .RaceInfo_Tab span.Icon_Sprite_Nk {
+	width: 32px;
+	height: 28px;
+	margin: 0 auto 6px;
+}
+
+.RaceSubMenu .RaceMenuList span.Icon_Sprite_Nk {
+	width: 40px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.Race_CategoryMenu span.Icon_Sprite_Nk {
+  width: 40px;
+  height: 30px;
+  margin: 0 auto 6px;
+}
+
+.Top_RaceMenu ul span.Icon_Sprite_Nk {
+	width: 42px;
+	height: 35px;
+	margin: 0 auto 8px;
+}
+
+/* 出馬表 */
+.Icon_RaceInfo01 {background-position: -110px -10px;}
+.Tab_Active .Icon_RaceInfo01 {background-position: -59px -10px;}
+.RaceSubMenu .Icon_RaceInfo01 {background-position: -104px -9px;}
+
+/* 予想 */
+.Icon_RaceInfo02 {background-position: -108px -60px;}
+.Tab_Active .Icon_RaceInfo02 {background-position: -59px -60px;}
+.RaceSubMenu .Icon_RaceInfo02 {background-position: -104px -59px;}
+
+/* オッズ */
+.Icon_RaceInfo03 {background-position: -109px -109px;}
+.Tab_Active .Icon_RaceInfo03 {background-position: -60px -108px;}
+.RaceSubMenu .Icon_RaceInfo03 {background-position: -104px -108px;}
+
+/* ipat */
+.Icon_RaceInfo04 {background-position: -10px -159px;}
+
+/* 結果払戻 */
+.Icon_RaceInfo05 {background-position: -108px -209px;}
+.Tab_Active .Icon_RaceInfo05 {background-position: -60px -209px;}
+.RaceSubMenu .Icon_RaceInfo05 {background-position: -108px -209px;}
+
+/* その他 */
+.Icon_RaceInfo06 {background-position: -11px -257px;}
+.Tab_Active .Icon_RaceInfo06 {background-position: -60px -257px;}
+
+/*　馬券分析 */
+.Icon_RaceInfo07 {background-position: -1px -306px; width: 58px !important;}
+
+/*　厩舎コメント */
+.Icon_RaceInfo08 {background-position: -5px -404px;}
+
+/*　調教タイム */
+.Icon_RaceInfo09 {background-position: -5px -356px;}
+
+/*　タイム指数 */
+.Icon_RaceInfo10 {background-position: -5px -504px;}
+
+/*　血統分析 */
+.Icon_RaceInfo11 {background-position: -5px -454px;}
+
+/*　特集 */
+.Icon_RaceInfo12 {background-position: -5px -603px;}
+.No_Link .Icon_RaceInfo12 {background-position: -54px -603px;}
+
+/*　映像 */
+.Icon_RaceInfo13 {background-position: -0px -554px;width: 50px !important;}
+.No_Link .Icon_RaceInfo13 {background-position: -53px -554px;width: 50px !important;}
+
+/*　掲示板 */
+.Icon_RaceInfo14 {background-position: -5px -654px;}
+
+/*　レース傾向 */
+.Icon_RaceInfo15 {background-position: -57px -857px;}
+
+/* ipat */
+.Icon_RaceInfo16 {background-position: -104px -158px;}
+.No_Link .Icon_RaceInfo16 {background-position: -153px -10px;}
+
+/*　レース傾向 */
+.Icon_RaceInfo17 {background-position: -6px -850px;}
+
+/*　予想 */
+.Icon_RaceInfo18 {background-position: -104px -59px;}
+
+/*　win5 */
+.Icon_RaceInfo19 {background-position: -56px -703px;}
+
+/*　結果払戻 */
+.Icon_RaceInfo20 {background-position: -54px -803px;}
+
+/*　騎乗騎手一覧 */
+.Icon_RaceInfo21 {background-position: -54px -901px;}
+
+/*　お気に入り馬 */
+.Icon_RaceInfo22 {background-position: -57px -1029px;}
+
+/* 重賞日程 */
+.Icon_RaceInfo23 {background-position: -58px -971px;}
+
+/*　開催一覧 */
+.Icon_RaceInfo24 {background-position: -58px -756px;}
+
+/*　変更情報 */
+.Icon_RaceInfo25 {background-position: -10px -1228px;}
+
+/*　馬券リスト */
+.Icon_RaceInfo27 {background-position: -58px -1136px;}
+
+/*　収支 */
+.Top_RaceMenu .Icon_RaceInfo28 {background-position: -4px -1096px;}
+.RaceUseful_Menu .Icon_RaceInfo28 {background-position: -7px -1097px;}
+
+/* 投票内容照会 */
+.Top_RaceMenu .Icon_RaceInfo29 {background-position: -6px -1195px; width: 72px !important;}
+.RaceUseful_Menu .Icon_RaceInfo29 {background-position: -6px -1195px; width: 72px !important;}
+
+/* 騎乗停止情報 */
+.Top_RaceMenu .Icon_RaceInfo30 {background-position: -53px -1541px;}
+.RaceUseful_Menu .Icon_RaceInfo30 {background-position: -53px -1541px; width: 42px !important;}
+
+/* 変更情報 */
+.Top_RaceMenu .Icon_RaceInfo31 {background-position: -53px -1492px;}
+.RaceUseful_Menu .Icon_RaceInfo31 {background-position: -57px -1493px;}
+
+/* オッズ・購入 */
+.Icon_RaceInfo32_1 {background-position: -9px -1595px;}
+.Tab_Active .Icon_RaceInfo32_1 {background-position: -60px -108px;}
+
+.Icon_RaceInfo32_2 {background-position: -11px -1643px;}
+.Tab_Active .Icon_RaceInfo32_2 {background-position: -60px -108px;}
+
+.Icon_RaceInfo32_3 {background-position: -10px -1694px;}
+.Tab_Active .Icon_RaceInfo32_3 {background-position: -60px -1694px;}
+.RaceSubMenu .Icon_RaceInfo32_3 {background-position: -5px -1693px;}
+.Shutuba_Form_Footer .Icon_RaceInfo32_3 {
+	display: inline-block;
+    width: 32px;
+    height: 28px;
+    background-position: -109px -1694px;
+    margin-left: 8px;
+    position: absolute;
+    top: 9px;
+}
+/* 馬路メーター */
+.Icon_RaceInfo35 {
+    background-position: -61px -1803px;
+	width: 31px !important;
+}
+/* 競馬新聞 */
+.Icon_RaceInfo36 {
+    background-position: -106px -1803px;
+    width: 31px !important;
+}
+/* うまい */
+.Icon_RaceInfo37 {
+    background-position: -144px -1803px;
+    width: 58px !important;
+}
+
+
+/* icon */
+.Icon_RaceInfo {
+	display: block;
+	background-image: url('../img/icon/icon_sprite_raceinfo.png');
+	background-repeat: no-repeat;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+
+
+/* netkeiba_top_nemu_icon */
+.Icon_Nk {
+	display: block;
+	background-image: url('../img/icon/icon_sprite_nk02.png?20190116');
+	background-repeat: no-repeat;
+	-webkit-background-size: 236px 2000px;
+	-moz-background-size: 236px 2000px;
+	-ms-background-size: 236px 2000px;
+	background-size: 236px 2000px;
+	width: 42px;
+	height: 35px;
+	margin: 0 auto 8px;
+}
+/*-- 開催一覧 --*/
+.Icon_Nk_07 {background-position: -5px -746px;}
+
+/*-- 結果・払戻 --*/
+.Icon_Nk_08 {background-position: -4px -797px;}
+
+/*-- 予想 --*/
+.Icon_Nk_09 {background-position: -3px -947px;}
+
+/*-- win5 --*/
+.Icon_Nk_10 {background-position: -4px -698px;}
+
+/*-- レース傾向 --*/
+.Icon_Nk_11 {background-position: -4px -847px;}
+
+/*-- 騎乗騎手/出走馬 --*/
+.Icon_Nk_12 {background-position: -4px -897px;}
+
+/*-- レースから選ぶ --*/
+.Icon_Nk_13 {background-position: -5px -472px;}
+
+/*-- 予想家から選ぶ --*/
+.Icon_Nk_14 {background-position: -5px -513px;}
+
+/*-- 的中結果から選ぶ --*/
+.Icon_Nk_15 {background-position: -3px -559px;}
+
+/*-- あなたの登録馬 --*/
+.Icon_Nk_16 {background-position: -6px -1044px;}
+
+/*-- 登録馬の出走情報 --*/
+.Icon_Nk_17 {background-position: -4px -646px;}
+
+/*-- 追加・登録 --*/
+.Icon_Nk_18 {background-position: -2px -689px;}
+
+/*-- あなたの登録馬 --*/
+.Icon_Nk_19 {background-position: -4px -995px;}
+
+/*-- 出馬表 --*/
+.Icon_Nk_20 {background-position: -153px -4px;}
+
+
+/* 重賞アイコン */
+.Icon_GradeType {
+	display: inline-block;
+	background: url("../img/icon/icon_gradetype.png?20190529");
+	background-repeat: no-repeat;
+	-webkit-background-size: 40px auto;
+	-moz-background-size: 40px auto;
+	-ms-background-size: 40px auto;
+	background-size: 40px auto;
+	width: 40px;
+	height: 18px;
+}
+.Icon_GradeType1 {background-position: 0 0;}
+.Icon_GradeType2 {background-position: 0 -18px;}
+.Icon_GradeType3 {background-position: 0 -36px;}
+.Icon_GradeType4 {background-position: 0 -54px;}
+.Icon_GradeType5 {background-position: 0 -72px;}
+.Icon_GradeType6 {background-position: 0 -89px;}
+.Icon_GradeType7 {background-position: 0 -107px;}
+.Icon_GradeType8 {background-position: 0 -124px;}
+.Icon_GradeType9 {background-position: 0 -142px;}
+.Icon_GradeType10 {background-position: 0 -159px;}
+.Icon_GradeType11 {background-position: 0 -177px;}
+.Icon_GradeType12 {background-position: 0 -194px;}
+.Icon_GradeType13 {background-position: 0 -212px;}
+.Icon_GradeType14 {background-position: 0 -229px;}
+.Icon_GradeType15 {background-position: 0 -248px;}
+.Icon_GradeType16 {background-position: 0 -299px;}
+.Icon_GradeType17 {background-position: 0 -282px;}
+.Icon_GradeType18 {background-position: 0 -264px;}
+
+.Icon_GradePos01 {
+	position: relative;
+	top: 1px;
+	left: 0;
+}
+.Icon_GradePos02 {
+	position: relative;
+	top: -2px;
+	left: 2px;
+}
+
+
+/* スマホアプリ */
+.Icon_App {
+	display: inline-block;
+	width: 84px;
+	height: 84px;
+	background-image: url(../img/common/img_nktop_01.png);
+	background-repeat: no-repeat;
+	background-size: 600px 300px;
+	-moz-background-size: 600px 300px;
+	-webkit-background-size: 600px 300px;
+	-ms-background-size: 600px 300px;
+	border-radius: 8px;
+}
+.Icon_AppBaken {background-position: -180px 0px;}
+.Icon_CS {background-position: 0px 0px;}
+
+
+/* ソートアイコン */
+.RaceOdds_Result_Table02 .Sort_Btn01 .sort,
+.Type_Detail_Table .Sort_Btn01 .sort {
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background: #fff;
+	padding: 5px 30px;
+}
+.Type_Detail_Table .Sort_Btn01 .sort {
+	padding: 5px 26px;
+}
+.RaceOdds_Result_Table02 .Sort_Btn02 .sort,
+.Type_Detail_Table .Sort_Btn02 .sort {
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 5px;
+}
+.RaceOdds_Result_Table02 .sort:after,
+.RaceOdds_Result_Table02 .sort.desc:after,
+.RaceOdds_Result_Table02 .sort.asc:after,
+.Type_Detail_Table .sort:after,
+.Type_Detail_Table .sort.desc:after,
+.Type_Detail_Table .sort.asc:after {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 12px;
+	margin-left: 8px;
+	position: relative;
+	top: 1px;
+}
+.RaceOdds_Result_Table02 .sort:after,
+.Type_Detail_Table .sort:after {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -62px -210px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceOdds_Result_Table02 .sort.desc:after,
+.Type_Detail_Table .sort.desc:after {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -39px -225px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceOdds_Result_Table02 .sort.asc:after,
+.Type_Detail_Table .sort.asc:after {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -39px -287px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+
+
+/* 天気icon */
+.Icon_Weather {
+	display: inline-block;
+	background: url("../img/icon/icon_weather.png") no-repeat;
+	-webkit-background-size: 37px 133px;
+	-moz-background-size: 37px 133px;
+	-ms-background-size: 37px 133px;
+	background-size: 37px 133px;
+	position: absolute;
+	top: -3px;
+	margin-left: 3px;
+	width: 18px;
+	height: 18px;
+}
+.Weather01 {background-position: -10px -9px;}
+.Weather02 {background-position: -10px -41px;}
+.Weather03 {background-position: -10px -73px;}
+.Weather04 {background-position: -10px -107px;}
+
+
+/* 人気アイコン */
+.Maru {
+	display: inline-block;
+	width: 27px;
+	height: 18px;
+	background: url("../img/icon/icon_tendency_ninki.png");
+	background-repeat: no-repeat;
+	-moz-background-size: 50px 400px;
+	-webkit-background-size: 50px 400px;
+	background-size: 50px 400px;
+}
+.Maru_1{background-position:0 0 !important;}
+.Maru_2{background-position:0 -40px !important;}
+.Maru_3{background-position:0 -80px !important;}
+.Maru_4{background-position:0 -120px !important;}
+.Maru_5{background-position:0 -160px !important;}
+.Maru_6{background-position:0 -200px !important;}
+.Maru_7{background-position:0 -240px !important;}
+.Maru_8{background-position:0 -280px !important;}
+.Maru_9{background-position:0 -320px !important;}
+.Maru_10{background-position:0 -360px !important;}
+.Maru_11{background-position:-25px -20px !important;}
+.Maru_12{background-position:-25px -60px !important;}
+.Maru_13{background-position:-25px -100px !important;}
+.Maru_14{background-position:-25px -140px !important;}
+.Maru_15{background-position:-25px -180px !important;}
+.Maru_16{background-position:-25px -220px !important;}
+.Maru_17{background-position:-25px -260px !important;}
+.Maru_18{background-position:-25px -300px !important;}
+.Maru_19{background-position:-25px -340px !important;}
+.Maru_20{background-position:-25px -380px !important;}
+
+
+/*　text-style　*/
+.Inner_Txt01 {
+	padding: 8px;
+	font-size: 88%;
+	line-height: 1.3;
+	color: #333;
+}
+.Inner_Txt02 {
+	padding: 8px;
+	font-size: 88%;
+	line-height: 1.3;
+	color: #f20;
+}
+
+
+/* 背景色 */
+.Bg01 {background: #fff;}
+
+
+/* 調整用class */
+.p08 {padding: 8px !important;}
+.p12_08 {padding: 12px 8px !important;}
+.Norwrap {white-space: nowrap;}
+
+
+/* LinkBtn */
+.LinkBtn_04 a {
+	display: block;
+	width: 100%;
+	color: #999;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 4px;
+	border: 2px solid #bfbfbf;
+	margin-bottom: 10px;
+}
+.LinkBtn_05 a {
+	display: block;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	color: #555;
+	background: #fff;
+	line-height: 1.2;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	position: relative;
+}
+
+
+/* リンクリストボタン */
+.List_Btn_Box {
+    margin: 8px;
+}
+.List_Btn_Box li + li {
+    margin-top: 3px;
+}
+.List_Btn_Box li a {
+    display: block;
+    padding: 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	background: #fff;
+}
+.List_Btn_Box dl .Link_Title {
+	font-size: 88%;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+.List_Btn_Box dl .Sub_Txt {
+    font-size: 83%;
+    font-weight: bold;
+}
+
+
+/* pager */
+.Common_Pager_Type2 {
+    position: relative;
+    padding: 20px 8px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+}
+.Common_Pager_Type2 p.Page_Info {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 16em;
+    margin-left: -8em;
+    text-align: center;
+    font-size: .7em;
+    color: #777;
+}
+.Common_Pager_Type2 ul.Pager_Arrow {
+    z-index: 100;
+    position: relative;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li.Prev_Page {
+    float: left;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li.Next_Page {
+    float: right;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li.Prev_Page a {
+    padding: 12px 12px 12px 8px;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li.Next_Page a {
+    padding: 12px 8px 12px 12px;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li a {
+    display: block;
+    color: #111;
+    font-size: .7em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: white 0px 1px 0px;
+    border: 1px solid #d7d8d9;
+    border-radius: 4px;
+    background: #f1f2f3;
+    background-image: -moz-linear-gradient(top, #f7f8f9, #f1f2f3);
+    background-image: -webkit-gradient(linear,left top,left bottom, from(#f7f8f9), to(#f1f2f3) );
+    background-image: linear-gradient(to bottom, #f7f8f9, #f1f2f3);
+    border: 1px solid #d7d8d9;
+}
+.Common_Pager_Type2 ul.Pager_Arrow li.Prev_None a {}
+.Common_Pager_Type2 ul.Page_Link {
+    display: table;
+    margin: 8px auto 0 auto;
+}
+.Common_Pager_Type2 ul.Page_Link li:first-child {
+    border-top-left-radius: 4px 4px;
+    border-bottom-left-radius: 4px 4px;
+}
+.Common_Pager_Type2 ul.Page_Link li:last-child {
+    width: 80px;
+    border-right: 1px solid #d7d8d9;
+    border-bottom-right-radius: 4px 4px;
+    border-top-right-radius: 4px 4px;
+}
+.Common_Pager_Type2 ul.Page_Link li {
+    display: table-cell;
+    width: 42px;
+    text-align: center;
+    font-size: .8em;
+    border-top: 1px solid #d7d8d9;
+    border-left: 1px solid #d7d8d9;
+    border-bottom: 1px solid #d7d8d9;
+    background: #f1f2f3;
+    background-image: -moz-linear-gradient(top, #f7f8f9, #f1f2f3);
+    background-image: -o-linear-gradient(top, #f7f8f9, #f1f2f3);
+    background-image: -webkit-gradient(linear,left top,left bottom, from(#f7f8f9), to(#f1f2f3) );
+    background-image: linear-gradient(to bottom, #f7f8f9, #f1f2f3);
+}
+.Common_Pager_Type2 ul.Page_Link li {
+    display: table-cell;
+    width: 42px;
+    text-align: center;
+    font-size: .8em;
+    border-top: 1px solid #d7d8d9;
+    border-left: 1px solid #d7d8d9;
+    border-bottom: 1px solid #d7d8d9;
+    background: #f1f2f3;
+    background-image: -moz-linear-gradient(top, #f7f8f9, #f1f2f3);
+    background-image: -o-linear-gradient(top, #f7f8f9, #f1f2f3);
+    background-image: -webkit-gradient(linear,left top,left bottom, from(#f7f8f9), to(#f1f2f3) );
+    background-image: linear-gradient(to bottom, #f7f8f9, #f1f2f3);
+}
+.Common_Pager_Type2 ul.Page_Link li.Page_Active {
+    padding: 12px 8px;
+    color: #fff !important;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+    text-shadow: #27436e 0px -1px 0px;
+    background: #7aa5fe;
+    background-image: -moz-linear-gradient(top, #96b8ff 0, #7aa5fe 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0 ,#96b8ff), color-stop(0.5 , #7aa5fe) );
+    background-image: linear-gradient(to bottom, #96b8ff 0, #7aa5fe 50%);
+    border: 1px solid #7aa5fe;
+}
+.Common_Pager_Type2 ul.Page_Link li a {
+    display: block;
+    padding: 12px 8px;
+    color: #000;
+}
+
+
+/* 共通tabスタイル */
+[class*="Common_Tab_Type"] ul {
+  box-shadow: 0 0 8px rgba(146, 151, 165, .5);
+  border-radius: 3px;
+}
+.Common_Tab_Type2:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #4150b2;
+}
+.Common_Tab_Type1:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #1F5DC3;
+}
+[class*="Common_Tab_Type"] .Inner {
+    padding: 8px 8px 0;
+}
+[class*="Common_Tab_Type"] ul.Col1 li .Tab_Active {
+	border-radius: 3px 3px 0 0;
+}
+[class*="Common_Tab_Type"] ul.Col4 li {
+	float: left;
+	width: 25%;
+}
+[class*="Common_Tab_Type"] ul a,
+[class*="Common_Tab_Type"] ul div {
+    display: block;
+    font-size: 86%;
+    font-weight: bold;
+    color: #5f5f5f;
+    background: #fff;
+    text-align: center;
+    padding: 14px 0;
+}
+[class*="Common_Tab_Type"] ul li:first-child a,
+[class*="Common_Tab_Type"] ul li:first-child div {
+    border-radius: 3px 0 0 0;
+}
+[class*="Common_Tab_Type"] ul li:last-child a,
+[class*="Common_Tab_Type"] ul li:last-child div {
+    border-radius: 0 3px 0 0;
+}
+[class*="Common_Tab_Type"] .Tab_Active {
+    color: #fff;
+    background: #3178e1;
+    background: -moz-linear-gradient(top, #3178e1 0%, #1f5dc3 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3178e1), color-stop(100%,#1f5dc3));
+    background: -webkit-linear-gradient(top, #3178e1 0%,#1f5dc3 100%);
+    background: -ms-linear-gradient(top, #3178e1 0%,#1f5dc3 100%);
+    background: linear-gradient(to bottom, #3178e1 0%,#1f5dc3 100%);
+    box-shadow: 0 1px 2px rgba(255,255,255,.5) inset;
+}
+[class*="Common_Tab_Type"] div.Tab_Active {
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+}
+[class*="Common_Tab_Type"] .Tab_Active span.Sat {
+    color: #9ACFFF;
+}
+[class*="Common_Tab_Type"] ul li + li a,
+[class*="Common_Tab_Type"] ul li + li div{
+  border-left: 1px solid #ccc;
+}
+
+
+/*==============================================
+main_column
+==============================================*/
+
+/*　レース名box　*/
+.RaceList_NameBox {
+	background: #fff;
+	border-bottom: 1px solid #bbb;
+}
+.RaceList_NameBox > a {
+	display: table;
+	width: 100%;
+	padding: 8px 20px 8px 8px;
+	position: relative;
+}
+.RaceList_NameBox [class*="Icon_Arrow"] {
+	width: 22px;
+	height: 12px;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -6px;
+}
+.RaceList_NameBox .Icon_ArrowB {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -36px -44px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceList_NameBox .Icon_ArrowT {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -36px -59px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceList_NameBox .RaceList_Item01 {
+	width: 52px;
+}
+.RaceList_NameBox .RaceList_Item01,
+.RaceList_NameBox .RaceList_Item02 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.RaceList_NameBox .RaceList_Item01 .Race_Num {
+	display: inline-block;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background: #4150b2;
+	width: 46px;
+	padding: 15px 0;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+.RaceList_NameBox .RaceList_Item02 dl .Race_Name {
+	color: #555;
+	font-size: 110%;
+	font-weight: bold;
+	margin-bottom: 6px;
+	/*line-height: 1.2;*/
+	white-space: nowrap;
+}
+.RaceList_NameBox .RaceList_Item02 dl .Race_Data {
+	color: #555;
+	font-size: 74%;
+	position: relative;
+}
+.RaceList_NameBox .RaceList_Item02 dl .Race_Data > .Turf {
+	color: #66bb6a;
+}
+.RaceList_NameBox .RaceList_Item02 dl .Race_Data > .Dart {
+	color: #874c11;
+}
+@media only screen and (max-width: 374px) {
+	.RaceList_NameBox .RaceList_Item02 dl .Race_Name {
+		font-size: 100%;
+	}
+}
+
+
+/**/
+.RaceData_Hide {
+	border-top: 1px solid #F2F2F2;
+	padding: 8px 8px 10px;
+}
+.RaceData_Hide .RaceDetail {
+	margin-bottom: 8px;
+}
+.RaceData_Hide .RaceDetail > .Course_Image {
+	text-align: center;
+	margin-bottom:6px;
+}
+.RaceData_Hide .RaceDetail > .Course_Image img {
+	width: 76%;
+}
+.RaceData_Hide .RaceDetail p {
+	font-size: 74%;
+	line-height: 1.4;
+	margin-bottom: 10px;
+	position: relative;
+	top: 2px;
+}
+.RaceData_Hide .CourseRecord {
+	background: #f7f7f7;
+	border: 1px solid #e0e0e0;
+	padding: 5px 10px;
+}
+.RaceData_Hide .CourseRecord dl {
+	display: table;
+	width: 100%;
+}
+.RaceData_Hide .CourseRecord dl dt,
+.RaceData_Hide .CourseRecord dl dd {
+	display: table-cell;
+	vertical-align: middle;
+}
+.RaceData_Hide .CourseRecord dl dt {
+	font-weight: bold;
+	font-size: 55%;
+	width: 36px;
+	padding-right: 8px;
+}
+.RaceData_Hide .CourseRecord dl dt > span {
+	display: block;
+	font-size: 134%;
+}
+.RaceData_Hide .CourseRecord dl .Time {
+	color: #ef5350;
+	font-size: 92%;
+	font-weight: bold;
+}
+.RaceData_Hide .CourseRecord dl .Horse_Name {
+	color: #666;
+	font-size: 78%;
+	text-align: right;
+}
+.RaceData_Hide .Btn ul {
+	text-align: center;
+}
+.RaceData_Hide .Btn ul li {
+	width: 48%;
+	display: inline-block;
+}
+.RaceData_Hide .Btn a {
+	display: block;
+	color: #0033aa;
+	font-size: 66%;
+	font-weight: bold;
+	background: #fff;
+	border: 1px solid #d3d3d3;
+	border-radius: 4px;
+	padding: 8px 0px;
+	text-align: center;
+	box-shadow: 0px 1px 3px rgba(146, 151, 165, 0.5);
+	position: relative;
+}
+.RaceData_Hide .Btn a:after {
+	content: "";
+	display: inline-block;
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -50px -28px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 7px;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	right: 6px;
+	margin-top: -6px;
+}
+
+
+/* 日付_開催場_btn */
+.Race_Detail_Info_Btn .Title {
+	background: #2c4ebe;
+	padding: 3px 6px
+}
+
+.Race_Detail_Info_Btn .Title h1,
+.Race_Detail_Info_Btn .Title h2,
+.Race_Detail_Info_Btn .Title .Title_Box {
+	color: #fff;
+	font-size: 72%;
+}
+.Race_Detail_Info_Btn .Change_Btn {
+	background: #3178e1;
+	background: -moz-linear-gradient(top, #3178e1 0%, #1e5bc1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3178e1), color-stop(100%,#1e5bc1));
+	background: -webkit-linear-gradient(top, #3178e1 0%,#1e5bc1 100%);
+	background: -ms-linear-gradient(top, #3178e1 0%,#1e5bc1 100%);
+	background: linear-gradient(to bottom, #3178e1 0%,#1e5bc1 100%);
+	border: 1px solid #1c3a9c;
+	border-radius: 5px;
+	padding: 0 8px;
+	line-height: 32px;
+	box-shadow: 0 1px 1px rgba(255,255,255,.5) inset;
+	position: relative;
+}
+.RaceNumLink {
+	float: right;
+}
+.RaceNumLink .Prev_Race,
+.RaceNumLink .Next_Race {
+	float: left;
+	width: 58px;
+	height: 34px;
+}
+.RaceNumLink .Prev_Race.First,
+.RaceNumLink .Next_Race.Last {
+	opacity: .7;
+}
+.RaceNumLink a {
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	width: 58px;
+	height: 34px;
+	line-height: 34px;
+}
+.RaceNumLink .Prev_Race {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -62px -5px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceNumLink .Prev_Race a {
+	text-indent: 8px;
+}
+.RaceNumLink .Next_Race {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -62px -44px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceNumLink .Next_Race a {
+	text-indent: -8px;
+}
+.RaceChangeMenu_Group {
+	width: 174px;
+	float: left;
+	font-weight:bold;
+	position:relative;
+}
+
+.Change_Btn.Day {
+	width: 160px;
+	float: left;
+	margin-right: 6px;
+}
+.Change_Btn.Course {
+	width: 70px;
+	float: left;
+}
+[class*="Icon_Change_Arrow"] {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -5px;
+}
+.Icon_Change_ArrowB {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -38px -73px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.Icon_Change_ArrowT {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -38px -85px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+}
+.RaceChangeMenu_Group .Change_BgColor {
+	background: #3178e1;
+	background: -moz-linear-gradient(top, #1e5bc1 0%, #3178e1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5bc1), color-stop(100%,#3178e1));
+	background: -webkit-linear-gradient(top, #1e5bc1 0%,#3178e1 100%);
+	background: -ms-linear-gradient(top, #1e5bc1 0%,#3178e1 100%);
+	background: linear-gradient(to bottom, #1e5bc1 0%,#3178e1 100%);
+	border: 1px solid #1c3a9c;
+}
+ul.DayChange_List {
+	position:absolute;
+	top:34px;
+	left:0;
+	z-index:500;
+}
+ul.CourseChange_List {
+	position:absolute;
+	top:34px;
+	left:103px;
+	z-index:500;
+}
+ul.DayChange_List li,
+ul.CourseChange_List li{
+	background: #3177e0;
+	border: 1px solid #1c3a9c;
+	border-top:0 none;
+	padding: 0;
+	width: 160px;
+}
+ul.CourseChange_List li {
+	width: 70px;
+}
+ul.DayChange_List li a,
+ul.CourseChange_List li a{
+	color:#fff;
+	display:block;
+	line-height: 32px;
+	padding-left:8px;
+}
+
+
+/*  便利メニューBtn*/
+.ThisWeek_Race_Header {
+	position: relative;
+}
+.RaceUseful_Btn {
+	color: #666;
+	font-size: 83%;
+	font-weight: bold;
+	background: #3178e1;
+	background: -moz-linear-gradient(top, #fff 0%, #C5C5C5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#C5C5C5));
+	background: -webkit-linear-gradient(top, #fff 0%,#C5C5C5 100%);
+	background: -ms-linear-gradient(top, #fff 0%,#C5C5C5 100%);
+	background: linear-gradient(to bottom, #fff 0%,#C5C5C5 100%);
+	border-radius: 3px;
+	padding: 0 6px;
+	line-height: 25px;
+	box-shadow: 0 0px 1px rgba(146, 151, 165, 0.9);
+	position: absolute;
+	top: 3px;
+	right: 6px;
+	width: 114px;
+	letter-spacing: -1px
+}
+.Icon_RaceMenu_ArrowB {
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -48px -80px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	margin-top: -5px;
+}
+
+
+/* モーダル便利メニュー */
+.RaceUseful_Menu {
+	padding: 10px;
+}
+.RaceUseful_Menu .Inner {
+	border-bottom: 1px solid #5A5A5A;
+	background: #42434f;
+	padding: 4px 0 4px 4px;
+}
+.RaceUseful_Menu .Inner ul li a {
+  margin: 0 3px 3px 0;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.RaceUseful_Menu .Close {
+	font-size: 88%;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	padding: 12px;
+	background: #42434f;
+}
+#modal_content_menu {
+	display: none;
+}
+#modal_overlay_menu,
+#modal_overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	background: rgba(0 ,0 ,0 , .8);
+	z-index: 10001;
+}
+.RaceUseful_Menu .Icon_Sprite_Nk {
+	width: 34px;
+	height: 34px;
+	top: 6px;
+	left: 8px;
+	margin: 0 auto 9px;
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+	.RaceUseful_Menu {
+		width: 750px;
+		margin: 0 auto;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.RaceUseful_Menu {
+		width: 920px;
+		margin: 0 auto;
+	}
+}
+
+
+/* レース一覧ナビゲーション */
+.RaceInfo_Navi_Group {
+	background: #dcdcdc;
+}
+.RaceInfo_Navi {
+	position: relative;
+	z-index: 10;
+}
+.RaceInfo_Tab li {
+	width: 20%;
+	float: left;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+.RaceInfo_Tab a {
+	display: block;
+	color: #fff;
+	font-size: 72%;
+	text-align: center;
+	font-weight:bold;
+	background: #484b65;
+	background: -moz-linear-gradient(top, #484b65 0%, #32354c 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#484b65), color-stop(100%,#32354c));
+	background: -webkit-linear-gradient(top, #484b65 0%,#32354c 100%);
+	background: -ms-linear-gradient(top, #484b65 0%,#32354c 100%);
+	background: linear-gradient(to bottom, #484b65 0%,#32354c 100%);
+	white-space: nowrap;
+	padding: 6px 0;
+}
+.RaceInfo_Tab li + li a {
+	border-left: 2px solid #5F637A;
+}
+.RaceInfo_Tab .Tab_Active a {
+	background: #dcdcdc;
+	color: #505471;
+	font-weight: bold;
+	position: relative;
+}
+.RaceInfo_Tab .Tab_Active {
+	box-shadow: none;
+}
+.RaceInfo_Tab .Tab_Active a:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #484b65;
+	position: absolute;
+	top: 0;
+}
+.RaceInfo_Navi + .RaceSubMenuArea .RaceMenuList li {
+	width: 33.3%;
+	float: left;
+}
+.RaceInfo_Navi + .RaceSubMenuArea .RaceMenuList li a {
+	display: block;
+	color: #333;
+	background: #fff;
+	border-radius: 3px;
+	padding: 4px 0;
+}
+#navi_odds_view {}
+
+
+/* その他　ボタンアクション */
+#navi_other .navi_other_active {
+    background: #666;
+}
+.Icon_RaceInfo_Open {
+    display: block;
+    background: url("../img/race/subMenu_Btn.png") no-repeat center;
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -ms-background-size: 22px 22px;
+    background-size: 22px 22px;
+}
+.Icon_RaceInfo_Open,
+.Icon_RaceInfo_Close {
+    height: 28px;
+    margin: 0 auto 6px;
+}
+.Icon_MenuClose {
+    display: block;
+    background: url("../img/race/icon_close_mark.png") no-repeat center;
+    -webkit-background-size: 17px 17px;
+    -moz-background-size: 17px 17px;
+    -ms-background-size: 17px 17px;
+    background-size: 17px 17px;
+}
+.boxShadow_none {
+    box-shadow: none !important;
+}
+
+
+/* オッズメニュー */
+.RaceOdds_Menu01 {
+	background: #dcdcdc;
+	margin-bottom: 14px;
+	padding: 8px 0 5px 8px;
+	position: relative;
+}
+.RaceOdds_Menu01:after,
+.RaceOdds_Menu02:after,
+.RaceOdds_Menu03:after {
+	content: "";
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 12px solid #dcdcdc;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	left: 50%;
+	bottom: -12px;
+	margin-left: -28px;
+}
+.RaceOdds_Menu01 .Col4 li {
+	width: 25%;
+	margin-bottom: 3px;
+}
+.RaceOdds_Menu01 ul li,
+.RaceOdds_Menu02 ul li {
+	float: left;
+}
+.RaceOdds_Menu01 ul a {
+	display: block;
+	font-size: 78%;
+	font-weight: bold;
+	text-align: center;
+	color: #797e8c;
+	background: #fff;
+	margin-right: 3px;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.RaceOdds_Menu01 ul li:nth-child(4n) a {
+	margin-right: 8px;
+}
+.RaceOdds_Menu01 ul li.Active a {
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+}
+#Netkeiba_Race_Shutuba .RaceOdds_Menu01 {
+	display: none;
+}
+
+
+/* 買い目購入不可 */
+.RaceOdds_Menu01 .No_Link a {
+    background: #ccc !important;
+    box-shadow: none;
+}
+
+
+/**/
+.RaceOdds_Menu02,
+.RaceOdds_Menu03 {
+	margin-bottom: 22px;
+	padding: 8px 5px 5px 8px;
+	position: relative;
+}
+.RaceOdds_Menu02 .Race_Odds_Menu_Title,
+.RaceOdds_Menu03 .Race_Odds_Menu_Title,
+.RaceOdds_HorseList_Title {
+	font-size: 94%;
+	color: #555;
+	text-align: center;
+	margin-bottom: 9px;
+	text-shadow: 0 1px 1px #fff;
+}
+.RaceOdds_Menu02 ul li:nth-child(n+4) {
+	width: 50%;
+}
+.RaceOdds_Menu02 ul li div,
+.RaceOdds_Menu03 ul li div {
+	margin: 0 3px 3px 0;
+}
+.RaceOdds_Menu02 input[type="button"],
+.RaceOdds_Menu03 input[type="button"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	font-size: 72%;
+	font-weight: bold;
+	text-align: center;
+	color: #797e8c;
+	background: #fff;
+	margin-right: 3px;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	border: none;
+}
+.RaceOdds_Menu02 input[type="button"]:disabled,
+.RaceOdds_Menu03 input[type="button"]:disabled {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+}
+.RaceOdds_Menu02.Col3 {}
+.RaceOdds_Menu02.Col3 ul li {
+	float: left;
+	width: 33.3%;
+}
+
+
+/**/
+.RaceOdds_Menu02 ul a,
+.RaceOdds_Menu03 ul a {
+	display: block;
+	width: 100%;
+	font-size: 77%;
+	font-weight: bold;
+	text-align: center;
+	color: #797e8c;
+	background: #fff;
+	margin-right: 3px;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.RaceOdds_Menu02 ul li .Active,
+.RaceOdds_Menu02 ul li .disabled,
+.RaceOdds_Menu03 ul li .disabled {
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+}
+
+.RaceOdds_Menu02 .Note {
+	font-size: 83%;
+	color: #555;
+	margin: 4px 0;
+}
+
+.RaceOdds_Menu02 ul .Formation a {
+	line-height: 1.2;
+	padding: 6px 0 5px;
+}
+.RaceOdds_Menu02 ul .Formation a > span {
+	font-size: 12px;
+	letter-spacing: -1px;
+}
+
+
+/* tab_月日 */
+.RaceDayWrap {
+	margin-top: 8px;
+}
+.RaceDayWrap_Inner {
+	display: table;
+	width: 100%;
+}
+.RaceDayWrap_Inner div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.Tab_RaceDaySelect {
+	width: 100%;
+}
+.Tab_RaceDaySelect ul {
+	display: table;
+	width: 100%;
+}
+.Tab_RaceDaySelect ul li {
+	display: table-cell;
+	vertical-align: bottom;
+}
+.Tab_RaceDaySelect .Tab1 li {
+  width: 100%;
+}
+.Tab_RaceDaySelect .Tab2 li {
+  width: 50%;
+}
+.Tab_RaceDaySelect .Tab3 li {
+  width: 33.3%;
+}
+.Tab_RaceDaySelect .Tab4 li {
+  width: 25%;
+}
+.Tab_RaceDaySelect ul a {
+	background: #fff;
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0 0 10px rgba(146, 151, 165, .3);
+	color: #5f5f5f;
+	display: block;
+	font-size: 86%;
+	font-weight: bold;
+	padding: 13px 0;
+	text-align: center;
+}
+.Tab_RaceDaySelect ul li + li a {
+	margin-left: 4px;
+}
+.Tab_RaceDaySelect ul .Tab_Active {
+	color: #fff;
+	background: #2b71d9;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0, #2b71d9),
+		color-stop(1, #215fc7)
+	);
+	background-image: -o-linear-gradient(bottom, #2b71d9 0%, #215fc7 100%);
+	background-image: -moz-linear-gradient(bottom, #2b71d9 0%, #215fc7 100%);
+	background-image: -webkit-linear-gradient(bottom, #2b71d9 0%, #215fc7 100%);
+	background-image: -ms-linear-gradient(bottom, #2b71d9 0%, #215fc7 100%);
+	background-image: linear-gradient(to bottom, #2b71d9 0%, #215fc7 100%);
+	box-shadow: 0 0 10px rgba(146, 151, 165, .3), 0 2px 2px rgba(255,255,255,.5) inset;
+	padding: 17px 0 13px;
+}
+.RaceDayPrev .Normal,
+.RaceDayNext .Normal {
+	display: inline-block;
+	background: #d6d8df;
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+.RaceDayPrev .Active,
+.RaceDayNext .Active {
+	display: inline-block;
+	background: #a3a8b8;
+	border-radius: 3px;
+	padding: 5px 10px;
+}
+.RaceDayPrev,
+.RaceDayNext {
+	padding: 0 8px;
+	position: relative;
+	top: 3px;
+}
+.RaceDayPrev img,
+.RaceDayNext img {
+	vertical-align: middle;
+}
+.Tab_RaceDaySelect ul .Tab_Active span.Sat{
+	color: #9ACFFF;
+}
+.Sat {color: #2d71da;}
+.Sun {color: #ff4473;}
+
+
+/* tab_開催場 */
+.Btn_Group {
+	background: #215fc7;
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0.9, #215FC9),
+		color-stop(1, #1A4D9E)
+	);
+	background-image: -o-linear-gradient(bottom, #215FC9 90%, #1A4D9E 100%);
+	background-image: -moz-linear-gradient(bottom, #215FC9 90%, #1A4D9E 100%);
+	background-image: -webkit-linear-gradient(bottom, #215FC9 90%, #1A4D9E 100%);
+	background-image: -ms-linear-gradient(bottom, #215FC9 90%, #1A4D9E 100%);
+	background-image: linear-gradient(to bottom, #215FC9 90%, #1A4D9E 100%);
+}
+.Btn_Group .Inner {
+	padding: 6px 0 0 8px;
+}
+.Btn_Group ul li {
+	border-radius: 3px;
+}
+.Btn_Group ul a {
+	display: block;
+	font-size: 94%;
+	font-weight: bold;
+	background: #6490D9;
+	border-radius: 3px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+	padding: 12px 0;
+	margin-right: 6px;
+}
+.Btn_Group .Col1 li a,
+.Btn_Group .Col2 li:nth-child(2n) a,
+.Btn_Group .Col3 li:nth-child(3n) a {
+	margin-right: 8px;
+}
+.Btn_Group ul .Active a {
+	color: #2160c9;
+	background: #EEEEEE;
+	box-shadow: 0 1px 2px rgba(255,255,255,.5) inset, 2px 1px 5px rgba(8, 8, 9, .5);
+	border-radius: 3px 3px 0 0;
+	text-shadow: none;
+	line-height: 26px;
+	height: 52px;
+}
+.Btn_Group ul li:not(.Active) {
+	position: relative;
+	top: 6px;
+}
+.Btn_Group .Col2 li {width: 45%;}
+.Btn_Group .Col2 .Active {width: 55%;}
+.Btn_Group .Col3 li {width: 30%;}
+.Btn_Group .Col3 .Active {width: 40%;}
+.Btn_Group .Col1 .Active {
+	width: 55%;
+	margin:auto;
+}
+
+
+/*　Surf_infomation */
+.RaceInfomation_Item {
+	padding: 8px 8px 0;
+}
+.RaceInfomation_Item li {
+	display: inline-block;
+	font-size: 74%;
+	font-weight: bold;
+	color: #555;
+}
+.RaceInfomation_Item li + li {
+	margin-left: 5px;
+}
+.RaceInfomation_Item .Item02 {
+	position: relative;
+}
+.RaceInfomation_Item .Item03 {
+	color: #08a800;
+	margin-left: 22px;
+}
+.RaceInfomation_Item .Item04 {
+	color: #913200;
+}
+.RaceInfomation_Item .Btn {
+	float: right;
+	font-size: 74%;
+	color: #a6a6a6;
+	border-radius: 3px;
+	border: 1px solid #a6a6a6;
+	padding: 4px 17px;
+}
+
+
+/* liScroll styles new_surf_box */
+.Surf_Box {
+    position: relative;
+    padding: 8px;
+}
+.Surf_Box .Surf_Box_Inner {
+	background: #fff;
+	border-radius: 3px;
+	height: 40px;
+	overflow: hidden;
+}
+.tickercontainer {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.tickercontainer .mask {
+	width: 90%;
+    position: relative;
+    /*left: 10px;*/
+    /*top: 12px;*/
+}
+#News_Ticker { /* that's your list */
+	display: table;
+	font-size: 14px;
+    position: relative;
+    top: 10px;
+    left: 5%;
+}
+#News_Ticker li {
+    display: table-cell;
+    white-space: nowrap;
+    height: 20px;
+    line-height: 20px;
+}
+#News_Ticker a {
+    color: #333;
+    font-size: 14px;
+    margin: 0 100px 0 0;
+    /*position: relative;
+    top: -2px;*/
+}
+#News_Ticker .Label {
+	display: inline-block;
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+}
+#News_Ticker a .Horse_Name {
+	font-size: 15px;
+	font-weight: bold;
+}
+#charge_guide,
+#info_ad {
+	height: 20px;
+	line-height: 20px;
+}
+#charge_guide .Horse_Num_Box {
+	color: #ef5350;
+	font-weight: bold;
+}
+
+
+/* surf_newsList */
+/*.Surf_NewsList {
+	display: none;
+	position: absolute;
+	width: 100%;
+	padding: 8px;
+	background: #dcdcdc;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+	top: 0;
+	left: 0;
+	z-index: 201;
+}*/
+#Netkeiba_RaceTop div.Surf_NewsList,
+.Surf_NewsList {
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 8px 0 0;
+    background: #dcdcdc;
+    box-shadow: none;
+	margin-top: -48px;
+}
+#Netkeiba_RaceTop div.Surf_NewsList {
+	background: #cfcfcf;
+}
+.Surf_NewsList > ul {
+	background: #fff;
+}
+.Surf_NewsList > ul > li {
+	display: table;
+	width: 100%;
+	padding: 8px;
+}
+.Surf_NewsList > ul > li > .Label {
+	display: table-cell;
+	padding-right: 6px;
+	width: 36px;
+}
+.Surf_NewsList > ul > li > .No_Label {
+	display: table-cell;
+	width: 40px;
+}
+.Surf_NewsList > ul .News {
+	display: table-cell;
+	vertical-align: top;
+	padding-right: 32px;
+}
+.Surf_NewsList > ul .News a {
+	display: block;
+	color: #333;
+	font-size: 77%;
+	line-height: 1.3;
+}
+.Surf_NewsList > ul .News a > div {
+	margin-bottom: 2px;
+	line-height: 1.3;
+}
+#News_Ticker li .Umaban,
+.Surf_NewsList > ul .News .Umaban {
+	display: inline-block;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-weight: bold;
+	padding: 2px 4px;
+	border-radius: 4px;
+	margin-right: 2px;
+}
+.Surf_NewsList > ul .News .Horse_Name {
+	color: #06389b;
+	font-weight: bold;
+	position: relative;
+	top: 1px;
+}
+#News_Ticker li .Txt {
+	font-weight: normal;
+}
+.Surf_Box {
+    background: #DCDCDC;
+}
+
+
+/* レーストップ専用 - surf */
+.RaceInfomation_Wrap {
+	background: #eee;
+	border-radius: 3px;
+	position: relative;
+	padding: 8px;
+}
+.RaceInfomation_Wrap .Inner {
+	background: #cfcfcf;
+	border-radius: 3px;
+}
+.RaceInfomation_Wrap .RaceInfomation_Item {
+	border-radius: 3px 3px 0 0;
+}
+#Netkeiba_RaceTop .Surf_NewsList {
+	background: #cfcfcf;
+}
+#Netkeiba_RaceTop .RaceInfomation_Item {
+	background: #cfcfcf;
+	padding: 8px;
+}
+#Netkeiba_RaceTop .Surf_Box,
+#Netkeiba_RaceTop .Surf_NewsList {
+	background: #cfcfcf;
+	border-radius: 0 0 3px 3px;
+	padding: 0 8px 8px;
+}
+#Netkeiba_RaceTop .Surf_Box [id*="news_list_btn"] {
+	margin-top: -34px;
+}
+.RaceInfomation_Wrap .Surf_NewsList {
+	background: #cfcfcf;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .3);
+}
+
+
+/* surf open/close btn */
+.Surf_Box [id*="news_list_btn"] {
+	width: 43px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+	background: #fff url("../img/race/icon_info_open.png") no-repeat center;
+	background-size: 17px 17px;
+	-moz-background-size: 17px 17px;
+	-webkit-background-size: 17px 17px;
+	-ms-background-size: 17px 17px;
+	position: absolute;
+	right: 8px;
+	top: 34px;
+	border-radius: 3px;
+	margin-top: -26px;
+	z-index: 2000;
+}
+.Surf_Box div[id*="news_list_btn"].close {
+	background-image: url("../img/race/icon_info_close.png");
+	-webkit-background-size: 17px 2px;
+	-moz-background-size: 17px 2px;
+	-ms-background-size: 17px 2px;
+	background-size: 17px 2px;
+}
+.HorseNumAlert {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	z-index: 98;
+	width: 14px;
+	height: 14px;
+	line-height: 10px;
+	background: #ef5350;
+	border-radius: 50%;
+}
+.HorseNumAlert span {
+	font-size: 61%;
+	color: #fff;
+}
+
+
+/* surf　ベーシック登録 */
+.Surf_Register {
+	background: #fff;
+	border-radius: 3px;
+	padding: 8px;
+	margin-top: 8px;
+}
+.Surf_Register .Pickup {
+	color: #2c4ebe;
+	background: #9cf;
+	border-radius: 3px;
+	font-size: 86%;
+	text-align: center;
+	margin-bottom: 16px;
+	padding: 8px 0;
+	position: relative;
+}
+.Surf_Register .Pickup > span {
+	font-weight: bold;
+}
+.Surf_Register .Pickup:after {
+	content: "";
+	border: 10px solid transparent;
+	border-top-color: #9cf;
+	position: absolute;
+	top: 100%;
+	left: 46%;
+	height: 0;
+	width: 0;
+}
+.Surf_Register .Basic_Info {
+	margin-bottom: 12px;
+}
+.Surf_Register .Basic_Info .Title {
+	color: #fff;
+	font-size: 88%;
+	background: #2c4ebe;
+	text-align: center;
+	padding: 6px 0;
+	line-height: 1.3;
+	border-radius: 3px 3px 0 0;
+}
+.Surf_Register .Basic_Info dl {
+	border: 1px solid #ccc;
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+	padding: 8px;
+}
+.Surf_Register .Basic_Info dl dt {
+	padding: 0 0 8px;
+	text-align: center;
+}
+.Surf_Register .Basic_Info dl dt > em {
+	color: #2c4ebe;
+	font-size: 88%;
+	font-weight: bold;
+	padding-left: 32px;
+	position: relative;
+	line-height: 28px;
+}
+.Surf_Register .Basic_Info dl dt > em:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_otoku.png') no-repeat;
+	-webkit-background-size: 28px 28px;
+	-moz-background-size: 28px 28px;
+	-ms-background-size: 28px 28px;
+	background-size: 28px 28px;
+	position: absolute;
+	left: 0;
+	width: 28px;
+	height: 28px;
+}
+.Surf_Register .Basic_Info dl ul li {
+	background: #fff !important;
+	font-size: 83%;
+	line-height: 1.3;
+	padding-left: 1em;
+	text-indent: -0.6em;
+	margin-bottom: 10px;
+}
+.Surf_Register .Basic_Info dl .Btn a {
+	display: block;
+	color: #fff;
+	font-size: 83%;
+	font-weight: bold;
+	text-align: center;
+	background: #ff9966;
+	background: -moz-linear-gradient(top, #ff9966 0%, #ff6600 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9966), color-stop(100%,#ff6600));
+	background: -webkit-linear-gradient(top, #ff9966 0%,#ff6600 100%);
+	background: -ms-linear-gradient(top, #ff9966 0%,#ff6600 100%);
+	background: linear-gradient(to bottom, #ff9966 0%,#ff6600 100%);
+	border: 1px solid #f60;
+	border-radius: 3px;
+	padding: 12px 0;
+}
+.Surf_Register .Login > p {
+	color: #666;
+	font-size: 77%;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+.Surf_Register .Login > .Btn {
+	display: block;
+	color: rgb(102, 102, 102);
+	background: #fff;
+	font-size: 83%;
+	font-weight: bold;
+	text-align: center;
+	padding: 12px 24px 12px 8px;
+	border-top: 1px solid #efefef;
+	border-radius: 3px;
+	box-shadow: rgba(146, 151, 165, 0.498039) 0px 2px 2px;
+}
+
+
+/* レース一覧 */
+.RaceTopRaceMenuWrap {
+	position: relative;
+}
+.RaceTopRaceMenuWrap .RaceList li {
+	display: -webkit-box;
+	display: -moz-box;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+}
+.RaceList_Main_Box {
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	border-right: 1px solid #eee;
+}
+.RaceList_Main_Box a {
+	display: table;
+	width: 100%;
+	padding: 9px 2px 9px 8px;
+}
+.RaceList_Main_Box .RaceList_Item01,
+.RaceList_Main_Box .RaceList_Item02 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.RaceList_Main_Box .RaceList_Item02 {
+	width: 100%;
+}
+.RaceList_Main_Box .RaceList_Item01 {
+	padding-right: 6px;
+}
+.RaceList_Main_Box .RaceList_Item01 .Race_Num {
+	display: inline-block;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+	background: #1228b6;
+	width: 46px;
+	padding: 15px 0;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+.RaceList_Main_Box .RaceList_Item01 .Race_Fixed {
+	background: #d90036 !important;
+}
+.RaceList_Main_Box .RaceList_Item01 .Race_Next {
+	background: #e9c500 !important;
+	position: relative;
+}
+.RaceList_Main_Box .RaceList_Item01 .Race_Next:before {
+	content: "";
+	display: block;
+	background: #e9c500;
+	position: absolute;
+	top: 0;
+	left: -8px;
+	width: 12px;
+	height: 45px;
+}
+.RaceList_Main_Box .RaceList_Item01 .Race_Next:after {
+	content: "";
+	display: block;
+	background: url("../img/race/Next_Race_Bg.png") no-repeat;
+	-webkit-background-size: 16px 45px;
+	-moz-background-size: 16px 45px;
+	-ms-background-size: 16px 45px;
+	background-size: 16px 45px;
+	width: 16px;
+	height: 45px;
+	position: absolute;
+	top: 0;
+	right: -12px;
+}
+.RaceList_Main_Box .RaceList_Item02 dl .Race_Name {
+	color: #555;
+	font-size: 105%;
+	font-weight: bold;
+	margin-bottom: 4px;
+	line-height: 1.2;
+}
+.RaceList_Main_Box .RaceList_Item02 dl .Race_Data {
+	color: #555;
+	font-size: 78%;
+}
+.RaceList_Main_Box .RaceList_Item02 dl .Race_Data > .Dart {
+	color: #874c11;
+}
+.RaceList_Main_Box .RaceList_Item02 dl .Race_Data > .Turf {
+	color: #08a800;
+}
+.RaceList_Main_Box .RaceList_Item02 dl .Race_Data > img {
+	position: relative;
+	top: 1px;
+}
+.Next_Racing {
+	background: #ffffcc !important;
+}
+.Next_Racing .RaceList_Item01 {
+	padding-right: 18px;
+}
+
+
+/* race_toggle_menu */
+.RaceTopRaceMenuWrap .RaceSubMenuArea,
+.Win5RaceMenuWrap .RaceSubMenuArea {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: -2px;
+	z-index: 100;
+	width: 100%;
+}
+.RaceSubMenu {
+	background: #666;
+	padding: 0 0 6px;
+	box-shadow: 0 4px 4px -1px rgba(0,0,0,0.3);
+}
+.RaceSubMenu ul {
+	width: 98%;
+	margin: auto;
+}
+.RaceSubMenu ul li {
+	padding: 6px 0 0;
+}
+ul.RaceMenuList li {
+	display: inline-block;
+	float: left;
+	width: 25%;
+	margin: 0;
+	position: relative;
+}
+.RaceSubMenuArea .RaceSubMenu li a,
+.ContentsUpdataTimeBox .Left_Box span.IconBox {
+	display: block;
+	color: #000;
+	width: auto;
+	margin: 0 2px;
+    min-height: 54px;
+	text-align: center;
+	padding: 4px 0;
+	border-radius: 3px;
+	background: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+}
+.RaceSubMenu .RaceMenuList span.Icon_Sprite_Nk.Icon_RaceInfo37{
+    position: relative;
+    top: 9px;
+}
+.RaceSubMenu ul li span.Icon_Label {
+	font-size: 74%;
+	font-weight: bold;
+	color: #333;
+}
+.RaceSubMenuArea .RaceSubMenu li span.No_Link {
+	display: block;
+	width: auto;
+	margin: 0 2px;
+	color: #444;
+	text-align: center;
+	padding: 4px 0;
+	background: #ADADAD;
+	border-radius: 3px;
+}
+.RaceList_Movie_Box a {
+	display: block;
+	width: 45px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	background: url("../img/race/subMenu_Btn.png") no-repeat center;
+	-webkit-background-size: 22px 22px;
+	-moz-background-size: 22px 22px;
+	-ms-background-size: 22px 22px;
+	background-size: 22px 22px;
+	outline: none;
+}
+.RaceList_Movie_Box .Close_Btn {
+	background: #666 !important;
+}
+.RaceList_Movie_Box .Close_Btn:before {
+	content: "";
+	display: inline-block;
+	background: url("../img/race/icon_close_mark.png") no-repeat center;
+	-webkit-background-size: 17px 17px;
+	-moz-background-size: 17px 17px;
+	-ms-background-size: 17px 17px;
+	background-size: 17px 17px;
+	width: 17px;
+	height: 17px;
+}
+
+
+/* 有料案内 */
+.Guidance {
+	background: #fff;
+	/*padding: 8px;*/
+}
+.Guide_Txt {
+	font-size: 77%;
+	color: #3e3e3e;
+	line-height: 1.3;
+	padding: 8px;
+}
+.Guide_Txt > a {
+	font-weight: bold;
+}
+
+
+/* 厩舎コメント */
+.Stable_Comment,
+.Stable_Time {
+	border-collapse: collapse;
+	width: 100%;
+	background: #fff;
+	margin-top: -1px;
+}
+.Stable_Comment td,
+.Stable_Time td {
+	border: 1px solid #cbcbcb;
+	vertical-align: middle;
+}
+.Stable_Comment td {
+	padding: 10px 8px;
+}
+.Stable_Comment td.Horse_Info {
+	padding: 6px 8px;
+}
+.Stable_Comment [class*="Waku"],
+.Stable_Time [class*="Waku"] {
+	min-width: 28px;
+	font-weight: bold;
+	vertical-align: middle;
+	padding: 0 1px;
+	text-align: center;
+	letter-spacing: -1px;
+}
+.Stable_Comment td.Horse_Info,
+.Stable_Time td.Horse_Info {
+	background: #f3f2de;
+}
+.Stable_Comment td.Horse_Info .Horse_Name,
+.Stable_Time td.Horse_Info .Horse_Name {
+	font-size: 94%;
+	font-weight: bold;
+	color: #333;
+	float: left;
+	line-height: 27px;
+}
+.Stable_Comment td.Horse_Info .Trainer {
+	font-size: 86%;
+	color: #555;
+	float: right;
+	position: relative;
+	padding: 6px 22px 6px 0px;
+}
+table#All_Comment_Table tr:nth-child(n+7){
+    display:none
+}
+table.Comment_Table_Show_All tr:nth-child(n+7){
+    display:table-row!important
+}
+
+
+/* 公開予定info_box */
+.Race_Infomation_Box {
+	font-size: 86%;
+	font-weight: bold;
+	text-align: center;
+	margin: 12px 14px;
+	padding: 12px;
+	border: 5px solid #ddd;
+	background: #fff;
+	line-height: 1.3;
+}
+.Race_Infomation_Txt01 {
+	padding: 8px 8px 0 8px;
+	font-size: 88%;
+	line-height: 1.3;
+	color: #333;
+}
+
+
+/* 評価icon */
+.Trainer .Icon_RaceInfo {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 4px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 2px;
+}
+.Icon_Mark_01 {background-position: -38px -157px;}
+.Icon_Mark_02 {background-position: -38px -180px;}
+.Icon_Mark_03 {background-position: -38px -201px;}
+
+
+/* 調教タイム */
+.Stable_Comment dl.Comment_Cell dt {
+	font-size: 94%;
+	font-weight: bold;
+	color: #3e3e3e;
+	margin-bottom: 10px;
+}
+.Stable_Comment dl.Comment_Cell dd {
+	font-size: 92%;
+	color: #3e3e3e;
+	line-height: 1.3;
+}
+.Stable_Time td.Horse_Info {
+	padding: 4px 8px;
+}
+.Stable_Time td.Horse_Info .Horse_Name {
+	/*width: 75%;*/
+	line-height: 27px;
+}
+.Stable_Time td.Horse_Info .Btn {
+	display: inline-block;
+	float: right;
+	font-size: 74%;
+	font-weight: bold;
+	color: #555;
+	background: #fff;
+	padding: 7px 22px 6px 16px;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	position: relative;
+}
+.Stable_Time td.Horse_Info .Btn:after {
+	content: "";
+	display: inline-block;
+	background: url("../img/icon/icon_sprite_raceinfo.png") no-repeat -48px -131px;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	width: 10px;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	margin-top: -6px;
+}
+.Stable_Time .Training_Place > div {
+	display: table;
+	width: 100%;
+}
+.Stable_Time .Training_Place > div > span {
+	display: table-cell;
+	color: #333;
+	padding: 10px 8px;
+	vertical-align: middle;
+}
+.Stable_Time .Training_Place .Training_Day {
+	font-size: 78%;
+	background: #eee;
+	border-right: 1px solid #cbcbcb;
+}
+.Stable_Time .Training_Place .Training_Critic {
+	font-size: 86%;
+	font-weight: bold;
+	text-align: center;
+}
+.Stable_Time .Training_Place .TrainingRank {
+	font-size: 83%;
+	padding: 10px 4px;
+}
+[class*="Rank_"] {
+	font-size: 120%;
+	position: relative;
+	top: 1px;
+	left: 2px;
+}
+.Rank_A {color: #f00; font-weight: bold;}
+.Rank_B {color: #007EFF; font-weight: bold;}
+.Rank_C {color: #333; font-weight: bold;}
+
+.Stable_Time .TrainingTimeData {
+	/*font-size: 88%;*/
+	font-weight: bold;
+	text-align: center;
+}
+.Stable_Time .TrainingTimeData td {
+	font-size: 92%;
+	padding: 10px 4px;
+	width: 15%;
+	line-height: 1.2;
+}
+.Stable_Time .TrainingTimeData .TrainingLoad {
+	font-size: 78%;
+	font-weight: normal;
+	width: 25%;
+}
+.Stable_Time .Comment_Cell {
+	font-size: 92%;
+	line-height: 1.3;
+	padding: 10px 8px;
+}
+
+.Stable_Comment tr td.Select,
+.Stable_Time tr td.Select {
+  padding: 4px;
+  background: #f3f2de;
+}
+.Stable_Comment tr td.Select input.HorseCheck_Select,
+.Stable_Time tr td.Select input.HorseCheck_Select {
+  display: none;
+}
+@media only screen and (min-width: 728px) {
+	.Stable_Comment [class*="Waku"] {
+		width: 20px;
+	}
+}
+table#All_Oikiri_Table tr:nth-child(n+13){
+    display:none
+}
+table.Oikiri_Table_Show_All tr:nth-child(n+13){
+    display:table-row!important
+}
+
+
+/* レースカテゴリーメニュー */
+.Race_CategoryMenu {
+	padding: 8px 0 0 8px;
+}
+.Race_CategoryMenu .Col4 li {
+	float: left;
+	width: 25%;
+}
+.Race_CategoryMenu ul a > span {
+	margin-bottom: 8px;
+}
+.Race_CategoryMenu ul a {
+	display: block;
+	font-size: 74%;
+	font-weight: bold;
+	color: #333;
+	text-align: center;
+	background: #fff;
+	margin: 0 3px 3px 0;
+	padding: 8px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	position: relative;
+	white-space: nowrap;
+}
+.Race_CategoryMenu ul li:nth-child(4n) a {
+	margin-right: 8px;
+}
+.Race_CategoryMenu ul li:nth-last-child(-n+3) a {
+  margin-bottom: 0;
+}
+
+
+/* 今週の注目レース */
+#RaceMain {
+	min-height: 50px;
+	background: #fff url("../img/common/gif-load.gif") no-repeat center;
+	border-radius: 3px;
+}
+.Jra_RaceList_Inner .PickupRace_01 {
+	margin: 8px;
+}
+.Jra_RaceList_Inner .PickupRace_01 > li {
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Jra_RaceList_Inner .PickupRace_01 li > .LinkBox_01 {
+	display: block;
+	padding: 8px 8px 0;
+}
+.LinkBox_01 > div > .RaceTitle {
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 8px;
+	font-size: 110%;
+}
+.LinkBox_01 > div > .RaceData {
+	font-size: 74%;
+	color: #333;
+}
+.PickupRaceDataBox {
+	padding: 8px;
+}
+.RaceSpecialLink {
+	margin: 0 0 8px;
+	position: relative;
+}
+img.Special_Img01 {
+	display: block;
+	width: 100%;
+}
+.RaceSpecialLink a > .Special_Img_Txt {
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	color: #fff;
+	font-size: 83%;
+	border-top-left-radius: 5px;
+	background-color: rgba(0,0,0,.6);
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.RaceSpecialLink a > .Special_Img_Txt:after {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.PickupRaceDataBox .LeftMenu {
+	float: left;
+	width: 27%;
+	z-index: 10;
+	position: relative;
+}
+.PickupRaceMenu li.RaceMenuList {
+	margin: 0 0 6px;
+}
+.PickupRaceMenu li a.PickupRace_LinkBtn {
+	padding: 16px 0;
+	font-weight: bold;
+}
+.PickupRace_LinkBtn {
+	display: block;
+	font-size: 89%;
+	font-weight: bold;
+	color: #03a;
+	background: #fff;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 4px;
+	border: 1px solid #d3d3d3;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .6);
+}
+.PickupRaceDataBox .RightMenu {
+	width: auto;
+	position: relative;
+	z-index: 9;
+}
+.PickupRaceDataBox .RightMenu li.RaceMenuList {
+	margin: 0 0 0 29%;
+}
+.PickupRaceDataBox .RightMenu li.RaceMenuList a.PickupRace_LinkBtn {
+	text-align: left;
+	padding: 8px 8px 0 8px;
+	height: 100%;
+}
+.PickupRaceDataBox .RightMenu li a.PickupRace_LinkBtn p {
+	padding-bottom: 4px;
+	margin: 0 0 8px;
+	border-bottom: 1px solid #ccc;
+}
+.PickupRaceDataBox .RightMenu li a.PickupRace_LinkBtn ul {
+	padding: 0 3px;
+}
+.PickupRaceDataBox .RightMenu li a.PickupRace_LinkBtn ul li {
+	margin: 0 0 5px;
+}
+.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.HorseName {
+	display:inline-block;
+	color: #333;
+	font-size: 85%;
+	width: 9.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.OddsData {
+	display: inline-block;
+	overflow: hidden;
+	color: #ff1127;
+	font-size: 85%;
+	float: right;
+	line-height: 1.3;
+}
+.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.OddsNum {
+    color: #666;
+    font-size: 85%;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*-- 横幅広い端末用調整 --*/
+@media only screen and (min-width: 340px) {
+	.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.HorseName{
+		font-size: 100%;
+	}
+	.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.OddsData{
+		font-size: 100%;
+	}
+	.PickupRaceDataBox li a.PickupRace_LinkBtn ul li span.OddsNum{
+		font-size: 100%;
+	}
+	.PickupRaceMenu li a.PickupRace_LinkBtn{
+		padding:19px 0;
+	}
+	.PickupRaceDataBox .RightMenu li a.PickupRace_LinkBtn p {
+		padding: 2px 0 6px;
+		margin: 0 0 10px;
+	}
+}
+/**/
+#Netkeiba_Race_Shutuba .Jra_RaceList_Inner + .LinkBtn_03 {
+	display: none;
+}
+#Netkeiba_Race_Shutuba .Jra_RaceList_Inner {
+	margin-bottom: 18px;
+}
+.Jra_RaceList_Inner .RaceList_02 {
+	margin: 8px;
+}
+.Jra_RaceList_Inner .RaceList_02 li a {
+	display: block;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Jra_RaceList_Inner .RaceList_02 li div {
+	padding: 12px;
+}
+.Jra_RaceList_Inner .RaceList_02 li div .RaceTitle {
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 8px;
+}
+.Jra_RaceList_Inner .RaceList_02 li div .RaceData {
+	font-size: 74%;
+	color: #333;
+}
+.Jra_RaceList_Inner .RaceList_02 li + li {
+	margin-top: 8px;
+}
+.Jra_RaceList_Inner.RaceInfo .Icon_Grade {
+	position: relative;
+	top: -2px;
+	left: 2px;
+}
+
+
+/* 今週のレース一覧modal_btn */
+.Shutuba_Modal > .Btn {
+    font-size: 61%;
+    font-weight: bold;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    border: 1px solid rgb(9, 76, 177);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(146, 151, 165, 0.9);
+    background-color: rgba(6, 56, 155, .7);
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 0 2px #333;
+    padding: 3px 4px 3px;
+    z-index: 2000;
+}
+.Shutuba_Modal > .Btn > .Icon {
+	display: block;
+	background: url('../img/icon/icon_sprite_nk02.png?20190116') no-repeat -59px -1447px;
+	-webkit-background-size: 236px 2000px;
+	-moz-background-size: 236px 2000px;
+	-ms-background-size: 236px 2000px;
+	background-size: 236px 2000px;
+	width: 32px;
+	height: 28px;
+	margin: 0 auto 2px;
+}
+#modal_content {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 6px 10px 10px 10px;
+	z-index: 10002;
+	overflow-y: auto;
+}
+
+
+/* 今週のレース一覧modal */
+.Shutuba_Modal_RaceList .RaceDayWrap {
+    border-bottom: 2px solid #1F5DC3;
+}
+.Shutuba_Modal_RaceList table.RaceList {
+	border-collapse: collapse;
+}
+.Shutuba_Modal_RaceList table.RaceList:last-child {
+	border-right: 1px solid #A1A1A5;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header {
+	background: #efefd9;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header th {
+	font-size: 83%;
+	color: #555;
+	padding: 8px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header th.Jyo_1 {
+	background: #1689AF;
+	color: #fff;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header th.Jyo_2 {
+	background: #3006B8;
+	color: #fff;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header th.Jyo_3 {
+	background: #A81B1F;
+	color: #fff;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName:nth-child(odd) {
+	background: #F0F7FB;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName:nth-child(even) {
+	background: #fff;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.Header th.RaceNum,
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName td.RaceNum,
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName th {
+	color: #fff;
+	background: #555;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName td.RaceNum {
+	font-size: 66%;
+	font-weight: bold;
+	text-align: center;
+	width: 1em;
+	padding: 2px;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName td {
+	font-size: 77%;
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	vertical-align: middle;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName td a {
+	display: block;
+	font-weight: bold;
+	color: #42434F;
+	padding: 0px 4px;
+	line-height: 1.2;
+	height: 40px;
+	vertical-align: middle;
+	position: relative;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a > div {
+	width: 94%;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0%,-50%);
+	-moz-transform: translate(0%,-50%);
+	transform: translate(0%,-50%);
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a .Race {
+	display: block;
+	line-height: 1.2;
+	letter-spacing: -1px;
+}
+.Shutuba_Modal_RaceList table.RaceList_Num {
+	width: 10% !important;
+}
+.Shutuba_Modal_RaceList table.RaceList_Num tr.Header th {
+	color: #ADADAD !important;
+}
+.Shutuba_Modal_RaceList .RaceList_Table table.RaceList tr.RaceName td {
+	/*height: 41px;*/
+}
+.Shutuba_Modal_RaceList .Close {
+	font-size: 88%;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	padding: 12px;
+	background: #42434f;
+	border: 1px solid #555;
+}
+
+
+/*一時的処理　発走時間を消去*/
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a .Time {
+	display: none;
+	font-weight: normal;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a .Time:before {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: 2px;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a .Turf:before {
+	background: #73c560;
+}
+.Shutuba_Modal_RaceList table.RaceList tr.RaceName a .Dart:before {
+	background: #b4835b;
+}
+
+
+/* 終了レース */
+.Shutuba_Modal_RaceList table.RaceList tr.Race_Fixed a {
+	background: #FFEBED;
+}
+/* 3場開催　Col3 */
+.Shutuba_Modal_RaceList .RaceList_Table.Col3 table.RaceList {
+	float: left;
+	width: 30%;
+}
+/* 2場開催　Col2 */
+.Shutuba_Modal_RaceList .RaceList_Table.Col2 table.RaceList {
+	float: left;
+	width: 45%;
+}
+/* 1場開催　Col1 */
+.Shutuba_Modal_RaceList .RaceList_Table.Col1 table.RaceList {
+	float: left;
+	width: 90%;
+}
+@media only screen and (min-width: 1024px) {
+	.Shutuba_Modal_RaceList {
+		width: 920px;
+		margin:0 auto;
+	}
+}
+
+
+/* 非表示　*/
+/*#Netkeiba_Race_Shutuba #News_Ticker {display: none;}*/
+/*#Netkeiba_Race_Oikiri .Shutuba_RaceInfomation,*/
+/*#Netkeiba_Race_Result .Shutuba_RaceInfomation,*/
+#Netkeiba_Race_Purchase .Shutuba_RaceInfomation,
+#Netkeiba_Race_MyOdds .Shutuba_RaceInfomation,
+#Netkeiba_Race_OddsView .Shutuba_RaceInfomation,
+#Netkeiba_Race_MyOdds .RaceOdds_Menu01,
+#Netkeiba_Race_Purchase .RaceOdds_Menu01 {
+	display: none;
+}
+
+
+/*--------------------------
+予想ページ
+----------------------------*/
+.Yosoka_Ranking_Inner .Race_Yoso_List .LinkBox_01 .Right_Box h2 {
+	height:2.7em;
+}
+/*-- 予想表 --*/
+/*-- 印アイコン --*/
+span.Icon_Shirushi {
+	display:block;
+	background-image: url("../img/icon/icon_yoso_shirushi.png");
+	background-repeat: no-repeat;
+	background-size:90px 250px;
+	-moz-background-size:90px 250px;
+	-webkit-background-size:90px 250px;
+	-o-background-size:90px 250px;
+	-ms-background-size:90px 250px;
+	width:19px;
+	height:19px;
+	margin:auto;
+}
+.Mark_Pro span.Icon_Honmei {
+	background-position:0 0 ;
+}
+.Mark_Pro span.Icon_Taikou {
+	background-position:0 -19px ;
+}
+.Mark_Pro span.Icon_Kurosan {
+	background-position:0 -38px ;
+}
+.Mark_Pro span.Icon_Osae {
+	background-position:0 -57px ;
+}
+.Mark_Pro span.Icon_Hoshi {
+	background-position:0 -76px ;
+}
+.Mark_Pro span.Icon_Keshi {
+	background-position:0 -95px ;
+}
+.Mark_Pro span.Icon_Chuui {
+	background-position:0 -152px ;
+}
+
+/*-- 本紙の見解 .Yoso_HonshiBox_01 --*/
+.Yoso_HonshiBox_01 {
+	border-bottom: 1px solid #ccc;
+	background:#fff;
+}
+.Yoso_HonshiBox_01 .Yoso_Comment_Txt{
+	padding: 8px;
+}
+.Yoso_HonshiBox_01 .Yoso_Comment_Txt p{
+	font-size:100%;
+	line-height: 1.5;
+}
+p#Honshi_Txt {
+	max-height:4.5em;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	margin-bottom:2px;
+}
+.Yoso_Comment_Txt .Yoso_Cacth {
+	display: inline-block;
+	position:relative;
+	background-color:#f66;
+	color:#fff;
+	font-weight:bold;
+	border-radius: 3px;
+	font-size:90%;
+	padding:3px 5px 3px 29px;
+	margin-bottom:4px;
+	background-image: url("../img/icon/icon_hand01.png");
+	background-repeat: no-repeat;
+	background-size:19px 11px;
+	-moz-background-size:19px 11px;
+	-webkit-background-size:19px 11px;
+	-o-background-size:19px 11px;
+	-ms-background-size:19px 11px;
+	background-position: 8px 50%;
+	line-height:1;
+}
+
+/*-- オッズを見るボタン --*/
+.ToOdds_Link {
+	padding:14px 0;
+}
+.ToOdds_Link a{
+	position:relative;
+	display:block;
+	color: #fff;
+	font-size: 92%;
+	font-weight: bold;
+	margin: 0 20px;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+	text-align:center;
+}
+/*-- 予想一覧 table --*/
+
+.Yoso01_Table {
+	border-collapse: collapse;
+	background: #fff;
+}
+.Yoso01_Table thead th {
+	background: #efefd9;
+ 	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 3px 2px 3px;
+	vertical-align: middle;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	white-space: nowrap;
+}
+.Yoso01_Table thead th + th {
+	border-left: 1px solid #e3e5eb;
+}
+.Yoso01_Table tbody td {
+	font-size: 83%;
+	font-weight: bold;
+	color: #555;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	padding: 8px;
+	border-top: 1px solid #e3e5eb;
+	border-left: 1px solid #e3e5eb;
+	border-bottom: 1px solid #e3e5eb;
+}
+.Yoso01_Table tbody td.Horse_Info p {
+	text-align: left;
+}
+.Yoso01_Table tbody [class*="Waku"] {
+	font-weight: bold;
+	padding: 8px 2px;
+	font-size:66%;
+	text-align: center;
+}
+.Yoso_HonshiBox_01 .Yoso_Comment_Txt {
+	padding-top:12px;
+}
+.Yoso01_Table thead th a{
+	width:32px;
+	height:7.6em;
+	display: table;
+	font-weight: bold;
+	text-align: center;
+	background: #fff;
+	margin: 2px;
+	padding: 6px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Yoso01_Table thead th a p{
+	display: table-cell;
+	vertical-align:middle;
+	line-height:1.1;
+}
+.Race_Yoso_Area table td {
+	text-align:center;
+	height:36px;
+}
+.Yoso01_Table tbody td.Popular,
+.Yoso01_Table tbody td.Weight {
+	font-size: 78%;
+}
+.Yoso01_Table .Popular > span,
+.Yoso01_Table .Weight > span {
+	color: #9c9fa6;
+	display: inline;
+/*	font-size: 85%; */
+	font-weight: 700;
+	margin:auto;
+	margin-top: 8px;
+	white-space: nowrap;
+	text-align:center;
+}
+.Yoso01_Table .Popular > span.Odds_Ninki,
+.Yoso01_Table .Weight > span.Odds_Ninki {
+	color: #f20;
+	padding-right:4px;
+}
+.Yoso01_Table tbody td.Mark_Pro:nth-child(even){
+	background:#fafafa;
+}
+.NotesWrap p {
+	font-size: 78%;
+	padding: 0 8px 8px;
+}
+.Tendency_Data_Table {
+	position:relative;
+}
+.YosoShirushi_Info01 {
+	background:url("../img/race/shirushi_sample_01.jpg") no-repeat 0 0;
+	position:absolute;
+}
+.Yoso_PremiumInfo01 {
+	width:96%;
+	position:absolute;
+	top:215px;
+	left:0;
+	z-index:200;
+}
+
+.KenkaiSample01 {
+	max-width:460px;
+}
+
+
+/*==============================================
+掲示板
+==============================================*/
+.CommentBoxWrap_Inner .CommentBtnNice,
+.CommentBoxWrap_Inner .Comment_Like_CountSpace {
+	display: inline;
+}
+.CommentBoxWrap_Inner .CommentBtnNice a,
+.CommentBoxWrap_Inner .Comment_Like_CountSpace a{
+	display: inline;
+	padding:8px 0;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn .Btn,
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn_Right .Btn {
+	height: 26px;
+	line-height: 26px;
+	min-width: 32px;
+	padding: 0 4px;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn_Right {
+	position: absolute;
+	right: 8px;
+	bottom: 0;
+	margin: 0;
+}
+.CommentBoxWrap_Inner .Comment_Box dl {
+	padding: 8px 12px;
+}
+.CommentBoxWrap_Inner .Comment_Box dl dd.Date {
+	padding-bottom:8px !important;
+}
+.CommentBoxWrap_Inner .Comment_Box dl dd.taR {
+	display:none;
+}
+.CommentBoxWrap_Inner .Comment_Box dd.BBS_Comment {
+	color:#000;
+	padding-top:8px;
+	font-size:90%;
+	line-height: 1.4;
+}
+.CommentBoxWrap_Inner .Comment_Form_01_resbtn a{
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+.CommentBoxWrap_Inner .BBS_Report a {
+	cursor: pointer;
+	display: block;
+	height: 38px;
+	margin: 6px auto;
+	width: 80%;
+	padding: 12px 2px 8px 2px;
+	text-align: center;
+	font-size: .8em;
+	font-weight: bold;
+	border: 1px solid #d7d8d9;
+	background-color: #fff;
+	background-image: -moz-linear-gradient(center top,#fff 0,#f6f6f6 100%);
+	background-image: -o-linear-gradient(top,#fff 0,#f6f6f6 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(1.0,#f6f6f6));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f6f6f6')";
+	background: linear-gradient(to bottom,rgba(255,255,255,1),rgba(246,246,246,1));
+	font-size: 70%;
+	color: #333;
+}
+/*コメントフォーム*/
+.CommentBoxWrap_Inner .Comment_Form_01{
+  padding: 8px;
+}
+.Comment_Form_01 button{
+  margin:6px auto 8px;
+}
+.Comment_Form_01 .Res_Form textarea.jqm-input-text{
+  margin:0 auto;width:96%;padding:6px 4px 4px;
+}
+.Comment_Form_01 .Common_Title_Sec h3{
+  font-size:95%;padding:8px 8px;
+}
+.CommentBoxWrap_Inner .Attention_Form{
+  font-size: .88em;
+}
+.CommentBoxWrap_Inner .Attention_Form button{
+  font-size: .85em!important;
+}
+.Comment_Form_01 .CommentCautionText{
+  font-size:80%;
+  margin:4px 20px 4px 10px;
+}
+.CommentBtnCenter{
+  text-align: center;
+}
+.CommentBtnCenter .jqm-btn{
+  margin:6px auto;
+  width:150px;
+}
+.CommentBoxWrap_Inner .Res_Form button {
+  display: inline-block;
+  width: 80%;
+  margin-top: 10px;
+  border: solid 1px #d7d8d9;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  background-color: #fff;
+  background-image: -moz-linear-gradient(center top,#fff 0,#f6f6f6 100%);
+  background-image: -o-linear-gradient(top,#fff 0,#f6f6f6 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(1,#f6f6f6));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f6f6f6')";
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(246,246,246,1));
+  font-size: .7em;
+  font-weight: bold;
+  height: 38px;
+  padding: 0 2px 3px;
+  text-align: center;
+}
+/*投稿するボタン*/
+.Comment_Form_01 .Comment_Form_01_btnhide a{
+  cursor:pointer;
+  display: block;
+  height: 38px;
+  margin:6px auto;
+  width:80%;
+  padding: 12px 2px 8px 2px;
+  text-align: center;
+  font-size: .8em;
+  font-weight:bold;
+  border: 1px solid #d7d8d9;
+  background-color: #fff;
+  background-image: -moz-linear-gradient(center top,#fff 0,#f6f6f6 100%);
+  background-image: -o-linear-gradient(top,#fff 0,#f6f6f6 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(1.0,#f6f6f6));
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f6f6f6')";
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(246,246,246,1));
+  font-size: 70%;
+  color: #333333;
+}
+.CommentBoxWrap_Inner .CommentBtnNice,
+.CommentBoxWrap_Inner .Comment_Like_CountSpace {
+  display: inline;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn .Btn {
+  margin-bottom: 0;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn.BBS_Reply {
+  margin-bottom: 0;
+}
+.CommentBoxWrap_Inner .BBS_Menu_Box{
+  top: auto;
+  bottom: 0;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn .invalid {
+  color: #777;
+}
+/*掲示板コメント内ボタン基本設定*/
+.CommentBoxWrap_Inner .Comment_Box .Btn {
+	display: inline-block;
+	font-size: .7em;
+	text-align: center;
+	background-color: #f1f2f3;
+	background-image: -moz-linear-gradient(top,
+					#f9f9f9 0%,
+				  #f9f9f9 40%,
+				  #f4f4f4 100%);
+  background-image: -o-linear-gradient(top,
+				  #f9f9f9 0%,
+				  #f9f9f9 40%,
+				  #f4f4f4 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,
+				  color-stop(0   , #f9f9f9),
+				  color-stop(0.4 , #f9f9f9),
+				  color-stop(1.0 , #f4f4f4)
+				  );
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9f9f9', EndColorStr='#f4f4f4')";
+  -moz-box-shadow:  0 1px 1px 0 rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0.4) inset,1px 0 0 rgba(255,255,255,0.4) inset;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0.4) inset,1px 0 0 rgba(255,255,255,0.4) inset;
+  -o-box-shadow:0 1px 1px 0 rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0.4) inset,1px 0 0 rgba(255,255,255,0.4) inset;
+  -ms-box-shadow:0 1px 1px 0 rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0.4) inset,1px 0 0 rgba(255,255,255,0.4) inset;
+  box-shadow:0 1px 1px 0 rgba(0,0,0,0.2),0 1px 0 rgba(255,255,255,0.4) inset,1px 0 0 rgba(255,255,255,0.4) inset;
+  border: 1px solid #ccc;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  height: 20px;
+  line-height: 20px;
+  min-width: 80px;
+  margin: 0 0 6px;
+  padding: 0 10px;
+}
+/*いいねボタン設定*/
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn {
+  display: inline-block;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn .Btn,
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn_Right .Btn{
+  height: 26px;
+  line-height: 26px;
+  min-width: 32px;
+  padding: 0 4px;
+}
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn_Right a {
+  font-size: 10px;
+}
+/*ボタン非活性時*/
+.CommentBoxWrap_Inner .Comment_Box .BBS_Btn .invalid { color: #777 }
+/*いいねコメント数設定*/
+.CommentBoxWrap_Inner .Comment_Box .Nice em{
+  color: #333;
+  font-weight: normal;
+  font-size: .8em;
+}
+.CommentBoxWrap_Inner .Comment_Box .Comment_Like_Count { display: inline-block }
+/*いいねコメント数吹き出し設定*/
+.CommentBoxWrap_Inner .Comment_Box .Comment_Like_Count div {
+	background: none repeat scroll 0 0 #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px 4px 4px 4px;
+	height: 28px;
+	margin: 0 4px 0 2px;
+	padding: 5px 0;
+	vertical-align: middle;
+  }
+.CommentBoxWrap_Inner .Comment_Box .Nice em{
+  color: #333;
+  font-weight: normal;
+  font-size: .8em;
+}
+.DB_Horse_Result ul.List_Box li dl em {
+  font-weight: bold;
+  color: #000;
+}
+.CommentBoxWrap_Inner .Comment_Like_Count div span:after {
+  border-color: transparent #fff transparent transparent;
+  border-style: solid;
+  border-width: 5px;
+  content: " ";
+  height: 0;
+  left: -9px;
+  position: absolute;
+  top: 4px;
+}
+.CommentBoxWrap_Inner .Comment_Like_Count div span:before {
+  border-color: transparent #ddd transparent transparent;
+  border-style: solid;
+  border-width: 5px;
+  content: " ";
+  height: 0;
+  left: -10px;
+  position: absolute;
+  top: 4px;
+  width: 0;
+}
+.CommentBoxWrap_Inner .Comment_Like_Count div span {
+  padding: 0 4px;
+  position: relative;
+}
+span[class*="hidden_comment_"] span.invalid,
+span[class*="hidden_comment_"] span:not([class]){
+  display: block!important;
+  height: 24px;
+  margin: 0 0 6px 0!important;
+  padding: 0!important;
+  font-size: .8em;
+}
+/*-- 規約違反通報 --*/
+.report_form {
+	border: 1px solid #ccc;
+	border-top:0 none;
+	background:#fff;
+	padding: 14px;
+	margin-bottom: 18px;
+	color: #333;
+	font-size: 100%;
+}
+.report_form p,
+.report_form dl dd{
+	line-height:1.5;
+	margin-bottom:0.8em;
+}
+.report_form dl dt{
+	margin-bottom:0.4em;
+	font-weight:bold;
+}
+.report_form dl dd span{
+	color:#c00;
+}
+.report_form dl dd span{
+	color:#c00;
+}
+.report_form dl dd a{
+	font-weight:bold;
+}
+.report_form table {
+	width: 100%;
+}
+.report_form table th {
+	width: 6em;
+	vertical-align: top;
+	padding:6px;
+}
+.report_form table td {
+	padding:6px;
+}
+.report_form table textarea {
+	width: 90%;
+	margin-bottom:8px;
+}
+.report_form button {
+	padding: 8px 20px;
+	font-size: .8em;
+	font-weight: bold;
+	border: 1px solid #d7d8d9;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: #f1f2f3;
+	background-image: -moz-linear-gradient(top,#f7f8f9,#f1f2f3);
+	background-image: -o-linear-gradient(top,#f7f8f9,#f1f2f3);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f7f8f9),to(#f1f2f3));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f7f8f9', EndColorStr='#f1f2f3')";
+	border: 1px solid #d7d8d9;
+	text-shadow: white 0 1px 0;
+	-moz-box-shadow: 0 1px 0 #fff inset;
+	-webkit-box-shadow: 0 1px 0 #fff inset;
+	-o-box-shadow: 0 1px 0 #fff inset;
+	-ms-box-shadow: 0 1px 0 #fff inset;
+	min-width:200px;
+	margin:auto;
+	display: block;
+}
+
+/*==============================================
+side_column
+==============================================*/
+
+/* 関連コラムリスト */
+.Related_Column li {
+	border-bottom: 1px solid #ccc;
+}
+.Related_Column li a {
+	display: block;
+	background: #fff;
+	padding: 10px 8px 8px 15px;
+}
+.Column_Box_Inner .PhotoThumb {
+	float: left;
+	margin-right: 8px;
+}
+.Column_Box_Inner .PhotoThumb > img {
+	max-width: 90px;
+	border-radius: 3px;
+}
+.Column_Box_Inner .Column_Content {
+	overflow: hidden;
+	position: relative;
+	top: 1px;
+}
+.Column_Box_Inner .Column_Content > .PickupTitle {
+	line-height: 1.3;
+	font-weight: bold;
+	font-size: 92%;
+	color: #333;
+}
+.Column_Box_Inner .Column_Content > .Column_Tag {
+	display: inline-block;
+	width: 90px;
+	font-size: 11px;
+	text-align: center;
+	color: #fff;
+	background-color: #7580b6;
+	border-radius: 3px;
+	padding: 2px 0px;
+	margin-bottom: 2px;
+	vertical-align: top;
+}
+.Column_Box_Inner .Column_Content > .Data {
+	line-height: 1.3;
+}
+
+
+/* レースメニュー */
+.Top_RaceMenu_Inner {
+	padding: 8px 0 0 8px;
+}
+.Top_RaceMenu_Inner ul li:nth-child(3n) a {
+	margin-right: 8px;
+}
+.Top_RaceMenu_Inner ul li:nth-last-child(-n+3) a {
+	margin-bottom: 0;
+}
+.Top_RaceMenu_Inner ul li a {
+	margin-bottom: 3px;
+}
+.Top_RaceMenu_Inner ul li a {
+	margin-right: 3px;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+/* アプリ */
+.Recommend_App_Box li {
+	border-bottom: 1px solid #ccc;
+}
+.Recommend_App_Box .PhotoThumb {
+	display: table-cell;
+}
+.Recommend_App_Box .PhotoThumb > span {
+	margin-right: 8px;
+}
+.Recommend_App_Box a {
+	display: table;
+	width: 100%;
+	background: #fff;
+	padding: 8px;
+}
+.Recommend_App_Box .LinkTitle {
+	display: table-cell;
+	width: 100%;
+	vertical-align: top;
+}
+.Recommend_App_Box .LinkTitle p.ContentCopy01 {
+	background-color: #cf3f3e;
+	border-radius: 3px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	vertical-align: top;
+	white-space: nowrap;
+	padding:3px 6px;
+	margin-bottom:6px;
+}
+.Recommend_App_Box .LinkTitle h3 {
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 3px;
+}
+.Recommend_App_Box .LinkTitle p.ContentInfoTxt01 {
+	font-size: 78%;
+	color: #4b4b4b;
+	line-height: 1.3;
+}
+
+
+/* =======================================================
+ 下層ページ
+ スピード指数、結果払戻、血統、馬券分析、予想、win5、お気に入り馬
+ 重賞日程、開催一覧、レース傾向、
+======================================================= */
+
+/* 共通table-style */
+.RaceCommon_Table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+.RaceCommon_Table tr.Header th {
+    background: #efefd9;
+    font-size: 74%;
+    color: #777;
+    border-top: 1px solid #E3E5EB;
+    border-bottom: 1px solid #E3E5EB;
+    padding: 3px 2px 3px;
+    vertical-align: middle;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+.RaceCommon_Table tr.Header th + th {
+    border-left: 1px solid #E3E5EB;
+}
+.RaceCommon_Table tr th,
+.RaceCommon_Table tr td,
+.RaceCommon_Table tr td.List {
+    font-size: 74%;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    vertical-align: middle;
+    /*white-space: nowrap;*/
+    padding: 8px 4px;
+    border: 1px solid #E3E5EB;
+}
+table tr .Odds_Ninki {
+	color: #f20;
+}
+.Table_Inner_Txt {
+	font-size: 78%;
+	padding: 8px 8px 0 8px;
+	font-weight: bold;
+}
+
+
+/* 共通table-scroll */
+.Table_Container {
+    position: relative;
+    margin-bottom: 18px;
+    overflow: auto;
+}
+.Table_Scroll {
+    overflow-x: scroll;
+    position: relative;
+}
+
+
+/* 共通header-btn */
+.Title_Sec_Btn {
+    position: absolute;
+    top: 3px;
+    right: 8px;
+}
+.Title_Sec_Btn a {
+    display: inline-block;
+    color: #333;
+    background: #fff;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 4px 8px 3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0px 1px 3px rgba(146, 151, 165, 0.5);
+}
+.Contents_Header .Icon_Inline_L h2 {
+	padding: 5px 8px;
+}
+.Contents_Header .Icon_Inline_L .Title_Sec_Btn {
+    top: 7px;
+    right: 6px;
+}
+
+
+/* 共通local-btn */
+[class*="RaceInfo_Local_Menu"] {
+    margin-bottom: 18px;
+    padding: 8px 5px 8px 8px;
+    position: relative;
+}
+[class*="RaceInfo_Local_Menu"] ul a,
+[class*="RaceInfo_Local_Menu"] ul li > div {
+	display: block;
+	font-size: 77%;
+	font-weight: bold;
+	text-align: center;
+	color: #5f5f5f;
+	background: #fff;
+	margin-right: 3px;
+	padding: 15px 0;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+[class*="RaceInfo_Local_Menu"] ul .Active,
+[class*="RaceInfo_Local_Menu"] ul div.Tab_Active,
+[class*="RaceInfo_Local_Menu"] ul .SelectNow,
+.RaceInfo_Local_Menu.Payback_List .Tab_Active {
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+}
+[class*="RaceInfo_Local_Menu"] ul .Tab_Active {
+	color: #fff;
+	background: #3178e1;
+	background: -moz-linear-gradient(top, #3178e1 0%, #1f5dc3 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3178e1), color-stop(100%,#1f5dc3));
+	background: -webkit-linear-gradient(top, #3178e1 0%,#1f5dc3 100%);
+	background: -ms-linear-gradient(top, #3178e1 0%,#1f5dc3 100%);
+	background: linear-gradient(to bottom, #3178e1 0%,#1f5dc3 100%);
+	box-shadow: 0 1px 2px rgba(255,255,255,.5) inset, 0 2px 2px rgba(146, 151, 165, .5);
+}
+.RaceInfo_Local_Menu {
+	margin-bottom: 0;
+    padding: 8px 5px 8px 8px;
+    position: relative;
+}
+.RaceInfo_Local_Menu .Col4 li {
+	float: left;
+	width: 25%;
+}
+.RaceInfo_Local_Menu .Col5 li {
+	float: left;
+	width: 20%;
+}
+.RaceInfo_Local_Menu .Col6 li {
+	float: left;
+	width: 16.6%;
+	margin: 0 0 3px 0;
+}
+.RaceInfo_Local_Menu.Payback_List {
+	padding: 0 5px 0 8px;
+}
+
+
+/* スピード指数メニュー */
+.RaceInfo_Local_Menu01:after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid #dcdcdc;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 0px solid transparent;
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    margin-left: -28px;
+}
+.RaceInfo_Local_Menu01.Arrow_None:after {
+  border: none;
+}
+.RaceInfo_Local_Menu02 {
+    margin-bottom: 0px;
+}
+.RaceInfo_Local_Menu02 .Col4 li {
+    float: left;
+    width: 25%;
+}
+.Icon_ArrowPos01 {
+    position: relative;
+    top: 3px;
+}
+.Icon_AllowR {
+    display: inline-block;
+    background: url('../img/icon/icon_link_arrow_x2.png') no-repeat;
+    -webkit-background-size: 21px 16px;
+    -moz-background-size: 21px 16px;
+    -ms-background-size: 21px 16px;
+    background-size: 21px 16px;
+    width: 21px;
+    height: 16px;
+}
+
+
+/* スピード指数table */
+.SpeedIndex_Table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+}
+.SpeedIndex_Table tr.Header th {
+    background: #efefd9;
+    font-size: 74%;
+    color: #777;
+    border-top: 1px solid #E3E5EB;
+    border-bottom: 1px solid #E3E5EB;
+    padding: 3px 2px 3px;
+    vertical-align: middle;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+.SpeedIndex_Table tr.Header th + th {
+    border-left: 1px solid #E3E5EB;
+}
+.SpeedIndex_Table.Default tr.Header th,
+.SpeedIndex_Table.Past tr.Header th,
+.SpeedIndex_Table.Course tr.Header th {
+	vertical-align: bottom;
+}
+.SpeedIndex_Table tr.List td {
+    font-size: 83%;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 8px;
+    border: 1px solid #E3E5EB;
+}
+.SpeedIndex_Table tr.List td.Horse_Name,
+.SpeedIndex_Table tr.List td.Jockey,
+.SpeedIndex_Table tr.List td.Race_Name,
+.SpeedIndex_Table tr.List td.Win_Horse {
+    text-align: left;
+}
+.SpeedIndex_Table tr.List [class*="Waku"] {
+    font-weight: normal;
+    padding: 8px 2px;
+}
+.cellcolor_1 {background: #fc855c;}
+.cellcolor_2 {background: #fc6;}
+.cellcolor_3 {background: #fdf2c1;}
+.cellcolor_purple {background: #d0d0ff;}
+.cellcolor_check {background: #ffffbf;}
+
+/* 標準 */
+.SpeedIndex_Table.Default tr.Header th > span {
+    white-space: nowrap;
+}
+.SpeedIndex_Table.Default tr.Header th a > img {
+    margin: 3px auto 0;
+    display: block;
+}
+
+/* 近5走 */
+.SpeedIndex_Table.Past tr.List td > span {
+    display: block;
+    line-height: 1.5;
+}
+
+/* 距離&コース */
+.SpeedIndex_Table.Course tr.List td > span {
+    display: block;
+    line-height: 1.3;
+}
+
+/* 最高値 - 近走平均 - 距離 - コース - 結果 */
+.SpeedIndex_Table_Header {
+    padding: 0 8px;
+}
+.SpeedIndex_Table_Header p {
+    font-size: 77%;
+    line-height: 1.3;
+}
+.SpeedIndex_Table_Header .Average {
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 83%;
+}
+.SpeedIndex_Table_Header .Average > strong {
+    color: #dc3c3c;
+    margin-left: 4px;
+}
+.SpeedIndex_Table.RankMax tr.Header th,
+.SpeedIndex_Table.RankAverage tr.Header th,
+.SpeedIndex_Table.RankDistance tr.Header th,
+.SpeedIndex_Table.RankCourse tr.Header th,
+.SpeedIndex_Table.Result tr.Header th {
+    vertical-align: bottom;
+    white-space: nowrap;
+    padding: 3px 4px 3px;
+}
+.SpeedIndex_Table.RankMax tr.List td.Rank,
+.SpeedIndex_Table.RankAverage tr.List td.Rank,
+.SpeedIndex_Table.RankDistance tr.List td.Rank,
+.SpeedIndex_Table.RankCourse tr.List td.Rank,
+.SpeedIndex_Table.Result tr.List td.Rank {
+    padding: 4px;
+    background: #E3E5EB;
+}
+.SpeedIndex_Menu01.Result {
+    margin-bottom: 20px;
+}
+.SpeedIndex_Menu01.Result:after {
+    border: none;
+}
+[class*="SpeedIndex_No"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: -2px;
+    border: 1px solid #777;
+    border-radius: 50%;
+}
+.SpeedIndex_No1 {background: #FC855C;}
+.SpeedIndex_No2 {background: #FFCC66;}
+.SpeedIndex_No3 {background: #FDF2C1;}
+.SpeedIndex_No4 {background: #D0D0FF;}
+.SpeedIndex_No5 {background: #FFFFBF;}
+
+
+/* 払戻金 */
+.Payout_Detail {
+	margin-bottom: 18px;
+}
+.Payout_Detail_Table {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+}
+.Payout_Detail_Table tr th {
+    border-bottom: 1px solid #E3E5EB;
+}
+.Payout_Detail_Table tr th {
+    color: #fff;
+    font-size: 77%;
+    white-space: nowrap;
+}
+.Payout_Detail_Table tr td.Result {
+    font-size: 77%;
+    white-space: nowrap;
+}
+.Payout_Detail_Table tr th,
+.Payout_Detail_Table tr td {
+    padding: 8px 4px 8px 4px;
+    vertical-align: middle;
+    text-align: left;
+}
+.Payout_Detail_Table tr td {
+    border: 1px solid #E3E5EB;
+}
+.Payout_Detail_Table tr td.Result span {
+	color: #333;
+	font-size: 114%;
+	font-weight: bold;
+	line-height: 1.7;
+	position: relative;
+}
+.Payout_Detail_Table tr.Fukusho td.Result span + span {
+	margin-top: 8px;
+}
+/*.Payout_Detail_Table tr.Wide td.Result span {
+	line-height: 1.2;
+}*/
+/*.Payout_Detail_Table tr td.Result ul + ul {
+	margin-top: 9px;
+}*/
+.Payout_Detail_Table tr td.Result ul li {
+	display: inline-block;
+	vertical-align: middle;
+}
+.Payout_Detail_Table tr td ul li + li {
+	margin-left: 8px;
+}
+.Payout_Detail_Table tr td ul li + li span:before {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 2px;
+	background: #333;
+	position: absolute;
+	top: 8px;
+	left: -9px;
+}
+.Payout_Detail_Table tr.Umatan td ul li + li span:before,
+.Payout_Detail_Table tr.Tan3 td ul li + li span:before {
+	width: 4px;
+	height: 4px;
+	border-top: 2px solid #333;
+	border-right: 2px solid #333;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: none;
+	position: absolute;
+	top: 6px;
+	left: -10px;
+}
+.Payout_Detail_Table tr td.Payout,
+.Payout_Detail_Table tr td.Ninki {
+    font-size: 77%;
+    text-align: right;
+    white-space: nowrap;
+}
+.Payout_Detail_Table tr td.Payout > span {
+	line-height: 2;
+	font-weight: bold;
+}
+.Payout_Detail_Table tr td.Ninki > span {
+    display: block;
+    line-height: 2;
+}
+.Payout_Detail_Table .Tansho {background: #edf2ff;}
+.Payout_Detail_Table .Tansho th {background: #565eb0;}
+
+.Payout_Detail_Table .Fukusho {background: #ffeeee;}
+.Payout_Detail_Table .Fukusho th {background: #cb5353;}
+
+.Payout_Detail_Table .Wakuren {background: #f1fdeb;}
+.Payout_Detail_Table .Wakuren th {background: #52a455;}
+
+.Payout_Detail_Table .Umaren {background: #f9ebfd;}
+.Payout_Detail_Table .Umaren th {background: #87599a;}
+
+.Payout_Detail_Table .Wide {background: #ebfbfd;}
+.Payout_Detail_Table .Wide th {background: #529fa8;}
+
+.Payout_Detail_Table .Umatan {background: #fffbe6;}
+.Payout_Detail_Table .Umatan th {background: #e5a339;}
+
+.Payout_Detail_Table .Fuku3 {background: #ebf6fd;}
+.Payout_Detail_Table .Fuku3 th {background: #4a94bc;}
+
+.Payout_Detail_Table .Tan3 {background: #fdf6eb;}
+.Payout_Detail_Table .Tan3 th {background: #e4813e;}
+
+
+/* 結果払戻 - Tabメニュー */
+.Tab_ResultSelect:after {
+	content: "";
+	display: block;
+	width: 100%;
+	border-bottom: 2px solid #4150b2;
+}
+.Tab_ResultSelect .Inner {
+	padding: 8px 28px 0;
+	background: #DCDCDC;
+}
+.Tab_ResultSelect ul {
+	box-shadow: 0 0 8px rgba(146, 151, 165, .5);
+	border-radius: 3px 3px 0 0;
+}
+.Tab_ResultSelect ul li {
+	display: table;
+	border-radius: 3px;
+}
+.Tab_ResultSelect ul.Col2 li {
+	width: 50%;
+}
+.Tab_ResultSelect ul.Col3 li {
+	width: 33.33%;
+}
+.Tab_ResultSelect ul a {
+	display: table-cell;
+	font-size: 77%;
+	font-weight: bold;
+	color: #888c99;
+	background: #fff;
+	height: 42px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1.2;
+}
+.Tab_ResultSelect ul li + li a,
+.Tab_ResultSelect ul li + li + li a {
+  border-left: 1px solid #ccc;
+}
+.Tab_ResultSelect ul .Active a {
+	background: #4150b2 url('../img/race/menu_selected.png') no-repeat center;
+	-webkit-background-size: 44px 35px;
+	-moz-background-size: 44px 35px;
+	-ms-background-size: 44px 35px;
+	background-size: 44px 35px;
+	color: #fff;
+	box-shadow: 0 1px 2px rgba(255,255,255,.5) inset;
+}
+.Tab_ResultSelect ul li:first-child a {
+	border-radius: 3px 0 0 0;
+}
+.Tab_ResultSelect ul li:last-child a {
+	border-radius: 0 3px 0 0;
+}
+.Tab_ResultSelect ul.Col3 li.NoData {
+	width: 33.33%;
+}
+.Tab_ResultSelect ul .NoData a {
+	pointer-events:none;
+	background: #ddd;
+	color: #888;
+	box-shadow: 0 1px 2px rgba(255,255,255,.5) inset;
+}
+
+.Tab_ResultSelect ul li.Col3:last-child {
+	width: 33.34%;
+}
+
+/* 結果払戻table */
+table.ResultRefund tr.Header th.Result_Num,
+table.ResultRefund tr.Header th.Num {
+	width: 1em;
+}
+table.ResultRefund tr.Header th.Time,
+table.ResultRefund tr.Header th.Odds {
+	width: 18%;
+	text-align: center !important;
+}
+table.ResultRefund tr.Header th.Horse_Info .Horse_Info_Detail {
+	margin-top: 2px;
+}
+table.ResultRefund tr.Header th.Horse_Info .Horse_Info_Detail span {
+	font-size: 92%;
+	line-height: 1.3;
+}
+table.ResultRefund tr.Header th.Horse_Info .Detail_Left,
+table.ResultRefund tr td.Horse_Info .Detail_Left {
+	display: table-cell;
+	float: left;
+	width: 55%;
+}
+table.ResultRefund tr.Header th.Horse_Info .Detail_Right,
+table.ResultRefund tr td.Horse_Info .Detail_Right {
+	display: table-cell;
+	float: right;
+	width: 45%;
+	text-align: right;
+}
+table.ResultRefund tr.Header th.Time > span,
+table.ResultRefund tr.Header th.Odds > span {
+	display: block;
+	font-size: 92%;
+	line-height: 1.3;
+	margin-top: 2px;
+}
+
+table.ResultRefund tr td {
+	padding: 8px 2px;
+}
+table.ResultRefund tr td.Result_Num,
+table.ResultRefund tr td.Num {
+	padding: 0;
+}
+table.ResultRefund tr td.Horse_Info {
+	text-align: left;
+}
+table.ResultRefund tr td.Horse_Info dl .Horse_Name {
+	font-size: 130%;
+	margin-bottom: 8px;
+	line-height: 1.2;
+	letter-spacing: -1px;
+}
+table.ResultRefund tr td.Horse_Info dl .Horse_Info_Detail {
+	display: table;
+	width: 100%;
+}
+table.ResultRefund tr td.Horse_Info dl .Horse_Info_Detail span {
+	line-height: 1.5;
+	color: #666;
+	/*white-space: nowrap;*/
+}
+table.ResultRefund tr td.Horse_Info dl .Horse_Info_Detail .Detail_Right {
+	text-align: right;
+}
+table.ResultRefund tr td.Time,
+table.ResultRefund tr td.Odds {
+	white-space: nowrap;
+}
+table.ResultRefund tr td.Time dl dt,
+table.ResultRefund tr td.Odds dl dt {
+	font-size: 107%;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+table.ResultRefund tr td.Time dl dd + dd {
+	margin-top: 3px;
+}
+table tr.Torikeshi {
+	background: #efefef;
+}
+table.ResultRefund .Result_Slim > p {
+	line-height: 1.4;
+	text-align: left;
+	padding: 0 6px;
+}
+@media screen and (max-width: 374px) {
+	table.ResultRefund tr td.Horse_Info dl .Horse_Name {
+	    font-size: 122% !important;
+	}
+}
+
+
+
+/*　全着順 */
+.Result_Show_Btn {
+	padding: 8px 20px;
+	background: #fff;
+}
+.Button_01 {
+	display: block;
+	color: #fff;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	padding: 16px 0;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(146, 151, 165, .8);
+	background: #ef5350 url("../img/icon/icon_view.png") no-repeat 24px center;
+	-webkit-background-size: 10px 11px;
+	-moz-background-size: 10px 11px;
+	-ms-background-size: 10px 11px;
+	background-size: 10px 11px;
+}
+table#All_Result_Table tr:not(.FirstDisplay):not(.Header){
+	display:none
+}
+
+/*
+table#All_Result_Table tr:nth-child(n+5){
+	display:none
+}
+*/
+table.Table_Show_All tr{
+	display:table-row !important
+}
+
+
+/* レース映像・ゴール前写真 */
+.Result_Btn_Box_01 {
+	padding: 8px;
+}
+.Result_Btn_Box_01 ul li {
+	text-align: center;
+}
+.Result_Btn_Box_01 ul li + li a,
+.Result_Btn_Box_01 ul li + li .No_Link {
+	margin-left: 8px;
+}
+.Result_Btn_Box_01 ul a {
+	display: block;
+	font-size: 88%;
+	font-weight: bold;
+	color: #003399;
+	background: #fff;
+	padding: 15px 0;
+	text-indent: 22px;
+	border-radius: 3px;
+	box-shadow: 0 2px 6px rgba(146, 151, 165, .8);
+	position: relative;
+}
+.Result_Btn_Box_01 ul a span,
+.Result_Btn_Box_01 ul .No_Link span {
+	position: relative;
+}
+.Result_Btn_Box_01 ul .Race_Movie span:before,
+.Result_Btn_Box_01 ul .Race_Photo span:before {
+	content: "";
+	display: inline-block;
+	background: url('../img/icon/icon_sprite_raceinfo.png') no-repeat;
+	-webkit-background-size: 124px 300px;
+	-moz-background-size: 124px 300px;
+	-ms-background-size: 124px 300px;
+	background-size: 124px 300px;
+	position: absolute;
+	width: 22px;
+	height: 20px;
+}
+.Result_Btn_Box_01 ul .Race_Movie span:before {
+	background-position: -61px -188px;
+	top: -2px;
+	left: -24px;
+}
+.Result_Btn_Box_01 ul .Race_Photo span:before {
+	background-position: -61px -167px;
+	top: -2px;
+	left: -24px;
+}
+.Result_Btn_Box_01 ul .Race_Movie .No_Link span:before {
+	background-position: -85px -188px;
+	top: -2px;
+	left: -26px;
+}
+.Result_Btn_Box_01 ul .Race_Photo .No_Link span:before {
+	background-position: -85px -167px;
+	top: -2px;
+	left: -26px;
+}
+.Result_Btn_Box_01 ul .No_Link_Btn {
+	font-size: 88%;
+	font-weight: bold;
+	color: #999;
+	background: #ddd;
+	padding: 15px 0 14px;
+	text-indent: 22px;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+
+
+/* コーナー通過順位 */
+table.Corner_Num tr th {
+	background: #efefd9;
+	font-size: 74%;
+	color: #777;
+	border-top: 1px solid #E3E5EB;
+	border-bottom: 1px solid #E3E5EB;
+	padding: 8px 4px;
+	font-weight: normal;
+	vertical-align: middle;
+	line-height: 1.2;
+	letter-spacing: 1px;
+	white-space: nowrap;
+}
+table.Corner_Num tr th > strong {
+	font-size: 123%;
+}
+table.Corner_Num tr td {
+	font-size: 83%;
+	line-height: 1.3;
+	text-align: left;
+	padding: 8px 12px 8px 8px;
+	border: 1px solid #E3E5EB;
+	letter-spacing: 1px;
+	word-break: break-all;
+}
+table.Corner_Num tr:nth-child(even){
+	background: #F5F5F5;
+}
+
+
+/* ラップタイム */
+.Race_HaronTime tr.Header th {
+	padding: 8px 4px;
+}
+.Race_HaronTime tr.HaronTime td {
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.3;
+	padding: 8px;
+	border: 1px solid #E3E5EB;
+}
+
+
+/* ゴール前写真 */
+.RaceResult_Photo {
+	padding: 8px;
+}
+.RaceResult_Photo > img {
+	width: 100%;
+}
+
+
+/* ゴール映像 */
+.RaceMovie .List_Box dl .Link_Title {
+	font-size: 78%;
+	margin: 0 0 0 8px;
+}
+.MovieTxt_01 {
+	padding: 8px;
+	font-size: 88%;
+	line-height: 1.3;
+	color: #333;
+}
+.PremiumRegistWrap{}
+.PremiumRegistBox {
+	background: #fff;
+	border: 2px solid #ccc;
+	border-radius: 3px;
+	padding: 12px 10px;
+	margin: 8px 8px 0;
+}
+.PremiumRegistBox .PremiumHeadline {
+	font-size: 88%;
+	font-weight: bold;
+	line-height: 1.3;
+	text-align: center;
+}
+.PremiumRegistBox .CourseInfoTxt01 {
+	font-size: 88%;
+	font-weight: bold;
+	line-height: 1.3;
+	margin: 8px 0;
+}
+.PremiumRegistBox .PremiumColumnBtnWrap a {
+	display: block;
+	width: 100%;
+	color: #999;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 4px;
+	border: 2px solid #bfbfbf;
+	margin-top: 8px;
+}
+.PremiumRegistBox img {
+	max-width: 750px;
+	width: 100%;
+}
+.PremiumRegistBox .MovieSampleImg01,
+.PremiumRegistBox .MovieSampleImg02 {
+	text-align: center;
+}
+.PremiumRegistBtnWrap a {
+	display: block;
+	font-weight: bold;
+	color: #fff;
+	background: #8ED3FF;
+	border-radius: 5px;
+	padding: 15px 0;
+	text-align: center;
+	box-shadow: 0 3px 0 #7CC1F8;
+	margin: 12px 0;
+}
+.PremiumRegistBox .Login_Btn {
+	margin-bottom: 12px;
+}
+.PremiumRegistBox .Login_Btn a {
+	display: block;
+	padding: 8px;
+	background: #e9e9e9;
+	background-image: -moz-linear-gradient(center top,#fff 0,#e9e9e9 50%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#fff),color-stop(0.5,#e9e9e9));
+	box-shadow: 1px 1px 2px 0 #999;
+	border-radius: 4px;
+	text-align: center;
+	border: 1px solid #ccc;
+	color: #03a;
+	font-size: 88%;
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+
+/* 30秒速報 */
+table.ResultFlash tr.List td.Result_Num {
+	width: 3em;
+	padding: 0;
+	line-height: 1.3;
+	letter-spacing: 1px;
+}
+table.ResultFlash tr.List td.Num {
+	width: 1em;
+	padding: 4px;
+}
+table.ResultFlash tr.List td.Horse_Info .Detail_Left {
+	width: 30%;
+}
+table.ResultRefund tr.List td.Horse_Info .Detail_Right {
+	width: 70%;
+}
+.Result_Show_Btn .SubmitBtn {
+	font-size: 84%;
+	background: #ef5350;
+}
+
+/* sns_share */
+.UserAction_Btn {
+	padding: 8px;
+}
+.UserAction_Btn ul {
+	text-align: right;
+}
+.UserAction_Btn ul li {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+/* raceレビューテキスト */
+.Review_Photo_Box {
+	border: solid 1px #eee;
+	background-color: #f1f2f3;
+	margin: 0 14px 8px;
+	padding: 4px;
+	border-radius: 4px;
+}
+.Review_Photo_Box img {
+	width: 100%;
+}
+.Review_Photo_Box .Caption {
+	text-align: left;
+	color: #444;
+	line-height: 1.3;
+	font-size: 87%;
+	margin: 4px auto 0 auto;
+}
+.Review_Txt_Box {
+	padding: 14px;
+}
+.Review_Txt_Box .Review_Txt  {
+	font-size: 100%;
+	color: #333;
+	line-height: 1.5;
+	margin: 0 0 8px 0;
+}
+
+
+/*　結果払戻text */
+.Race_ResultBox .Txt {
+	font-size: 72%;
+	padding: 8px;
+}
+.Result_Note {
+	padding: 8px;
+}
+.Result_Note > p {
+	font-size: 72%;
+	line-height: 1.4;
+}
+.Result_Guide > p {
+	font-size: 88%;
+	padding: 8px;
+	line-height: 1.3;
+}
+.Result_Guide > p > span {
+	font-weight: bold;
+}
+
+
+/*　血統 */
+.Bias_Colorling01 {background:#C4F2F9;}
+.Bias_Colorling02 {background:#C6FFAA;}
+.Bias_Colorling03 {background:#E0B7FF;}
+.Bias_Colorling04 {background:#FFA6E2;}
+.Bias_Colorling05 {background:#FFD28E;}
+.Bias_Colorling06 {background:#E8BF9B;}
+.Bias_Colorling07 {background:#FFFF99;}
+.Bias_Colorling08 {background:#DDDDDD;}
+
+
+/* 血統-サンプルレース */
+.Bias_Sample_Race {
+    font-size: 78%;
+    font-weight: bold;
+    padding: 8px;
+}
+.Bias_Sample_Race dt {
+    margin-bottom: 4px;
+}
+
+
+/* 血統table */
+table.Bias tr.Header th {
+    vertical-align: bottom;
+}
+table.Bias tr.List td {
+    font-size: 83%;
+    white-space: nowrap;
+}
+table.Bias tr.List td.Horse_Name,
+table.Bias tr.List td.Blood_Cell {
+    text-align: left;
+}
+table.Bias tr.List td.Blood_Cell {
+	box-shadow: 2px 2px 0 0 #fff inset,-2px -2px 0 0 #fff inset;
+	border-top: 1px solid #E3E5EB;
+	border-left: 1px solid #E3E5EB;
+	border-bottom: none;
+	border-right: none;
+}
+
+
+/* 血統表 + 説明表 */
+.Bias_Colorling {
+    padding: 0 8px;
+    margin-bottom: 18px;
+}
+.Bias_Colorling ul li {
+    width: 150px;
+    font-size: 74%;
+    color: #333;
+    padding: 8px;
+    margin: 0 2px 2px 0;
+    border-radius: 3px;
+}
+.Bias_Colorling a {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 78%;
+}
+.Description_Box {
+    padding: 0 8px 18px;
+}
+.Description_Box > dl {
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    padding: 10px;
+}
+.Description_Box > dl > dt {
+    font-size: 78%;
+    color: #0039ab;
+    padding-left: 26px;
+    padding-right: 22px;
+    position: relative;
+    line-height: 1.1;
+}
+.Description_Box > dl > dd {
+    display: none;
+}
+.Description_Inner {
+	/*border: 2px solid #fff;*/
+    margin-top: 12px;
+}
+.Description_Inner dl dt {
+	font-size: 78%;
+	font-weight: bold;
+	padding: 8px;
+}
+.Description_Inner dl dd {
+	font-size: 78%;
+	line-height: 1.5;
+	padding: 12px 8px;
+	background: #fff;
+}
+.SpeedIndex .Description_Inner dl dt {
+	color: #fff;
+	background: #72737e;
+}
+.Description_Inner .help_numberlist li p {
+    line-height: 1.5;
+}
+
+
+/* 馬券の買い方 */
+.Description_Box.Flow {
+	padding: 0 8px 8px;
+}
+.Baken_Flow:first-child {
+	padding: 8px 0;
+}
+.Baken_Flow_Title {
+	font-size: 78%;
+	color: #fff;
+	line-height: 1.4;
+	padding: 4px 8px;
+	background: #72737e;
+	border-radius: 3px 3px 0 0;
+}
+.Baken_Flow .Inner {
+	border: 1px solid #72737e;
+	border-radius: 0 0 3px 3px;
+	background: #fff;
+	padding: 8px 4px;
+}
+.Baken_Flow .Step + .Step {
+	margin-top: 8px;
+}
+.Baken_Flow .Step .Step_Title {
+	font-size: 78%;
+	padding: 8px;
+	border-bottom: 1px solid #999;
+}
+.Baken_Flow .Step .Image {
+	text-align: center;
+}
+.Baken_Flow .Step .Image > img {
+	padding: 8px;
+	width: 100%;
+	max-width: 556px;
+}
+.Baken_Flow .Note {
+	font-size: 78%;
+	line-height: 1.4;
+	margin: 0 4px;
+}
+
+
+/* レースの見方 */
+.Description_Box table.Icon_Guide {
+	background: #fff;
+	border-radius: 3px;
+	padding: 8px;
+	width: 100%;
+}
+.Description_Box table.Icon_Guide tr th {
+	text-align: left;
+	width: 38px;
+}
+.Description_Box table.Icon_Guide tr td {
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align: bottom;
+}
+.Icon_Guide01,
+.Icon_Guide02,
+.Icon_Guide03 {
+	font-size: 11px;
+	border-radius: 3px;
+	color: #fff;
+	display: inline-block;
+	padding: 2px 3px;
+}
+.Icon_Guide02:after {
+    content: "";
+    background: url("../img/race/Next_Race_Bg.png") no-repeat;
+    -webkit-background-size: 8px 15px;
+    -moz-background-size: 8px 15px;
+    -ms-background-size: 8px 15px;
+    background-size: 8px 15px;
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    width: 16px;
+    height: 15px;
+}
+.Icon_Guide01 {
+	background: #1228B6;
+}
+.Icon_Guide02 {
+    background: #E9C500;
+    border: 1px solid #E9C500;
+    position: relative;
+}
+.Icon_Guide03 {
+	background: #D90036;
+}
+
+
+/* 馬券収支FAQ */
+.Description_Box.Balance .Description_Inner dl dt {
+	background: #999;
+	border-radius: 3px 3px 0 0;
+	color: #fff;
+	line-height: 1.4;
+	padding: 4px 8px;
+}
+.Description_Box.Balance .Description_Inner dl dd {
+	border-radius: 0 0 3px 3px;
+	margin-bottom: 8px;
+}
+.Description_Box.Balance .Description_Inner dl dd:last-child {
+	margin-bottom: 0;
+}
+.Description_Box.Balance .Description_Inner .List {
+	background: #efefef;
+	padding: 4px;
+}
+.Description_Box.Balance .Description_Inner .List li {
+	font-size: 13px;
+	line-height: 1.4;
+}
+.Description_Box.Balance .Description_Inner .List li + li {
+	margin-top: 6px;
+}
+.Description_Box.Balance .Description_Inner .Link_Text {
+	display: block;
+	font-size: 14px;
+	margin: 12px 0 0 0;
+	text-align: right;
+}
+
+
+/*-- 予想一覧 --*/
+.Race_Yoso_Area{
+	padding:6px 0 8px;
+	position: relative;
+}
+.Race_Yoso_Area > table{
+	position: absolute;
+	z-index: 50;
+}
+.Race_Yoso_Area table th {
+	height: 37px;
+}
+.Race_Yoso_Area table td {
+	white-space: nowrap;
+	text-align:right;
+}
+.Race_Yoso_Area table.Horse_Name_Table th.Horse_Name_Table,
+.Race_Yoso_Area table.Tendency_Data_Table th.Horse_Name_Table {
+	white-space: nowrap;
+	height: 37px;
+	vertical-align:middle;
+}
+.Race_Yoso_Area table.Horse_Name_Table td.Horse_Info{
+	background:#fff;
+	text-align:left;
+	height:27px;
+	vertical-align:middle;
+}
+table.Yoso01_Table {
+	background: #fff;
+	border-right: 3px double #ddd!important;
+}
+table.Yoso01_Table td.Horse_Info{
+	font-size: 76%;
+}
+.Race_Yoso_Area .Horse_Date_Table {
+	overflow:auto;
+}
+.Yoso01_Table tbody td.Popular,
+.Yoso01_Table tbody td.Weight {
+    font-size: 78%;
+    text-align: center;
+}
+.Yoso01_Table tbody td.Mark_Pro:nth-child(even){
+    background:#fafafa;
+}
+.NotesWrap p {
+    font-size: 78%;
+    padding: 0 8px 8px;
+}
+.Yoso_Check {
+    background: #fff;
+    padding: 0 8px 8px;
+    display: table;
+    width: 100%;
+}
+.Yoso_Check .Select > input {
+    display: none;
+}
+.Yoso_Check .Select,
+.Yoso_Check .Txt {
+    display: table-cell;
+    vertical-align: middle;
+}
+.Yoso_Check .Txt {
+    width: 100%;
+    color: #333;
+    padding-left: 6px;
+}
+.Yoso_Check .Txt > span {
+    display: block;
+    font-size: 70%;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.2;
+}
+.Yoso_Send_Btn {
+    padding: 8px;
+}
+.Yoso_Send_Btn .Button_01 {
+    background: #ef5350;
+}
+
+
+/* cpカスタマイズ */
+.Current_Result {
+    margin: 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px;
+}
+.Current_Result .Txt {
+    font-size: 86%;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+.Current_Result .Yoso_Mark_Kaime {
+    margin-bottom: 8px;
+}
+.Yoso01_Table thead tr.Num div {
+    width: 24px;
+    margin: 0 auto;
+    color: #039;
+    padding: 6px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+.Yoso01_Table thead tr.CP_Result th {
+    background: #cdf;
+}
+.Yoso01_Table tbody tr.CP_Result td:nth-child(even) {
+    background: #fff;
+}
+.Yoso01_Table tbody tr.CP_Result td:nth-child(3) {
+    background: #F0F7FB;
+}
+.Yoso_CP_Max {
+    padding: 0 8px 8px;
+    margin-bottom: 10px;
+}
+.Yoso_CP_Max .Title {
+    margin: 6px 0;
+    color: #f20;
+    font-size: 88%;
+    font-weight: bold;
+}
+.Yoso_CP_Max .Txt {
+  font-size: 83%;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #333;
+  margin-bottom: 8px;
+}
+.Yoso_CP_Max dl {
+    margin-bottom: 8px;
+}
+.Yoso_CP_Max dl dt,
+.Yoso_CP_Max dl dd {
+    display: inline-block;
+    font-size: 83%;
+    font-weight: bold;
+}
+.Yoso_CP_Max dl dt > span,
+.Yoso_CP_Max dl dd > span {
+    font-size: 106%;
+    color: #f20;
+    margin-right: 2px;
+}
+.Yoso_CP_Max dl dd + dd {
+    margin-left: 6px;
+}
+table.Yoso_CP_Max_Table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #fff;
+    margin-bottom: 8px;
+}
+table.Yoso_CP_Max_Table tr td {
+    font-size: 83%;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    vertical-align: bottom;
+    background: #cdf;
+    padding: 8px;
+}
+table.Yoso_CP_Max_Table tr td + td {
+    border-left: 1px solid #fff;
+}
+table.Yoso_CP_Max_Table tr td div {
+    font-size: 106%;
+    width: 24px;
+    margin: 8px auto 0;
+    color: #039;
+    padding: 6px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+}
+@media only screen and (min-width: 400px){
+    table.Yoso_CP_Max_Table {
+        width: 392px;
+    }
+}
+
+
+/* cpカスタマイズ - 設定 */
+table.CP_Setting {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.CP_Setting thead tr th {
+    background: #efefd9;
+    font-size: 74%;
+    color: #777;
+    border: 1px solid #E3E5EB;
+    padding: 3px 2px 3px;
+    vertical-align: middle;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+table.CP_Setting tbody tr th {
+    font-size: 83%;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 8px;
+    border: 1px solid #E3E5EB;
+    background: #cdf;
+}
+table.CP_Setting tbody tr td {
+    border: 1px solid #E3E5EB;
+    background: #fff;
+    text-align: center;
+}
+.Setting_Box {
+    padding: 8px;
+}
+.Setting_Box .Txt {
+    font-size: 88%;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 4px;
+}
+.Setting_Btn {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 88%;
+    font-weight: bold;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(146, 151, 165, .8) !important;
+    padding: 14px 0;
+    border-radius: 3px;
+    position: relative;
+}
+.List_Btn_Box.Setting dl dt {
+    color: #333;
+    font-size: 88%;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.List_Btn_Box.Setting dl dd {
+	font-size: 75%;
+	font-weight: bold;
+}
+.LinkBtn_05.Setting a {
+    color: #333;
+    background: #fff;
+}
+.LinkBtn_03.Setting > .Txt {
+    font-size: 83%;
+    line-height: 1.3;
+    color: #333;
+    margin: 8px 0 28px;
+    text-align: left;
+}
+@media only screen and (min-width: 400px){
+    table.CP_Setting {
+        width: 400px;
+    }
+}
+
+
+/* cp設定検索 */
+.CP_Setting_Detail {
+    margin: 8px 8px 18px;
+}
+[class*="Setting_Detail0"] {
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+[class*="Setting_Detail0"] .Title {
+    font-size: 88%;
+    padding: 8px;
+    background: #cdf;
+    margin-bottom: 14px;
+    border-radius: 3px 3px 0 0;
+}
+[class*="Setting_Detail0"] ul {
+    margin: 0 0 0 6px;
+}
+[class*="Setting_Detail0"] ul li {
+    display: inline-block;
+    width: 70px;
+    margin-bottom: 14px;
+}
+[class*="Setting_Detail0"] label > span {
+    font-size: 83%;
+    white-space: nowrap;
+    line-height: 30px;
+    padding-left: 34px;
+}
+.Setting_Detail02 ul .Item01 {
+    width: 60px;
+}
+.Setting_Detail02 ul .Item02 {
+    width: 86px;
+}
+.Setting_Detail03 ul li {
+    width: 90px;
+}
+
+
+/* radio */
+.Radio_Btn {
+    padding: 8px;
+}
+.Radio_Btn input,
+[class*="Setting_Detail"] input[type="radio"] {
+    display: none;
+}
+.Radio_Btn_Off {
+    display: inline-block;
+    background: url('../img/race/radio_off.png') no-repeat center;
+    -webkit-background-size: 28px 28px;
+    -moz-background-size: 28px 28px;
+    -ms-background-size: 28px 28px;
+    background-size: 28px 28px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(146, 151, 165, 0.6);
+    width: 28px;
+    height: 28px;
+}
+[class*="Setting_Detail"] input[type="radio"]:checked + label,
+.Radio_Btn input[type="radio"]:checked + label {
+    background: url('../img/race/radio_on.png') no-repeat center;
+    -webkit-background-size: 28px 28px;
+    -moz-background-size: 28px 28px;
+    -ms-background-size: 28px 28px;
+    background-size: 28px 28px;
+}
+[class*="Setting_Detail"] input[type="radio"]:checked + label > span {
+	color: #EF5350;
+}
+
+
+/* 過去のwin5 */
+#Netkeiba_Race_Win5 .Title_Sec_Btn a {
+	font-size: 86%;
+}
+.Win5_PaybackBox > ul > li:first-child {
+  border-top: 1px solid #ccc;
+}
+.WIN5_RaceListBox {
+	display: table;
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.WIN5_RaceListBox a {
+	display: block;
+	padding: 8px;
+}
+.WIN5_RaceDataLeftBox {
+	display: table-cell;
+	width: 3.0em;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	background: #f1f2f3;
+	border-right: 1px solid #ccc;
+}
+.WIN5_RaceDataLeftBox .Win5Date {
+	font-size: 88%;
+	color: #333;
+	margin-bottom: 4px;
+}
+.WIN5_RaceDataLeftBox .Win5DateWeek_sun {
+	font-size: 77%;
+	color: #f02e2e;
+}
+.WIN5_MainRaceName {
+	margin-bottom: 8px;
+}
+.WIN5_MainRaceName .Win5RaceName {
+	font-size: 105%;
+	font-weight: bold;
+	color: #333;
+	float: left;
+}
+.WIN5_MainRaceName .Win5RaceHoka {
+	font-size: 84%;
+	color: #333;
+}
+.Win5_UmabanWrap {
+	margin-bottom: 4px;
+}
+.Win5_UmabanWrap .w5 {
+	display: inline-block;
+	width: 26px;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 2px;
+	padding: 4px 0px 4px 0px;
+	position: relative;
+}
+.Win5_Table .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(1) .Maru {
+	left: -2px;
+}
+.Win5_Table .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(2) .Maru,
+.Win5_Table .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(3) .Maru {
+	left: -1px;
+}
+.WIN5_RaceListBox .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(2) .Maru {
+	left: 2px;
+}
+.WIN5_RaceListBox .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(3) .Maru {
+	left: 4px;
+}
+.WIN5_RaceListBox .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(4) .Maru {
+	left: 4px;
+}
+.WIN5_RaceListBox .Win5_UmabanWrap + .Win5_NinkiWrap ul li:nth-child(5) .Maru {
+	left: 5px;
+}
+.WIN5_RaceListBox .Win5_UmabanWrap + .Win5_NinkiWrap ul li .Maru {
+	position: relative;
+}
+
+.Win5_UmabanWrap ul li + li {
+	margin-left: 14px;
+}
+.Win5_UmabanWrap ul li + li:before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #333;
+	border-right: 2px solid #333;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background: none;
+	position: absolute;
+	top: 8px;
+	left: -16px;
+}
+.Win5_NinkiWrap {
+	margin-bottom: 8px;
+}
+.Win5_NinkiWrap ul li {
+	display: inline-block;
+	font-size: 88%;
+	color: #333;
+}
+.Win5_NinkiWrap ul li + li {
+	margin-left: 12px;
+}
+.Win5_PaybackWrap .Win5PaybackText {
+	display: inline-block;
+	font-size: 72%;
+	color: #fff;
+	background: #999;
+	padding: 2px 8px;
+	margin-right: 6px;
+	border-radius: 2px;
+	vertical-align: top;
+}
+.Win5_PaybackWrap .Win5PlaybackMoney {
+	color: #333;
+	font-weight: bold;
+}
+.Win5_CarryOverWrap {
+	color: #fff;
+	background-color: #f02e2e;
+	padding: 4px;
+	border-radius: 3px;
+}
+.Win5_CarryOverWrap .Win5CarryOverText {
+	font-size: 66%;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin-right: 6px;
+}
+.Win5_CarryOverWrap .Win5CarryOverMoney {
+	font-weight: bold;
+}
+
+
+/* 枠カラー*/
+[class*="WakuBan"] {color: #fff;}
+.WakuBan1 {background: #fff; border: 1px solid #222; color: #333;}
+.WakuBan2 {background: #222; border: 1px solid #222;}
+.WakuBan3 {background: #dc3c3c; border: 1px solid #dc3c3c;}
+.WakuBan4 {background: #2c53a9; border: 1px solid #2c53a9;}
+.WakuBan5 {background: #e4ca3b; border: 1px solid #e4ca3b;}
+.WakuBan6 {background: #58af4a; border: 1px solid #58af4a;}
+.WakuBan7 {background: #de8a26; border: 1px solid #de8a26;}
+.WakuBan8 {background: #dc6179; border: 1px solid #dc6179;}
+
+
+/* win5-結果払戻 */
+.WIN5_AllResult {
+	padding: 8px;
+}
+.WIN5_AllResult .Win5TextSmall {
+	white-space: nowrap;
+}
+.WIN5_AllResult table + table {
+	margin-top: 8px;
+}
+table.Win5_Table tr.Header th {
+	text-align: center;
+	padding: 8px;
+}
+table.Win5_Table tr th {
+	width: 88px;
+	font-size: 74%;
+	text-align: left;
+	color: #777;
+	background: #efefd9;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+table.Win5_Table tr td {
+	font-size: 83%;
+	color: #333;
+	text-align: right;
+}
+table.Win5_Table .Win5_UmabanWrap .w5 {
+	font-size: 100%;
+}
+table.Win5_Table .Win5_NinkiWrap .Maru {
+	position: relative;
+	left: 2px;
+}
+table.Win5_Table tr.Result td,
+table.Win5_Table tr.CarryOver td {
+	font-size: 100%;
+	color: #333;
+}
+
+
+/* 投票・照会 */
+.Win5_LinkBtn {
+	padding: 8px;
+}
+.Win5_LinkBtn ul li + li a {
+	margin-left: 4px;
+}
+.Win5_LinkBtn ul a {
+	display: block;
+	background: #fff;
+	text-align: center;
+	padding: 4px 0px 8px;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Win5_LinkBtn .Win5ShimekiriTimeText {
+	display: block;
+	color: #333;
+	font-size: 74%;
+}
+
+.Race_Infomation_Box.Win5 {
+    font-size: 85%;
+    padding: 8px;
+    margin: 12px 8px;
+    line-height: 1.4;
+    text-align: left;
+}
+.Race_Infomation_Box.Win5 a {
+    display: block;
+    word-break: break-all;
+    line-height: 1.2;
+}
+
+/* win5-レースリスト */
+.Win5RaceMenuWrap {
+	position: relative;
+}
+.Win5RaceMenuWrap .RaceList li {
+	display: -webkit-box;
+	display: -moz-box;
+	width: 100%;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+}
+.Win5RaceMenuWrap .RaceList_Item01 .Race_Num {
+	font-size: 116%;
+	padding: 12px 0;
+}
+.Win5RaceTrack_1 {color: #08a800;}
+.Win5RaceTrack_2 {color: #874c11;}
+
+/* day / year - pager */
+.Common_Pager_Type1 .Prev_Page,
+.Common_Pager_Type1 .Next_Page {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+    top: 4px;
+}
+.Common_Pager_Type1 .Prev_Page {
+	left: 8px;
+}
+.Common_Pager_Type1 .Next_Page {
+	right: 8px;
+}
+.Common_Pager_Type1 a {
+	display: block;
+	font-size: 77%;
+	text-align: center;
+	color: #333;
+	background: #f1f2f3;
+	background-image: -moz-linear-gradient(top, #f7f8f9, #f1f2f3);
+	background-image: -webkit-gradient(linear,left top,left bottom, from(#f7f8f9), to(#f1f2f3) );
+	background-image: linear-gradient(to bottom, #f7f8f9, #f1f2f3);
+	border-radius: 3px;
+	box-shadow: 0px 1px 0px #fff inset;
+	padding: 8px 0;
+	border: 1px solid #ddd;
+}
+.Win5_Race_Year {
+	padding: 14px 8px;
+	background: #fff;
+	position: relative;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.Win5_Race_Year .Page_Info {
+	font-size: 111%;
+	font-weight: bold;
+	text-align: center;
+}
+.Win5_Race_Year .Prev_Page,
+.Win5_Race_Year .Next_Page {
+	width: 80px;
+	height: 30px;
+	position: absolute;
+	top: 7px;
+}
+.Payback_Day,
+.Common_Pager_Type1.Calendar_List {
+	position: relative;
+}
+.Common_Pager_Type1.Calendar_List {
+	padding: 14px 0;
+	text-align: center;
+	background: #fff;
+}
+.Common_Pager_Type1.Calendar_List .Prev_Page,
+.Common_Pager_Type1.Calendar_List .Next_Page {
+    width: 60px;
+    position: absolute;
+    top: 8px;
+}
+.Icon_Inline_S .Icon_Pager_Prev {
+	background-position: -72px -94px;
+}
+.Icon_Inline_S .Icon_Pager_Next {
+	background-position: -72px -119px;
+}
+
+
+/* 結果払戻し一覧 */
+.RaceResult_Btn {
+  margin: 8px;
+}
+.RaceResult_Btn a {
+	display: block;
+	border-radius: 3px;
+	background: #fff;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	/*background: #fff url('../img/icon/icon_link_arrow_x2.png') no-repeat right;
+	-webkit-background-size: 21px 16px;
+	-moz-background-size: 21px 16px;
+	background-size: 21px 16px;*/
+}
+.RaceResult_Btn li div {
+	padding: 12px;
+}
+.RaceResult_Btn li div .RaceTitle {
+	font-size: 110%;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 8px;
+}
+.RaceResult_Btn li div .RaceData {
+  font-size: 74%;
+  color: #333;
+}
+
+
+/* 開催一覧カレンダー - select */
+.Race_Calendar_Select_Box {
+	background: #fff;
+	text-align: center;
+	border-radius: 4px;
+	padding: 12px 8px;
+}
+.Race_Calendar_Select_Box .Select_Box,
+.Race_Calendar_Select_Box .Select_Btn {
+	display: inline-block;
+}
+.Race_Calendar_Select_Box .Select_Box > span {
+	vertical-align: middle;
+}
+.Race_Calendar_Select_Box select {
+  padding: 4px;
+  font-size: 94%;
+  border-radius: 3px;
+}
+.Race_Calendar_Select_Box input[type="submit"] {
+	border: none;
+	color: #333;
+	font-size: 88%;
+	font-weight: bold;
+	padding: 7px 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background: #f1f2f3;
+	background-image: -moz-linear-gradient(top, #f7f8f9, #f1f2f3);
+	background-image: -webkit-gradient(linear,left top,left bottom, from(#f7f8f9), to(#f1f2f3) );
+	background-image: linear-gradient(to bottom, #f7f8f9, #f1f2f3);
+	border-radius: 3px;
+	box-shadow: 0px 1px 0px #fff inset;
+}
+.Calendar_List {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+
+/* 開催一覧 - レースカレンダー */
+.Race_Calendar_List > ul {
+	padding: 8px 0 0 8px;
+}
+.Calendar_DayList dl.ThisWeek_RaceList {
+	display: table;
+	width: 100%;
+	margin: 0 0 8px;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dt {
+	display: table-cell;
+	width: 65px;
+	font-size: 86%;
+	font-weight: bold;
+	vertical-align: middle;
+	background: url("../img/race/thisweek_bg.png") no-repeat center center;
+	-webkit-background-size: 62px 52px;
+	-moz-background-size: 62px 52px;
+	-ms-background-size: 62px 52px;
+	background-size: 62px 52px;
+	letter-spacing: 2px;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dt p {
+	color: #333;
+	text-align: center;
+	line-height: 1.3;
+	padding-right: 8px;
+	letter-spacing: -0.1px;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dt.Day span {
+	display: block;
+	font-size: 100%;
+	font-weight: normal;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dt span.Day_Sat {
+	color: #0066cc;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dt span.Day_holi {
+	color: #f02e2e;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dd {
+	display: table-cell;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dd ul {
+	width: 100%;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dd li {
+  display: table;
+  text-align: center;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dd ul.Btn_3col li {
+	width: 33%;
+	float: left;
+}
+.Calendar_DayList dl.ThisWeek_RaceList dd li {
+  padding-left: 8px;
+}
+.Race_Calendar_List dl.ThisWeek_RaceList dd li a,
+.Race_Calendar_List dl.ThisWeek_RaceList dd .No_Link {
+	display: table-cell;
+	width: 100%;
+	height: 3em;
+	vertical-align: middle;
+	font-weight: bold;
+	padding: 0 0;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+dl.ThisWeek_RaceList dd li .JyoName {
+	font-size: 92%;
+	color: #03a;
+}
+dl.ThisWeek_RaceList dd li .Top_RaceName {
+  font-size: 75%;
+  color: #777;
+  font-weight: normal;
+  margin: auto;
+  margin-top: .3em;
+  text-align: center;
+}
+
+dl.ThisWeek_RaceList dd li .No_Link {
+	background: #ccc !important;
+}
+dl.ThisWeek_RaceList dd li .No_Link .JyoName {
+	color: #444;
+}
+
+
+/* お気に入り馬pager */
+.Race_Bookmark_List .RaceDayWrap {
+    margin-top: 0;
+    padding: 8px 0;
+}
+.Race_Bookmark_List .RaceDayText {
+    font-size: 94%;
+    text-align: center;
+}
+.Race_Bookmark_List .RaceDayPrev,
+.Race_Bookmark_List .RaceDayNext {
+    padding: 4px;
+}
+.Race_Bookmark_List .RaceDayNext {
+    text-align: right;
+}
+
+
+/* お気に入り馬出走情報 */
+.Race_Bookmark_List {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.Race_Bookmark_List .Contents_Header {
+    position: relative;
+    background-color: #ddd;
+    border-bottom: 0;
+    padding: 8px;
+}
+.Race_Bookmark_List .Contents_Header h2 {
+    font-size: 88%;
+    color: #333;
+    line-height: 1.2;
+}
+.Race_Bookmark_List .Contents_Header .sat {
+  color: #0066cc;
+}
+.Race_Bookmark_List .Contents_Header .sun {
+  color: #f02e2e;
+}
+.RaceCourseInfoWrap {
+    padding: 8px;
+}
+.RaceCourseInfoWrap dl {}
+.RaceCourseInfoWrap dl dt {
+    font-weight: bold;
+    padding: 6px 2px;
+    border-left: 6px solid #034cca;
+    border-bottom: 1px solid #034cca;
+    position: relative;
+}
+.AttentionText {
+    padding: 8px;
+}
+.AttentionText .Txt {
+    font-size: 77%;
+    line-height: 1.3;
+}
+.AttentionText .LinkBtn_06 {
+    margin: 12px 0;
+}
+.LinkBtn_06 a {
+    display: block;
+    font-size: 88%;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background: #f60;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .7);
+    background-image: -moz-linear-gradient(top,#f96,#f60);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f96),to(#f60));
+    background-image: -webkit-linear-gradient(top,#f96,#f60);
+    background-image: linear-gradient(top,#f96,#f60);
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .7);
+    padding: 12px 0;
+}
+.AttentionText .LinkBtn a {
+    display: block;
+    font-size: 77%;
+    color: #333;
+    background: #fff;
+    text-align: left;
+    padding: 12px 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+    background: #fff url("../img/icon/icon_link_arrow_x2.png") no-repeat right center;
+    -webkit-background-size: 21px 16px;
+    -moz-background-size: 21px 16px;
+    background-size: 21px 16px;
+}
+.AttentionText .AttentionText_Id {
+    font-size: 77%;
+    text-align: right;
+    margin: 18px 0 6px;
+}
+.RaceCourseInfoWrap {
+    padding: 4px;
+}
+.RaceCourseInfoWrap dl {
+    margin: 0 0 12px;
+}
+.RaceCourseInfoWrap dl dt {
+    border-left: 6px solid #034cca;
+    border-bottom: 1px solid #034cca;
+    padding: 6px 2px 2px;
+    font-weight: bold;
+    margin: 0 auto 2px;
+    overflow: hidden;
+    position: relative;
+}
+.RaceCourseInfoWrap dl dt a {
+    display: block;
+    line-height: 1.3;
+}
+.RaceCourseInfoWrap dl dt a > .race_num {
+    display: inline-block;
+    color: #333;
+    margin-bottom: 4px;
+}
+.RaceCourseInfoWrap dl dt span {
+    font-size: 88%;
+    vertical-align: 0;
+}
+.RaceCourseInfoWrap .icon_grade_post {
+    position: relative;
+    top: -1px;
+    left: -2px;
+    vertical-align: middle;
+}
+.RaceCourseInfoWrap .race_status_post {
+    font-size: 88%;
+    border: 1px solid #999;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 2px 3px;
+    color: #333;
+    float: right;
+}
+.RaceCourseInfoWrap dl dd {
+    padding: 0 0 0 10px;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul {
+    display: table;
+    clear: both;
+    overflow: hidden;
+    width: 98%;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul li {
+    display: table-cell;
+    padding: 6px 0;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul li:first-child {
+    font-size: 88%;
+    font-weight: bold;
+    width: 100%;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul li:nth-child(2) {
+    font-size: 83%;
+    color: #666;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul li:nth-child(2) p {
+    width: 80px;
+}
+.jockeyarr_right .RaceCourseInfoWrap dl dd ul li:last-child {
+    width: 50px;
+    text-align: center;
+}
+.RaceCourseInfoWrap dl dd ul li .ArrivalBox {
+    display: block;
+    width: 45px;
+    margin: 0 auto;
+    background-color: #FFF;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 83%;
+    font-weight: bold;
+    padding: 3px 4px 4px 4px;
+}
+.RaceCourseInfoWrap dl dd ul li .Arr_1 {
+    background-color: #fff080;
+    border-color: #ffb933;
+}
+.RaceCourseInfoWrap dl dd ul li .Arr_2 {
+  background-color: #ccdfff;
+  border-color: #7af;
+}
+.RaceCourseInfoWrap dl dd ul li .Arr_3 {
+    background-color: #f0c8a0;
+    border-color: #f96;
+}
+
+
+/* お気に入り馬出走テーブル */
+.Bookmark_Schedule {
+    padding: 8px;
+}
+table.Bookmark tr th {
+    background: #999;
+    color: #fff;
+    font-weight: normal;
+    width: 70px;
+    padding: 8px 0;
+    border: 1px solid #ccc;
+}
+table.Bookmark tr td {
+    border: 1px solid #ccc;
+    border-left: none;
+    text-align: left;
+}
+.Bookmark_Schedule .Notice {
+    font-size: 77%;
+    color: #555;
+    text-align: right;
+    margin-top: 8px;
+}
+
+
+/*　お気に入り馬メニュー　*/
+.Favorite_Menu {
+    padding: 8px 0 8px 8px;
+}
+.Favorite_Menu ul a {
+    display: block;
+    font-size: 78%;
+    font-weight: bold;
+    color: #333;
+    background: #fff;
+    text-align: center;
+    line-height: 1.3;
+    margin-right: 3px;
+    padding: 6px 0;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+}
+.Favorite_Menu ul a span.Icon_Nk {
+    margin: 0 auto 4px;
+}
+.Favorite_Menu ul li:nth-child(3n) a {
+   margin-right: 8px;
+}
+.Favorite_Menu_List {
+    padding: 8px 0px 18px 8px;
+}
+.Favorite_Menu_List a {
+    display: block;
+    font-size: 78%;
+    font-weight: bold;
+    color: #333;
+    margin: 0 3px 3px 0;
+    padding: 12px 4px 12px 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(146, 151, 165, .5);
+	background: #fff;
+}
+.Favorite_Menu_List ul li:nth-child(2n) a {
+    margin-right: 8px;
+}
+.Favorite_Menu_List ul a > .Icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+.Icon_Sp_Sns {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: -2px 6px 0 0;
+    vertical-align: middle;
+    background: url("../img/icon/icon_sp_sns_x2.png") no-repeat;
+    background-size: 144px 432px;
+    -moz-background-size: 144px 432px;
+    -webkit-background-size: 144px 432px;
+    -ms-background-size: 144px 432px;
+}
+.Icon_Sp_Sns01 {background-position: -32px -160px;}
+.Icon_Sp_Sns02 {background-position: -16px -16px;}
+.Icon_Sp_Sns03 {background-position: 0 -96px;}
+.Icon_Sp_Sns04 {background-position: -65px -322px;}
+
+
+/* 重賞スケジュール */
+table.Schedule tr td {
+    font-size: 83%;
+    white-space: nowrap;
+}
+table.Schedule tr td.Race_Name {
+    text-align: left;
+}
+
+
+/* 変更情報・お知らせ */
+.List_Btn_Box.Infomation li {
+    padding: 8px;
+    background: #fff;
+    border-radius: 3px;
+}
+.List_Btn_Box.Infomation .Link_Title {
+    margin-bottom: 8px;
+}
+.List_Btn_Box.Infomation .Link_Title > span {
+    font-size: 88%;
+    font-weight: bold;
+    color: #fff;
+    background: #cf3f3e;
+    margin-right: 6px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    position: relative;
+    top: -1px;
+}
+.List_Btn_Box.Infomation .Sub_Txt {
+    font-size: 88%;
+    font-weight: normal;
+    line-height: 1.3;
+}
+.List_Btn_Box.Infomation .No_Info {
+    font-size: 83%;
+    line-height: 1.3;
+    color: #333;
+}
+
+
+/* 今週の騎乗馬 */
+.ThisWeek_List .List_Btn_Box {
+    margin: 0 8px 18px;
+}
+.ThisWeek_List .List_Btn_Box dl dt {
+    color: #333;
+    font-size: 88%;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.ThisWeek_List dl dd {
+    font-size: 83%;
+    font-weight: bold;
+}
+span[class*="belong_color_"] {
+	padding: 2px 4px;
+	color: #FFF;
+	font-size: 75%;
+	vertical-align: 2px;
+	margin: 0 6px 0 0;
+	border-radius: 3px;
+}
+.belong_color_1 {background-color: #c14;}
+.belong_color_2 {background-color: #155cc1;}
+.belong_color_3 {background-color: #009000;}
+.belong_color_4 {background-color: #666;}
+
+
+/* 今週のレース傾向 */
+.Tendency_Date_Select {
+    padding: 8px;
+}
+.Tendency_Date_Select select {
+    padding: 4px;
+    font-size: 94%;
+    border-radius: 3px;
+}
+.Common_Tab_Type1.Race_Contents_Sub_Menu_Box:after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #4150b2;
+}
+table.Tendency_Data tr.Header th {
+    white-space: nowrap;
+    padding: 6px 0;
+}
+table.Tendency_Data tr td {
+    white-space: nowrap;
+    font-size: 83%;
+    padding: 8px;
+    text-align: left;
+}
+table.Tendency_Data td.Rank {
+    background: #f1f2f3;
+    text-align: center;
+}
+table.Tendency_Data td.Condition {}
+table.Tendency_Data td.Tendency_Waku > [class*="WakuBan"] {
+    display: inline-block;
+    width: 26px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 2px;
+    padding: 4px 0px 4px 0px;
+    position: relative;
+}
+table.Tendency_Data td.Tendency_Waku > [class*="WakuBan"] + [class*="WakuBan"] {
+    margin-left: 2px;
+}
+table.Tendency_Data td.Tendency_Waku span div {
+    display: inline-block;
+    color: #fff;
+    width: 26px;
+    padding: 4px 0px 4px 0px;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-right: 6px;
+}
+table.Tendency_Data td.Waku1 div {
+    background: #fff;
+    border: 1px solid #222;
+    color: #333 !important;
+}
+table.Tendency_Data td.Waku2 div {
+    background: #222;
+    border: 1px solid #222;
+}
+table.Tendency_Data td.Waku3 div {
+    background: #dc3c3c;
+    border: 1px solid #dc3c3c;
+}
+table.Tendency_Data td.Waku4 div {
+    background: #2c53a9;
+    border: 1px solid #2c53a9;
+}
+table.Tendency_Data td.Waku5 div {
+    background: #e4ca3b;
+    border: 1px solid #e4ca3b;
+}
+table.Tendency_Data td.Waku6 div {
+    background: #58af4a;
+    border: 1px solid #58af4a;
+}
+table.Tendency_Data td.Waku7 div {
+    background: #de8a26;
+    border: 1px solid #fff;
+}
+table.Tendency_Data td.Waku8 div {
+    background: #dc6179;
+    border: 1px solid #dc6179;
+}
+table.Tendency_Data tr td.Tendency_Waku {
+    background: #fff;
+}
+table.Tendency_Data tr td a {
+	padding-right: 22px;
+}
+table.Tendency_Data tr td span.Maru,
+table.Tendency_Data tr td.Tendency_Waku span {
+    /*vertical-align: middle;*/
+    /*padding-right: 12px;*/
+}
+table.Tendency_Data tr td span.Maru,
+table.Tendency_Data tr td.Tendency_Waku span.Maru {
+	position: absolute;
+	top: 50%;
+	right: -7px;
+	margin-top: -9px;
+}
+table.Tendency_Data tr td.Blood_Cell {
+	box-shadow: 2px 2px 0 0 #fff inset,-2px -2px 0 0 #fff inset;
+	border-top: 1px solid #E3E5EB;
+	border-left: 1px solid #E3E5EB;
+	border-bottom: none;
+	border-right: none;
+}
+table.Tendency_Data tr td.Blood_Cell .Inner a{
+	position: relative;
+	top: 1px;
+}
+table.Tendency_Data tr td div.Inner {
+	background: none;
+	border: none;
+	position: relative;
+}

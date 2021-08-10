@@ -1,0 +1,549 @@
+@charset "euc-jp";
+/*==============================================
+orepro ランキング用css
+-----------------------------------------
+■ランキング
+==============================================*/
+.Contents{
+	/*width:480px;*/
+}
+/*==============================================
+ランキング
+==============================================*/
+/*--ヘッダー部分--*/
+#Ranking_list{
+	background: #5d1919;
+	background-image: url(../img/orepro/body_pattern_02.png);
+	background-size: 64px 64px;
+}
+
+#Ranking_list .Title_Box .TimeStamp{
+	display: block;
+	text-align: right;
+	font-size: 70%;
+	color: #d4aa2c;
+	padding-top: 5px;
+	padding-bottom: 8px;
+	padding-right: 8px;
+}
+#Ranking_list .Title_Box .Prize_Info{
+	text-align:center;
+	padding-bottom: 16px;
+}
+#Ranking_list .Title_Box .Prize_Info a{
+	color: #fff;
+	display: inline-block;
+	border-bottom: 2px solid #fff;
+	padding: 0 6px 4px 0;
+	cursor: pointer;
+}
+#Ranking_list .Ranking_Head .Prize_Info a:before{
+	content: '';
+	display:inline-block;
+	width: 28px;
+	height: 25px;
+	background-image: url(../img/orepro/yoso_ranking_crown.png);
+	background-repeat: no-repeat;
+	background-size: 28px 75px;
+	margin-bottom: -5px;
+	padding-right: 5px;
+	background-position: 3px 0;
+}
+/*--タブ--*/
+#Ranking_list .Switch_Btn ul li a{
+	display: block;
+	margin: auto;
+	width:130px;
+	font-size: 88%;
+	font-weight: bold;
+	text-align: center;
+	padding: 16px 0 14px;
+}
+#Ranking_list .Switch_Btn ul li.Active a{
+	color: #333333;
+	-webkit-box-shadow: 2px 2px 0 0 #ffffff inset, -2px -2px 0 0 #a77811 inset;
+	box-shadow: 2px 2px 0 0 #ffffff inset, -2px -2px 0 0 #a77811 inset;
+	background: rgb(233,229,191);
+	background: -webkit-linear-gradient(top, rgba(233,229,191,1) 0%,rgba(198,188,111,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(233,229,191,1)),to(rgba(198,188,111,1)));
+	background: -o-linear-gradient(top, rgba(233,229,191,1) 0%,rgba(198,188,111,1) 100%);
+	background: linear-gradient(to bottom, rgba(233,229,191,1) 0%,rgba(198,188,111,1) 100%);
+}
+#Ranking_list .Common_Tab ul li{
+	height: 42px;
+}
+#Ranking_list .Common_Tab ul li a{
+	height: 52px;
+	padding: 0;
+}
+#Ranking_list .Common_Tab ul.Label_Tab li a{
+	display: block;
+}
+#Ranking_list .Common_Tab ul li.Active a{
+	top:-2px;
+	height: 53px;
+	background: #5d1919;
+	border-color: #c9bf87;
+	-webkit-box-shadow: 0px 1px 0px 0px #5d1919;
+	box-shadow: 0px 1px 0px 0px #5d1919;
+	z-index: 9;
+}
+#Ranking_list .Common_Tab ul li a .Category_Label{
+	margin-bottom: 9px;
+	width: 100%;
+	max-width: none;
+}
+#Ranking_list .Common_Tab ul li{
+	height: 42px;
+}
+#Ranking_list .Common_Tab ul li a{
+	height: 52px;
+	padding: 0;
+}
+#Ranking_list .Common_Tab ul.Label_Tab li a{
+	display: block;
+}
+#Ranking_list .Common_Tab ul li.Active a{
+	top:-2px;
+	height: 53px;
+	background: #5d1919;
+	border-color: #c9bf87;
+	-webkit-box-shadow: 0px 1px 0px 0px #5d1919;
+	box-shadow: 0px 1px 0px 0px #5d1919;
+	z-index: 9;
+}
+.Ranking_list_page .Tab_Contents{
+	background-color: #5d1919;
+}
+.Ranking_list_page .Ranking_Body{
+	background-color: #5d1919;
+}
+.Ranking_list_page .Ranking_Body .Ranking_Not_Members{
+	color:#fff;
+	padding: 8px 6px 0;
+}
+.Ranking_list_page .Ranking_Body > ul,
+.Ranking_list_page .Ranking_Body > .container{
+	padding: 8px 11px 15px;
+}
+#Ranking_list .Tab_Contents .Tips{
+	padding: 0 8px 20px;
+}
+#Ranking_list .Tab_Contents .Tips > p{
+	padding: 12px 0 0px;
+	color: #fff;
+	font-size: 82%;
+	line-height: 1.4em;
+}
+#Ranking_list .Tab_Contents .Tips_Toggle_Box{
+	margin-top: 14px;
+	border-color: #fff;
+}
+/*--コンテンツ--*/
+.Ranking_Myself{
+	margin-bottom: 20px;
+}
+ul li.Ranking_List{
+	position: relative;
+	padding: 2px;
+	margin-top: 25px;
+	background: #340202;
+	border:1px solid #e9c575;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 0px 1px #b4914e inset,0px 0px 0px 2px #785622 inset,0px 0px 0px 3px #785622 inset,1px 1px 0px 0px #2e0800,-1px -1px 0px 0px #2e0800;
+	box-shadow: 0px 0px 0px 1px #b4914e inset,0px 0px 0px 2px #785622 inset,0px 0px 0px 3px #785622 inset,1px 1px 0px 0px #2e0800,-1px -1px 0px 0px #2e0800;
+}
+#Ranking_list ul li.Ranking_List:before,
+#Ranking_list ul li.Ranking_List:after,
+#Ranking_list ul li.Ranking_List > div:before,
+#Ranking_list ul li.Ranking_List > div:after,
+.User_Rank01 .Rank_Tag,
+.User_Rank02 .Rank_Tag,
+.User_Rank03 .Rank_Tag{
+	background: url("../img/orepro/yoso_ranking_list_bg.png") no-repeat;
+	background-position: 0px 0px;
+	background-size: 253px auto;
+}
+ul li.Ranking_List.User_Rank01{
+	margin-top: 43px;
+	border: 2px solid #eac675;
+	box-shadow:0px 0px 0px 1px #c8a55d inset,0px 0px 0px 2px #99763a inset,0px 0px 0px 3px #6c4915 inset,0px 0px 0px 4px #512e00 inset,0px 0px 2px 0px #512e00;
+}
+ul li.Ranking_List.User_Rank01 + .User_Rank01{
+	margin-top: 53px;
+}
+#Ranking_list ul li.Ranking_List:before,
+#Ranking_list ul li.Ranking_List:after,
+#Ranking_list ul li.Ranking_List > div:before,
+#Ranking_list ul li.Ranking_List > div:after{
+	display: block;
+	position: absolute;
+	content: '';
+	width:43px;
+	height: 49px;
+	z-index: 1;
+	background-position: 0 0;
+}
+#Ranking_list ul li.Ranking_List.User_Rank01:before{
+	top: -9px;
+	left: -5px;
+	background-position: -11px -156px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank01:after{
+	top: -9px;
+	right: -5px;
+	background-position: -201px -156px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank01 > div:before{
+	bottom: -9px;
+	left: -5px;
+	background-position: -66px -156px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank01 > div:after{
+	bottom: -9px;
+	right: -5px;
+	background-position: -142px -156px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank02{
+	margin-top: 43px;
+	border: 2px solid #cdcdcd;
+	box-shadow:0px 0px 0px 1px #adadad inset,0px 0px 0px 2px #848484 inset,0px 0px 0px 3px #5c5b5b inset,0px 0px 0px 4px #41403d inset,0px 0px 2px 0px #512e00;
+}
+#Ranking_list ul li.Ranking_List.User_Rank02:before{
+	top: -9px;
+	left: -5px;
+	background-position: -11px -300px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank02:after{
+	top: -9px;
+	right: -5px;
+	background-position: -201px -300px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank02 > div:before{
+	bottom: -9px;
+	left: -5px;
+	background-position: -66px -300px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank02 > div:after{
+	bottom: -9px;
+	right: -5px;
+	background-position: -142px -300px;
+}
+#Ranking_list ul li.Ranking_List.User_Rank03{
+	margin-top: 43px;
+	border: 2px solid #cc9768;
+	box-shadow:0px 0px 0px 1px #b08259 inset,0px 0px 0px 2px #8a6745 inset,0px 0px 0px 3px #65472a inset,0px 0px 0px 4px #311100 inset,0px 0px 2px 0px #512e00;
+}
+/*-- ランキングタグ部分 --*/
+.Rank_Tag{
+	position: absolute;
+	top: -14px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	display:inline-block;
+	color:#fff;
+	font-size: 120%;
+	text-align: center;
+
+}
+.Rank_Tag .Rank_View {
+	display: inline-block;
+	font-size: 100%;
+	top:0;
+	left: 0;
+	background: #81764e;
+	height: 24px;
+	padding: 1px 23px;
+	border-radius:12px;
+	border: 2px solid #958365;
+	box-shadow:0px 0px 4px 0px #595136 inset,0px 0px 0px 1px #675539;
+}
+.Rank_Tag .Rank_View span{
+	font-size: 63%;
+	display: inline;
+}
+.User_Rank01 .Rank_Tag,
+.User_Rank02 .Rank_Tag,
+.User_Rank03 .Rank_Tag{
+	width:253px;
+	height: 72px;
+	top: -50px;
+	border: none;
+	box-shadow: none;
+	z-index: 100;
+}
+.User_Rank01 .Rank_Tag{
+	background-position: 0 -72px;
+}
+.User_Rank02 .Rank_Tag{
+	top: -45px;
+	background-position: 0 -216px;
+}
+.User_Rank03 .Rank_Tag{
+	top: -45px;
+	background-position: 0 -360px;
+}
+.User_Rank01 .Rank_Tag .Rank_View,
+.User_Rank02 .Rank_Tag .Rank_View,
+.User_Rank03 .Rank_Tag .Rank_View{
+	display: none;
+}
+
+
+ul li.Ranking_List .Ranking_Inner{
+	position:relative;
+	width: 100%;
+	min-height:88px;
+	padding:18px 8px;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+ul li.Ranking_List .Ranking_Inner .Avatar_Box [class^='MemberAvatar']{
+	position: absolute;
+	top: -5px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 52px;
+	height: 52px;
+	overflow: hidden;
+	border-radius: 3px;
+	border: 1px solid #575555;
+}
+ul li.Ranking_List .Ranking_Inner .User_Info{
+	position: relative;
+	padding:7px 0 0 70px;
+}
+ul li.Ranking_List .Ranking_Inner .User_Info .Grade_Emblem{
+	position: absolute;
+	top: -2px;
+	right: 4px;
+}
+ul li.Ranking_List .Ranking_Inner .User_Info .User_Name{
+	display: block;
+	position: relative;
+	top: 0;
+	color: #fff;
+	padding: 0 6px 8px 14px;
+	font-size: 118.75%;
+	margin-right: 6px;
+	text-shadow: 1px 2px 0 rgba(0,0,0,.5);
+}
+/*
+ul li.Ranking_List .Ranking_Inner .User_Info .User_Name:before{
+	content: '';
+	display: none;
+	width: 28px;
+	height: 25px;
+	background-image: url(../img/orepro/yoso_ranking_crown.png);
+	background-repeat: no-repeat;
+	background-size: 28px 75px;
+	margin-bottom: -5px;
+	padding-right: 5px;
+}
+ul li.Ranking_List.User_Rank01 .Ranking_Inner .User_Info .User_Name:before{
+	display: inline-block;
+	background-position: 0 0;
+}
+ul li.Ranking_List.User_Rank02 .Ranking_Inner .User_Info .User_Name:before{
+	display: inline-block;
+	background-position: 0 -25px;
+}
+ul li.Ranking_List.User_Rank03 .Ranking_Inner .User_Info .User_Name:before{
+  display: inline-block;
+	background-position: 0 -50px;
+}
+ul li.Ranking_List.IsGrade .User_Info .User_Name:before{
+	content: '';
+	display: none;
+	width: 19px;
+	height: 25px;
+	background-image: url("../img/orepro/trophy.png");
+	background-repeat: no-repeat;
+	background-size: 45px;
+	margin-bottom: -5px;
+	padding-right: 5px;
+}
+ul li.Ranking_List.IsGrade.User_Rank01 .User_Info .User_Name:before {
+  display: inline-block;
+  background-position: 1px -1px;
+}
+ul li.Ranking_List.IsGrade.User_Rank02 .User_Info .User_Name:before {
+  display: inline-block;
+  background-position: -24px -1px;
+}
+ul li.Ranking_List.IsGrade.User_Rank03 .User_Info .User_Name:before {
+  display: inline-block;
+  background-position: 1px -29px;
+  }*/
+
+  ul li.Ranking_List .Ranking_Inner .User_Info .Diff_View {
+  	display: block;
+  	color: #fff;
+  	font-size: 133.3%;
+  	text-align: right;
+  	margin-left: 11px;
+  	background: #000;
+  	color: #64f2bb;
+  	border-radius: 6px;
+  	padding: 9px 7px 4px 14px;
+  	-webkit-box-pack: justify;
+  	-ms-flex-pack: justify;
+  	justify-content: space-between;
+  	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+  	-webkit-box-align: end;
+  	-ms-flex-align: end;
+  	align-items: flex-end;
+  	margin-right: 6px;
+  }
+  ul li.Ranking_List .Ranking_Inner .User_Info .Diff_View span{
+  	font-size: 75%;
+  }
+
+  ul li.Ranking_List .Ranking_Inner .User_Info .Diff_View span[class^="MemberSelfIntroduction_"]{
+  	text-align: left;
+  	color: #ffffff;
+  	line-height: 1.3em;
+  	height: 1.3em;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	display: -webkit-box;
+  	-webkit-line-clamp: 1;
+  	-webkit-box-orient: vertical;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record{
+  	margin-top: 19px;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul{
+  	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+  	width: 100%;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li{
+  	width:55%;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li + li{
+  	width: 45%;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl + dl{
+  	margin-top: 6px;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl dt{
+  	display: inline-block;
+  	height: 23px;
+  	width: 70px;
+  	text-align: center;
+  	padding: 6px 3px 0;
+  	margin-right: 4px;
+  	color: #fff;
+  	background: #957f32;
+  	border-radius: 12px;
+  	text-shadow: 1px 2px 3px rgba(0,0,0,0.5), -1px -2px 3px rgba(0,0,0,0.5), 2px 1px 3px rgba(0,0,0,0.5), -2px -1px 3px rgba(0,0,0,0.5);
+  	font-size: 73.3%;
+  }
+  ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl dd{
+  	display: inline-block;
+  	color: #ddd6ba;
+  	font-size: 88%;
+  }
+  @media only screen and (max-width: 320px) {
+  	ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl > *{
+  		display: block !important;
+  	}
+  	ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl dd{
+  		margin-top: 6px;
+  	}
+  }
+
+  /*-- ページャー --*/
+  .Ranking_list_page .PagerNavi{
+  	margin-top: -5px;
+  }
+  .Ranking_list_page .CommonPager{
+  	position: relative;
+  	margin-bottom: 24px;
+  	background-color: #5d1919;
+  	background-image: url("../img/orepro/tab_bg_bottom.png");
+  	background-repeat: repeat-x;
+  	background-size: 2px 4px;
+  	background-position: bottom;
+  }
+
+  .Ranking_list_page .CommonPager ul li:last-child,
+  .Ranking_list_page .CommonPager ul li:first-child,
+  .Ranking_list_page .CommonPager ul li:last-child a,
+  .Ranking_list_page .CommonPager ul li:first-child a{
+  	background: #e6dabe;
+  }
+  .Ranking_list_page .CommonPager ul li a{
+  	color: #222;
+  	background: #f0ebd9;
+  	border: 1px solid #f0ebd9;
+  }
+  .Ranking_list_page .CommonPager ul li a.Active{
+  	background: #aa9566;
+  	color: #fff;
+  	border: 1px solid #aa9566;
+  }
+
+/*==============================================
+最強位バトル暫定
+==============================================*/
+.Prodebut_battle_ranking_list .Ranking_Head p{
+	padding:20px 10px;
+	color: #fff;
+	line-height: 1.5;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record{
+	margin-top:10px;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record dl{
+	width:95%;
+	margin:auto;
+	border-radius: 8px;
+	border:1px solid #957f32;
+	overflow:hidden;
+	background:#957f32;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record dt{
+	display: block;
+	width:100%;
+	border-radius: 0;
+	color: #fff;
+  	font-size: 73.3%;
+  	text-align:center;
+  	height: 23px;
+  	padding: 6px 3px 0;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record dd{
+	background: #000;
+	color: #64f2bb;
+	margin-top:0;
+    padding: 6px 3px;
+    text-align:center;
+    width:100%;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li {
+	margin-top: 10px;
+	width: 50%;
+}
+.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl{
+	width:91%;
+}
+
+
+@media only screen and (max-width: 320px){
+	ul li.Ranking_List .Ranking_Inner .User_Info .User_Name{
+		font-size:87.5%;
+		padding-top: 6px;
+	}
+	.Prodebut_battle_ranking_list ul li.Ranking_List .Ranking_Inner .Ranking_User_Record ul li dl dt{
+		font-size:62.5%;
+	}
+}

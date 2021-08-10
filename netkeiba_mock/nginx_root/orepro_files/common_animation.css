@@ -1,0 +1,435 @@
+@charset "euc-jp";
+/*==============================================
+	yoso_gp
+	#Yoso_gp animation
+	2017-5-22 ikegami
+
+	Autoprefixer:http://autoprefixer.github.io/
+	> 1%, last 2 versions, Firefox ESR, Android > 4.0, IE >= 9
+	--------------------------------------------
+	共通
+	トップページ
+==============================================*/
+/*==============================================
+共通
+	クリックエフェクト
+	震える
+	光る
+	まわる
+	点滅
+  ドドンと登場
+  ふわふわ
+==============================================*/
+/*----------------------------------
+クリックエフェクト
+----------------------------------*/
+#Ripple{
+	display: none;
+	position: fixed;
+	width:20px;
+	height:20px;
+	background-image:url("../img/sample/ripple_image.png");
+	background-size: 20px 20px;
+	border-radius:100px;
+	opacity: .6;
+	z-index: 9999999999999999999999999999999999999;
+}
+#Ripple.play{
+	-webkit-animation-duration: .2s;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-name:ripple;
+	animation-duration: .2s;
+	animation-timing-function: ease-out;
+	animation-name:ripple;
+}
+@-webkit-keyframes ripple{
+	0% {-webkit-transform: scale(1, 1); }
+	50% {opacity: 1;}
+	100% {-webkit-transform: scale(2, 2); opacity: 0.0;}
+}
+@keyframes ripple {
+	0% {transform: scale(1, 1); }
+	50% {opacity: 1;}
+	100% {transform: scale(2, 2); opacity: 0.0;}
+}
+/*----------------------------------
+震える
+----------------------------------*/
+.anime_vibrate{
+	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:vibrate;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:vibrate;
+}
+@keyframes vibrate {
+	0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	1%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
+	2%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	3%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	4%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+@-webkit-keyframes vibrate {
+	0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	1%{-webkit-transform: rotate(10deg);transform: rotate(10deg);}
+	2%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	3%{-webkit-transform: rotate(-10deg);transform: rotate(-10deg);}
+	4%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+}
+/*----------------------------------
+光る
+----------------------------------*/
+.anime_blink{
+	position: absolute;
+	left: -2px;
+	top: -46px;
+	display: block;
+	width: 10px;
+	height: 100px;
+	background: #fff;
+	-webkit-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	-webkit-animation-duration: 4s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:blink;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:blink;
+	opacity: .5;
+}
+@-webkit-keyframes blink {
+	0%{left:-2px;top:-46px;}
+	8%{left:70px;top:4px;}
+	100%{left:70px;top:4px;}
+}
+@keyframes blink {
+	0%{left:-2px;top:-46px;}
+	8%{left:70px;top:4px;}
+	100%{left:70px;top:4px;}
+}
+/*----------------------------------
+まわる
+----------------------------------*/
+.anime_rotation{
+	-webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	-webkit-animation-duration: .5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name:rotation;
+	animation-duration: .5s;
+	animation-timing-function: linear;
+	animation-name:rotation;
+}
+@-webkit-keyframes rotation {
+	0%{-webkit-transform: rotate(0deg);}
+	50%{-webkit-transform: rotate(180deg);}
+	100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes rotation {
+	0%{transform: rotate(0deg)}
+	50%{transform: rotate(180deg)}
+	100%{transform: rotate(360deg)}
+}
+
+.anime_rotation_back{
+	-webkit-transform: rotate(0deg);
+	        transform: rotate(0deg);
+	-webkit-animation-duration: .5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name:rotation_back;
+	animation-duration: .5s;
+	animation-timing-function: linear;
+	animation-name:rotation_back;
+}
+@-webkit-keyframes rotation_back {
+	0%{-webkit-transform: rotate(0deg);}
+	50%{-webkit-transform: rotate(-180deg);}
+	100%{-webkit-transform: rotate(-360deg);}
+}
+@keyframes rotation_back {
+	0%{transform: rotate(0deg)}
+	50%{transform: rotate(-180deg)}
+	100%{transform: rotate(-360deg)}
+}
+/*----------------------------------
+点滅
+----------------------------------*/
+.anime_flash{
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:flash;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:flash;
+}
+@-webkit-keyframes flash {
+	0%{opacity: 1}
+	85%{opacity: 1}
+	100%{opacity: 0}
+}
+@keyframes flash {
+	0%{opacity: 1}
+	85%{opacity: 1}
+	100%{opacity: 0}
+}
+/*--　発光 --*/
+.anime_flash_02{
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:flash_02;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:flash_02;
+}
+@-webkit-keyframes flash_02 {
+	0%{opacity: 1}
+	100%{opacity: 0}
+}
+@keyframes flash_02 {
+	0%{opacity: 1}
+	100%{opacity: 0}
+}
+
+/*----------------------------------
+フェード
+----------------------------------*/
+/*-- イン --*/
+.animation_fade_in{
+  -webkit-animation-duration: .3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name:fade_in;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-duration: .3s;
+  animation-timing-function: linear;
+  animation-name:fade_in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+@keyframes fade_in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+@-webkit-keyframes fade_in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+/*-- アウト --*/
+.animation_fade_out{
+  -webkit-animation-duration: .3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name:fade_outn;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-duration: .3s;
+  animation-timing-function: linear;
+  animation-name:fade_out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+@keyframes fade_out {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+@-webkit-keyframes fade_out {
+  0% {opacity: 1}
+  100% {opacity: 0}
+}
+/*-- インーアウト --*/
+.animation_fade_in_out{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name:fade_in_out;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-name:fade_in_out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+@keyframes fade_in_out {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+@-webkit-keyframes fade_in_out {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+/*-- アウトーイン --*/
+.animation_fade_out_in{
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name:fade_out_in;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-name:fade_out_in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+@keyframes fade_out_in {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+}
+@-webkit-keyframes fade_out_in {
+  0% {opacity: 1}
+  50% {opacity: 0}
+  100% {opacity: 1}
+}
+/*----------------------
+回転
+-----------------------*/
+.animation_rotate{
+	-webkit-animation-duration: 8s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name:rotate;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-name:rotate;
+}
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(180deg);}
+	100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes rotate {
+	0% {-webkit-transform: rotate(0deg);}
+	50% {-webkit-transform: rotate(180deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+/*----------------------
+ドドンと登場
+-----------------------*/
+.animation_impact{
+	-webkit-animation-duration: .3s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name:impact;
+  -webkit-animation-fill-mode: forwards;
+	animation-duration: .3s;
+	animation-timing-function: linear;
+	animation-name:impact;
+  animation-fill-mode: forwards;
+}
+@-webkit-keyframes impact {
+  0% {-webkit-transform: scale(1);}
+  25% {-webkit-transform: scale(1.3);}
+  50% {-webkit-transform: scale(.8);}
+  100% {-webkit-transform: scale(1);}
+}
+@keyframes impact {
+  0% {transform: scale(1);}
+  25% {transform: scale(1.3);}
+  50% {transform: scale(.8);}
+  100% {transform: scale(1);}
+}
+.animation_impact_02{
+  -webkit-animation-duration: .3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name:impact_02;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: .3s;
+  animation-timing-function: linear;
+  animation-name:impact_02;
+  animation-fill-mode: forwards;
+}
+@keyframes impact_02 {
+  0% {transform: scale(10);opacity: 0}
+  100% {transform: scale(1);opacity: 1}
+}
+@-webkit-keyframes impact_02 {
+  0% {-webkit-transform: scale(10);opacity: 0}
+  100% {-webkit-transform: scale(1);opacity: 1}
+}
+/*----------------------------------
+ふわふわ
+----------------------------------*/
+.animation_float{
+	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-name:float;
+	-webkit-animation-iteration-count: infinite;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-name:float;
+	animation-iteration-count: infinite;
+}
+@-webkit-keyframes float {
+  0% {-webkit-transform: translate(0px, 0px)}
+  25% {-webkit-transform: translate(0px, 5px)}
+  50% {-webkit-transform: translate(0px, 0px)}
+  75% {-webkit-transform: translate(0px, -5px)}
+  100% {-webkit-transform: translate(0px, 0px)}
+}
+@keyframes float {
+  0% {transform: translate(0px, 0px)}
+  25% {transform: translate(0px, 5px)}
+  50% {transform: translate(0px, 0px)}
+  75% {transform: translate(0px, -5px)}
+  100% {transform: translate(0px, 0px)}
+}
+/*==============================================
+トップページ
+	雲
+	グレードアイコン光らせる
+==============================================*/
+/*----------------------------------
+雲
+----------------------------------*/
+.Cloud.c_01{
+	-webkit-animation-duration: 30s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:cloud_01;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:cloud_01;
+}
+.Cloud.c_02{
+	-webkit-animation-duration: 60s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name:cloud_02;
+	-webkit-animation-delay: -20s;
+	animation-duration: 60s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name:cloud_02;
+	animation-delay: -20s;
+}
+@-webkit-keyframes cloud_01 {
+	0% {left:-150%;}
+	90% {left:120%;}
+	100% {left:120%;}
+}
+@-webkit-keyframes cloud_02 {
+	0% {left:-150%;}
+	90% {left:150%;}
+	100% {left:150%;}
+}
+@keyframes cloud_01 {
+	0% {left:-150%;}
+	90% {left:120%;}
+	100% {left:120%;}
+}
+@keyframes cloud_02 {
+	0% {left:-150%;}
+	90% {left:150%;}
+	100% {left:150%;}
+}
