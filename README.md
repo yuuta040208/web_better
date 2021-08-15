@@ -5,6 +5,8 @@ netkeibaの俺プロに予想を投稿するAPIです。
 ## Installation
 
 ```
+$ git clone https://github.com/yuuta040208/web_better.git
+$ cd web_better
 $ docker-compose build
 $ docker-compose up -d
 ```
