@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::API
   class BadRequestError < StandardError; end
 
-  rescue_from StandardError, with: :internal_server_error
+  # rescue_from StandardError, with: :internal_server_error
   rescue_from Netkeiba::Orepro::Command::AuthenticationError, with: :unauthorized
   rescue_from BadRequestError, with: :bad_request
 
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
     render status: 401, json: { status: 401, message: "Unauthorized. #{message}" }
   end
 
-  def internal_server_error(message = nil)
-    render status: 500, json: { status: 500, message: "Internal Server Error. #{message}" }
-  end
+  # def internal_server_error(message = nil)
+  #   render status: 500, json: { status: 500, message: "Internal Server Error. #{message}" }
+  # end
 end

@@ -26,21 +26,38 @@ class Netkeiba::Orepro::Command
     Netkeiba::Orepro::Command.new(session)
   end
 
+  def visit_race_page(race_id)
+    url = "https://orepro.netkeiba.com/bet/shutuba.html?mode=init&race_id=#{race_id}"
+    @session.visit(url)
+  end
+
+  def select_kantan_mode
+    @session.find(:xpath, '/html/body/div[1]/div[3]/div/div[8]/div/ul/li[2]').click
+  end
+
+  def select_kaime_mode
+    @session.find(:xpath, '/html/body/div[1]/div[3]/div/div[8]/div/ul/li[4]').click
+  end
+
+  def refresh
+    @session.refresh
+  end
+
   def select_honmei(number)
-    @session.find(:xpath, "//*[@id=\"tr_#{number}\"]/td[2]/ul/li[1]").click
+    @session.find(:xpath, "/html/body/div[1]/div[3]/div/div[5]/div[1]/table/tbody/tr[#{number + 1}]/td[2]/ul/li[1]").click
   end
 
   def select_taikou(number)
-    @session.find(:xpath, "//*[@id=\"tr_#{number}\"]/td[2]/ul/li[2]").click
+    @session.find(:xpath, "/html/body/div[1]/div[3]/div/div[5]/div[1]/table/tbody/tr[#{number + 1}]/td[2]/ul/li[2]").click
   end
 
   def select_tanana(number)
-    @session.find(:xpath, "//*[@id=\"tr_#{number}\"]/td[2]/ul/li[3]").click
+    @session.find(:xpath, "/html/body/div[1]/div[3]/div/div[5]/div[1]/table/tbody/tr[#{number + 1}]/td[2]/ul/li[3]").click
   end
 
   def select_renka(numbers = [])
     numbers.each do |number|
-      @session.find(:xpath, "//*[@id=\"tr_#{number}\"]/td[2]/ul/li[4]").click
+      @session.find(:xpath, "/html/body/div[1]/div[3]/div/div[5]/div[1]/table/tbody/tr[#{number + 1}]/td[2]/ul/li[4]").click
     end
   end
 

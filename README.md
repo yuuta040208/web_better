@@ -1,24 +1,39 @@
-# README
+# WebBetter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+netkeibaの俺プロに予想を投稿するAPIです。
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```
+$ docker-compose build
+$ docker-compose up -d
+```
 
-* System dependencies
+## How to use
 
-* Configuration
+### 俺プロ予想投稿API
 
-* Database creation
+- POST `/api/netkeiba/orepro/v1/predictions`
 
-* Database initialization
+|name|type|required|description|example|
+|---|---|---|---|---|
+|email|string|true|netkeibaアカウントのメールアドレス|example@gmail.com|
+|password|string|true|netkeibaアカウントのパスワード|example1234|
+|race_id|integer|true|netkeibaのレースID|202130081211|
+|honmei|integer|true|本命馬の馬番|1|
+|taikou|integer|false|対抗馬の馬番|2|
+|tanana|integer|false|単穴馬の馬番|3|
+|renkas|Array<integer>|false|連下馬の馬番|[4, 5]|
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+リクエスト例
 
-* Deployment instructions
+```curl
+curl -X POST http://localhost:3000/api/netkeiba/orepro/v1/predictions -d 'email=YOUR_EMAIL&password=YOUR_PASSWORD&race_id=202130081211&honmei=1&taikou=2&tanana=3&renkas[]=4&renkas[]=5'
+``` 
 
-* ...
+レスポンス例
+
+```json
+{ "status":200, "message": "http://localhost:3000/capybara-202108150700382364758095.png" }
+```

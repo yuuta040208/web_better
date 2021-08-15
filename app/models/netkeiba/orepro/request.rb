@@ -18,7 +18,7 @@ class Netkeiba::Orepro::Request
   validates :honmei, presence: true
 
   def save!
-    OreproPrediction.create!(attributes)
+    # OreproPrediction.create!(attributes)
   end
 
   def error_message

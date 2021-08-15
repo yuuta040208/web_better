@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Api::Netkeiba::Orepro::V1::PredictionsController < ApplicationController
+  wrap_parameters false
+
   def create
     request = Netkeiba::Orepro::Request.new(create_params)
     request.save!
