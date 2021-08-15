@@ -39,6 +39,10 @@ class Netkeiba::Orepro::Command
     @session.find(:xpath, '/html/body/div[1]/div[3]/div/div[8]/div/ul/li[4]').click
   end
 
+  def enable_twice_mode
+    @session.find(:xpath, '/html/body/div[1]/div[3]/div/div[6]/div/div[1]/label').click
+  end
+
   def refresh
     @session.refresh
   end

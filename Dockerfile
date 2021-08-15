@@ -19,3 +19,5 @@ COPY Gemfile Gemfile.lock /myapp/
 
 RUN gem install bundler
 RUN bundle install
+RUN bundle e rails db:create
+RUN bundle e rails db:migrate
