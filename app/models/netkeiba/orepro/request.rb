@@ -11,6 +11,7 @@ class Netkeiba::Orepro::Request
   attribute :taikou, :integer
   attribute :tanana, :integer
   attribute :renkas, array: :integer
+  attribute :double, :boolean
 
   validates :email, presence: true
   validates :password, presence: true

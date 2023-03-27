@@ -22,6 +22,7 @@ class Api::Netkeiba::Orepro::V1::PredictionsController < ApplicationController
       :honmei,
       :taikou,
       :tanana,
+      :double,
       renkas: []
     )
   end

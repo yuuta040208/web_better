@@ -8,6 +8,6 @@ class Netkeiba::Orepro::Response
   end
 
   def screenshot_url
-    File.join('http://localhost:3000', @screenshot_path.split('/').last)
+    File.join('http://localhost:3000', @screenshot_path.gsub('public/myapp/', ''))
   end
 end

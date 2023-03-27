@@ -23,6 +23,7 @@ class Netkeiba::Orepro::Session
             no-sandbox
             headless
             disable-gpu
+            disable-dev-shm-usage
             window-size=1280,960
           ]
         }

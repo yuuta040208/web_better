@@ -69,13 +69,22 @@ class Netkeiba::Orepro::Command
     @session.find(:xpath, "//*[@id=\"act-bet_#{race_id}\"]").click
   end
 
-  def take_full_page_screenshot
+  def take_full_page_screenshot(race_id)
     width = @session.page.execute_script("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);")
     height = @session.page.execute_script("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);")
 
     window = @session.page.driver.browser.manage.window
     window.resize_to(width + 100, height + 100)
 
-    @session.save_screenshot
+    path = File.join(today, "#{race_id.to_s}.png")
+    Dir.mkdir(today) unless Dir.exist?(today)
+
+    @session.save_screenshot(path)
+  end
+
+  private
+
+  def today
+    (Time.current + 9.hours).strftime('%Y%m%d')
   end
 end

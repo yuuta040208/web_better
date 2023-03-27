@@ -26,12 +26,13 @@ $ docker-compose up -d
 |taikou|integer|false|対抗馬の馬番|2|
 |tanana|integer|false|単穴馬の馬番|3|
 |renkas|Array<integer>|false|連下馬の馬番|[4, 5]|
+|double|boolean|false|勝負レースにするかどうか|true|
 
 
 リクエスト例
 
 ```curl
-curl -X POST http://localhost:3000/api/netkeiba/orepro/v1/predictions -d 'email=YOUR_EMAIL&password=YOUR_PASSWORD&race_id=202130081211&honmei=1&taikou=2&tanana=3&renkas[]=4&renkas[]=5'
+curl -X POST http://localhost:3000/api/netkeiba/orepro/v1/predictions -d 'email=YOUR_EMAIL&password=YOUR_PASSWORD&race_id=202130081211&honmei=1&taikou=2&tanana=3&renkas[]=4&renkas[]=5&double=true'
 ``` 
 
 レスポンス例
